@@ -12,6 +12,12 @@ npm run typecheck  # next typegen + tsc
 npm run lint
 ```
 
+## Deploy
+
+The site deploys to Vercel. To set it up, open the Vercel dashboard, choose **Add New → Project**, import `nathanaelhwang/osa-atlas-website`, and deploy with the default Next.js settings. You don't need a `vercel.json` or any environment variables. After that, every push to `main` deploys to production, and every other branch and pull request gets its own preview URL.
+
+Vercel's free Hobby plan is for personal, non-commercial use only; commercial use needs Pro. When the site goes live, point `www.osaatlas.com` at the Vercel project. The site's metadata uses that address for social preview images.
+
 ## Routes
 
 | Route | Content |
