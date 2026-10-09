@@ -1,0 +1,2069 @@
+WEBSITE CONTENT EXPORT
+Snapshot date: 2026-10-08 (America/Los_Angeles)
+
+Files
+- page-copy.json: source-ordered page headings, prose, tables, buttons, labels, and captions.
+- website-text.json: detailed text catalog, including conditional labels, errors, accessibility copy, tooltips, and templates.
+- static-definitions.json: analysis and model definitions, family questions, release statuses, categories, navigation data, and static defaults.
+- navigation.json: eight existing routes and their content sources, plus link text and destinations.
+- extraction-report.json: coverage counts, scope, and limitations.
+
+This folder contains content data only. All source file names and line numbers are provenance references. Templates use {{value_1}} or {{chart_value_1}} for values supplied at runtime. The original study JSON files provide those values. Conditional alternatives are retained without running application code. Existing release notes and scientific caveats are preserved as content; this export does not change their status.
+
+READABLE COPY
+
+website/app/atlas-data.ts
+=========================
+[display-text; line 151] Unknown feature
+[text-template; line 180] Association data are unavailable ({{value_1}}).
+[display-text; line 192] Unknown feature
+[display-text; line 204] Feature index is unavailable.
+[display-text; line 216] Unknown feature
+[display-text; line 219] Other
+[display-text; line 221] Feature
+[display-text; line 230] Cross-domain feature index is unavailable.
+[display-text; line 232] Cross-domain feature index has an invalid shape.
+[display-text; line 242] Feature indexes are unavailable.
+[display-text; line 259] PheCode
+[text-template; line 279] WAS manifest is missing {{value_1}}.
+[display-text; line 285] WAS manifest is missing a partition path.
+[display-text; line 293] label
+[display-text; line 309] Analytic N
+[display-text; line 312] Feature-positive N
+[text-template; line 319] WAS manifest is unavailable ({{value_1}}).
+[display-text; line 325] WAS manifest has an invalid shape.
+[display-text; line 333] WAS manifest contains an invalid analysis entry.
+[display-text; line 347] WAS manifest contains an unsafe partition path.
+[display-text; line 357] Unknown feature
+[display-text; line 358] Other
+[text-template; line 384] Association data are unavailable ({{value_1}}).
+[display-text; line 390] Association data have an invalid shape.
+[display-text; line 398] Partition metadata do not match the manifest.
+[display-text; line 404] Not available
+[display-text; line 405] <1 × 10⁻³⁰⁰
+[display-text; line 406] × 10^
+
+website/app/atlas-state.ts
+==========================
+[display-text; line 2] M1
+[display-text; line 2] M2
+[display-text; line 2] M3
+[display-text; line 2] M4
+[display-text; line 21] M4
+[display-text; line 46] Severe vs None
+[display-text; line 47] Moderate vs None
+[display-text; line 48] Mild vs None
+[display-text; line 49] Severity trend
+[display-text; line 50] AHI ≥15 vs <15
+[display-text; line 51] AHI ≥5 vs <5
+[display-text; line 52] Any severity difference
+[display-text; line 56] M1 · crude
+[display-text; line 57] M2 · demographics
+[display-text; line 58] M3 · excludes BMI
+[display-text; line 59] M4 · + BMI · primary
+
+website/app/components/AtlasExplorer.tsx
+========================================
+[display-text; line 19] circulatory system
+[display-text; line 20] mental disorders
+[display-text; line 21] infectious diseases
+[display-text; line 21] sense organs
+[display-text; line 22] injuries & poisonings
+[display-text; line 22] pregnancy complications
+[display-text; line 23] congenital anomalies
+[display-text; line 26] Odds ratio
+[display-text; line 26] Hazard ratio
+[display-text; line 27] OR
+[display-text; line 27] HR
+[display-text; line 28] Prevalence PheDAS
+[display-text; line 28] Incidence PheDAS
+[text-template; line 78] {{chart_value_1}} | PheCode {{chart_value_2}} · {{chart_value_3}}
+[text-template; line 79] | {{value_1}} {{chart_value_1}} ({{chart_value_2}}–{{chart_value_3}})
+[text-template; line 80] | p = {{chart_value_1}}
+[text-template; line 115] log({{value_1}})
+[display-text; line 116] −log₁₀(p-value)
+[display-text; line 138] −log₁₀(p-value)
+[display-text; line 171] Association data could not be loaded.
+[text-template; line 183] /explore?{{value_1}}
+[page-copy; line 211] Atlas
+[page-copy; line 211] /
+[page-copy; line 211] Explore
+[page-copy; line 213] Disease-wide association scan
+[display-text; line 214] Existing disease associations before the sleep-study index.
+[display-text; line 214] New disease onset during post-index follow-up.
+[page-copy; line 218] Analysis settings
+[page-copy; line 220] Show
+[page-copy; line 221] Analysis family
+[page-copy; line 221] Prevalence PheDAS
+[page-copy; line 221] Incidence PheDAS
+[page-copy; line 222] for
+[page-copy; line 223] OSA contrast
+[page-copy; line 224] adjusted with
+[page-copy; line 225] Adjustment model
+[display-text; line 225] M1
+[display-text; line 225] M2
+[display-text; line 225] M3
+[display-text; line 225] M4
+[page-copy; line 226] across
+[page-copy; line 227] Disease category
+[page-copy; line 227] all disease categories
+[page-copy; line 230] Significance
+[page-copy; line 230] All results
+[page-copy; line 230] FDR-significant
+[page-copy; line 230] Bonferroni-significant
+[page-copy; line 231] Find in scan
+[placeholder; line 231] Name or PheCode
+[page-copy; line 232] Stable estimates only
+[page-copy; line 233] Reset
+[page-copy; line 235] Reference: AHI <5 (“None”) within a sleep-clinic referral cohort. M4 is the primary presentation model and includes BMI.
+[accessibility-label; line 238] Current scan summary
+[page-copy; line 239] endpoints displayed
+[page-copy; line 240] FDR-significant
+[display-text; line 241] None
+[page-copy; line 241] selected feature
+[accessibility-label; line 244] Result view
+[title; line 247] Volcano view is unavailable for a non-directional omnibus test
+[page-copy; line 249] Higher
+[page-copy; line 249] Lower
+[page-copy; line 249] Not FDR-significant
+[text-template; line 254] {{value_1}} and significance
+[display-text; line 254] Ranked association results
+[display-text; line 254] Phenome-wide significance landscape
+[title; line 254] Pending disclosure review
+[page-copy; line 254] CSV pending review
+[page-copy; line 255] Loading approved aggregate results…
+[text-template; line 255] {{value_1}} {{value_2}} plot. Use the synchronized table for keyboard access.
+[page-copy; line 260] Selected feature
+[page-copy; line 260] PheCode
+[page-copy; line 261] –
+[page-copy; line 261] interval
+[page-copy; line 262] p-value
+[page-copy; line 262] FDR
+[display-text; line 262] Significant
+[display-text; line 262] Not significant
+[page-copy; line 262] At risk
+[page-copy; line 262] Events
+[page-copy; line 263] Estimate flagged as unstable
+[page-copy; line 264] Proportional-hazards diagnostic flagged (p
+[page-copy; line 264] ).
+[page-copy; line 265] Open full feature page →
+[page-copy; line 266] View cumulative-incidence curves →
+[page-copy; line 267] Select a point or table row to inspect it.
+[page-copy; line 271] Keyboard-accessible companion
+[page-copy; line 271] Association results
+[page-copy; line 271] Showing the 60 strongest displayed results
+[page-copy; line 272] Research preview. Aggregate associations describe relationships within a sleep-clinic referral cohort; they do not estimate population OSA prevalence or establish causality. Prevalence downloads remain unavailable pending per-feature disclosure review.
+[text-template; line 273] Selected {{value_1}}, PheCode {{value_2}}
+[text-template; line 273] {{value_1}} results
+[page-copy; line 279] Ranked
+[page-copy; line 279] association results
+[page-copy; line 279] Feature
+[page-copy; line 279] Category
+[page-copy; line 279] (interval)
+[page-copy; line 279] p-value
+[page-copy; line 279] Significance
+[page-copy; line 279] Quality
+[page-copy; line 279] (
+[page-copy; line 279] –
+[page-copy; line 279] )
+[page-copy; line 279] Bonf.
+[page-copy; line 279] FDR
+[page-copy; line 279] —
+[page-copy; line 279] Flagged
+[page-copy; line 279] Stable
+
+website/app/components/AtlasHeader.tsx
+======================================
+[accessibility-label; line 7] OSA Association Atlas home
+[page-copy; line 8] OSA
+[page-copy; line 10] Association Atlas
+[accessibility-label; line 12] Primary navigation
+[page-copy; line 13] Disease scans
+[page-copy; line 14] Phenotypes
+[page-copy; line 15] Incidence curves
+[page-copy; line 16] Other WAS
+[page-copy; line 17] Feature lookup
+[page-copy; line 18] Methods
+[page-copy; line 20] Research preview · R1
+
+website/app/components/FeatureDetail.tsx
+========================================
+[display-text; line 10] M1
+[display-text; line 10] M2
+[display-text; line 10] M3
+[display-text; line 10] M4
+[text-template; line 38] No disease feature was found for PheCode {{value_1}}.
+[display-text; line 40] The disease feature index could not be loaded.
+[display-text; line 53] M4
+[display-text; line 54] M4
+[display-text; line 75] Feature evidence could not be loaded.
+[text-template; line 87] /feature?{{value_1}}
+[text-template; line 92] PheCode {{value_1}}
+[page-copy; line 96] Atlas
+[page-copy; line 96] /
+[page-copy; line 96] Explore
+[page-copy; line 96] /
+[page-copy; line 98] Disease feature
+[page-copy; line 98] PheCode
+[display-text; line 98] Clinical phenotype
+[accessibility-label; line 102] Primary M4 evidence
+[page-copy; line 104] Primary presentation
+[page-copy; line 105] Contrast
+[page-copy; line 105] Severe vs None
+[page-copy; line 105] Moderate vs None
+[page-copy; line 105] Mild vs None
+[page-copy; line 105] AHI ≥15 vs <15
+[page-copy; line 105] AHI ≥5 vs <5
+[page-copy; line 114] Adjustment ladder
+[page-copy; line 114] How the estimate changes from M1 to M4
+[page-copy; line 114] M4 is emphasized as the primary presentation model. M3 excludes BMI.
+[page-copy; line 119] Attenuation between M3 and M4 may be scientifically informative because BMI can be conceptualized differently across questions. The atlas presents both estimates without assigning a causal role.
+[page-copy; line 123] Dose pattern
+[page-copy; line 123] M4 associations across OSA severity
+[page-copy; line 123] Each row compares an OSA severity group with AHI <5 in the referred cohort.
+[page-copy; line 128] Prevalence PheDAS
+[page-copy; line 128] Existing disease evidence
+[page-copy; line 128] L1-regularized logistic models summarize disease presence before index. Odds ratios are shrunk and intervals are non-classical.
+[page-copy; line 128] Disclosure note
+[page-copy; line 128] Per-feature case counts are not present in the current combined output. Public data downloads remain disabled pending approved disclosure checks.
+[page-copy; line 129] Incidence PheDAS
+[page-copy; line 129] New-onset disease evidence
+[page-copy; line 129] Ridge cause-specific Cox models follow at-risk participants after index. Disease-specific at-risk and event counts, stability, and proportional-hazards diagnostics appear beside each result.
+[page-copy; line 129] Model note
+[page-copy; line 129] Incidence M3 also includes baseline encounter rate; model labels are analysis-specific.
+[page-copy; line 129] View cumulative-incidence curves →
+[page-copy; line 130] Interpretation
+[page-copy; line 130] Association, not causation
+[page-copy; line 130] The reference is a symptomatic referral group. These estimates do not measure population OSA prevalence and should not be described as causal, protective, or independent risk effects.
+[page-copy; line 130] Return to this feature in the scan →
+[page-copy; line 133] Separated by design
+[page-copy; line 133] Related cross-domain evidence
+[page-copy; line 133] Medication, laboratory, questionnaire, procedure, behavior, and utilization matches will appear here in a future linked view. They will be labeled as related evidence—not silently merged with this disease phenotype.
+[page-copy; line 133] LabWAS
+[page-copy; line 133] MedWAS
+[page-copy; line 133] QWAS
+[page-copy; line 133] ProcWAS
+[page-copy; line 133] UtilWAS
+[display-text; line 140] Prevalence PheDAS
+[display-text; line 140] Incidence PheDAS
+[display-text; line 140] Odds ratio
+[display-text; line 140] Hazard ratio
+[page-copy; line 140] Loading evidence…
+[page-copy; line 140] –
+[page-copy; line 140] p-value
+[page-copy; line 140] FDR
+[display-text; line 140] Significant
+[display-text; line 140] Not significant
+[page-copy; line 140] At risk
+[page-copy; line 140] Events
+[page-copy; line 140] Unstable estimate
+[page-copy; line 140] PH diagnostic p
+[page-copy; line 140] No estimate is available for this contrast.
+[display-text; line 144] OR
+[display-text; line 144] HR
+[text-template; line 148] {{chart_value_1}} | {{value_1}} {{chart_value_2}} | p {{chart_value_3}}
+[display-text; line 149] M4
+[display-text; line 149] M3
+[display-text; line 149] M2
+[display-text; line 149] M1
+[display-text; line 152] Prevalence
+[display-text; line 152] Incidence
+[display-text; line 152] Odds ratios
+[display-text; line 152] Hazard ratios
+[text-template; line 152] {{value_1}} model comparison forest plot
+[page-copy; line 152] Loading model comparison…
+[display-text; line 156] OR
+[display-text; line 156] HR
+[display-text; line 157] Prevalence
+[display-text; line 157] Incidence
+[page-copy; line 157] by severity
+[page-copy; line 157] M4 associations by OSA severity
+[page-copy; line 157] Contrast
+[page-copy; line 157] Interval
+[page-copy; line 157] FDR
+[page-copy; line 157] –
+[display-text; line 157] Yes
+[display-text; line 157] No
+
+website/app/components/FeatureSearch.tsx
+========================================
+[display-text; line 15] PheDAS
+[text-template; line 62] /feature?code={{value_1}}
+[text-template; line 66] /feature?{{value_1}}
+[display-text; line 78] Find another feature
+[display-text; line 78] Search diseases, labs, medications, behaviors, procedures, utilization, and questionnaires
+[page-copy; line 81] ⌕
+[placeholder; line 114] Try hypertension, HbA1c, sleepiness, or a feature code
+[page-copy; line 121] View feature
+[accessibility-label; line 125] Feature matches
+[text-template; line 142] · {{value_1}}
+[page-copy; line 157] No matching aggregate feature was found.
+[page-copy; line 160] Results identify the analysis family and coding system before opening evidence.
+
+website/app/components/OctantSurvivalExplorer.tsx
+=================================================
+[display-text; line 34] All eight OSA phenotypes (pooled)
+[display-text; line 55] Suppressed (<11)
+[display-text; line 63] Bonferroni
+[display-text; line 64] FDR
+[display-text; line 65] Gated
+[text-template; line 82] {{value_1}} 95% CI
+[text-template; line 87] {{value_1}} 95% CI
+[text-template; line 120] {{value_1}} | Year {{chart_value_1}} | Cumulative incidence {{chart_value_2}}%
+[display-text; line 134] Years since index
+[display-text; line 142] Cumulative incidence (%)
+[display-text; line 150] Log-rank p withheld
+[text-template; line 150] Log-rank p = {{value_1}}
+[text-template; line 185] {{value_1}} | Year {{chart_value_1}} | Unadjusted cumulative incidence {{chart_value_2}}%
+[text-template; line 193] {{value_1}} · selected focal
+[text-template; line 204] {{value_1}}{{value_2}} | Year {{chart_value_1}} | Unadjusted cumulative incidence {{chart_value_2}}%
+[display-text; line 204] · selected focal
+[display-text; line 211] No OSA
+[display-text; line 215] No OSA
+[display-text; line 215] No OSA
+[text-template; line 218] No OSA | Year {{chart_value_1}} | Unadjusted cumulative incidence {{chart_value_2}}%
+[display-text; line 231] Years since index
+[display-text; line 239] Cumulative incidence (%)
+[page-copy; line 264] : one-vs-rest M4 models for nominally omnibus-gated outcomes.
+[page-copy; line 267] Outcome
+[page-copy; line 268] Focal phenotype
+[page-copy; line 269] Adjusted M4 HR (95% CI)
+[page-copy; line 270] q / status
+[page-copy; line 271] Quality
+[text-template; line 282] PheCode {{value_1}}
+[page-copy; line 288] (
+[page-copy; line 288] –
+[page-copy; line 288] )
+[page-copy; line 292] EPV <10
+[page-copy; line 292] No EPV <10 flag
+[page-copy; line 293] Curve withheld
+[page-copy; line 298] No panel matches the current filters.
+[display-text; line 309] At risk: Suppressed (<11)
+[text-template; line 309] {{value_1}} at risk
+[display-text; line 310] Events: Suppressed (<11)
+[text-template; line 310] {{value_1}} cumulative events
+[page-copy; line 329] Annual at-risk and cumulative-event counts. OSA event counts are withheld for complement protection; No OSA counts below 11 are suppressed.
+[page-copy; line 330] Group
+[page-copy; line 330] Year
+[display-text; line 334] Events withheld (complement protection)
+[accessibility-label; line 352] Cumulative-incidence curve legend
+[page-copy; line 355] Directly estimated reference · excludes No OSA
+[display-text; line 371] Selected focal · highlighted
+[display-text; line 371] Published focal curve
+[display-text; line 371] Selected focal · curve withheld
+[display-text; line 371] Curve withheld · events <11
+[page-copy; line 378] No OSA
+[display-text; line 378] AHI <5 · separate reference group
+[display-text; line 378] Curve withheld · events <11
+[page-copy; line 396] Annual risk sets for the eight OSA phenotypes pooled, each focal phenotype, and No OSA. All OSA event counts are withheld for complement protection; No OSA counts below 11 are suppressed.
+[page-copy; line 399] Group
+[page-copy; line 400] Year
+[display-text; line 408] Events withheld (complement protection)
+[page-copy; line 416] Selected focal
+[page-copy; line 417] Curve withheld
+[display-text; line 419] Events withheld (complement protection)
+[page-copy; line 424] No OSA
+[display-text; line 455] Other seven OSA phenotypes (pooled)
+[display-text; line 458] No OSA
+[text-template; line 475] PheCode {{value_1}}
+[text-template; line 475] {{value_1}} system
+[page-copy; line 477] No OSA
+[page-copy; line 477] versus all eight OSA phenotypes pooled.
+[page-copy; line 477] All phenotype curves and No OSA
+[page-copy; line 477] with
+[page-copy; line 477] highlighted.
+[page-copy; line 477] All available phenotype curves and No OSA
+[page-copy; line 477] ; the selected
+[page-copy; line 477] trajectory is disclosure-withheld.
+[page-copy; line 477] versus the pooled other seven OSA phenotypes.
+[page-copy; line 480] Sparse data · EPV <10
+[page-copy; line 480] No EPV <10 warning
+[page-copy; line 481] PH diagnostic · not evaluated
+[page-copy; line 485] Adjusted M4 HR
+[page-copy; line 487] –
+[page-copy; line 487] · p
+[page-copy; line 487] · q
+[page-copy; line 493] Chart view
+[display-text; line 494] Compare every disclosure-safe OSA phenotype curve and No OSA with the directly estimated pooled OSA cohort.
+[display-text; line 494] Compare No OSA with all eight OSA phenotypes pooled.
+[display-text; line 494] Inspect the selected focal phenotype against its pooled one-vs-rest comparator.
+[accessibility-label; line 496] Cumulative-incidence chart view
+[page-copy; line 497] All phenotypes
+[page-copy; line 498] Focal vs other seven
+[page-copy; line 499] No OSA vs all eight
+[page-copy; line 504] Curve: unadjusted Aalen–Johansen cumulative incidence (death competing).
+[page-copy; line 505] Shading shows pointwise 95% confidence intervals. Every incident-event step is retained; risk tables remain annual.
+[page-copy; line 506] No OSA is excluded from every pooled other-seven comparator. The gray reference pools all eight OSA phenotypes. Exact pooled event counts are withheld to prevent reconstruction of rare focal counts.
+[page-copy; line 507] Curves use 25,226 OSA participants (AHI ≥5), excluding 154 participants with AHI <5 from the original phenotype cohort. The existing adjusted M4 models use the original 25,380-person analysis cohort.
+[display-text; line 508] All curve separation is descriptive, unadjusted, and noncausal.
+[display-text; line 508] Log-rank p values compare unadjusted cause-specific event hazards, censoring deaths; they do not test equality of competing-risk cumulative incidence. These p values are uncorrected for multiple comparisons.
+[page-copy; line 509] Association: the adjusted M4 hazard ratio is from a separate ridge-penalized Cox model.
+[page-copy; line 512] Loading interactive curve…
+[page-copy; line 512] Retrieving the aggregate outcome asset.
+[page-copy; line 513] Curve unavailable
+[text-template; line 519] {{value_1}} unadjusted cumulative incidence and 95% confidence intervals for {{value_2}} OSA phenotypes and No OSA with the pooled eight OSA phenotypes; {{value_3}} is {{value_4}}
+[display-text; line 526] phenotype curve is
+[display-text; line 526] phenotype curves are
+[page-copy; line 526] omitted
+[page-copy; line 527] Event count below 11:
+[page-copy; line 527] . Suppressed counts remain null rather than being displayed as zero.
+[page-copy; line 529] All eight focal OSA phenotype curves are available for this outcome.
+[page-copy; line 530] The No OSA curve is withheld because its event count is below 11.
+[text-template; line 537] {{value_1}} cumulative incidence with 95% confidence intervals and log-rank p value for No OSA versus all eight OSA phenotypes pooled
+[page-copy; line 543] No OSA curve withheld
+[page-copy; line 543] The No OSA event count is below 11.
+[text-template; line 549] {{value_1}} cumulative incidence for {{value_2}} versus the pooled other seven octants
+[page-copy; line 556] Curve coordinates withheld
+[page-copy; line 557] The focal event count is below 11. The model estimate remains searchable, but the high-precision trajectory is not published because it could reveal a rare-event pattern.
+[page-copy; line 562] Thin 3-year tail
+[page-copy; line 568] No OSA 3-year CIF
+[display-text; line 568] Withheld
+[page-copy; line 569] Pooled OSA 3-year CIF
+[page-copy; line 569] %
+[page-copy; line 569] All eight OSA phenotypes
+[page-copy; line 570] No OSA at baseline
+[page-copy; line 571] Log-rank p
+[display-text; line 571] Withheld
+[page-copy; line 571] Unadjusted · uncorrected
+[page-copy; line 575] Pooled OSA 3-year CIF
+[page-copy; line 575] %
+[page-copy; line 575] All eight OSA phenotypes
+[page-copy; line 576] Pooled OSA events
+[page-copy; line 576] Withheld
+[page-copy; line 576] Complement protection ·
+[page-copy; line 576] at risk at baseline
+[page-copy; line 577] Mean follow-up
+[page-copy; line 577] y
+[page-copy; line 577] Outcome-specific cohort
+[page-copy; line 578] At risk at 3 years
+[page-copy; line 578] % of baseline
+[page-copy; line 582] Focal 3-year CIF
+[display-text; line 582] Withheld
+[text-template; line 582] {{value_1}} at baseline
+[display-text; line 582] Loading curve cohort
+[page-copy; line 583] Pooled 3-year CIF
+[display-text; line 583] Withheld
+[text-template; line 583] {{value_1}} at baseline
+[display-text; line 583] Loading curve cohort
+[page-copy; line 584] Penalizer
+[page-copy; line 584] M4 ridge Cox
+[page-copy; line 585] Omnibus gate
+[page-copy; line 585] p
+[page-copy; line 585] 7-df joint Wald
+[display-text; line 590] Other seven OSA phenotypes (pooled)
+[display-text; line 591] No OSA
+[display-text; line 659] The aggregate curve asset could not be loaded.
+[page-copy; line 672] Octant-exposure Incidence PheDAS
+[page-copy; line 672] Look up any gated phenotype–outcome panel
+[page-copy; line 673] Search 168 one-vs-rest M4 panels across 21 nominally omnibus-gated outcomes, then compare all disclosure-safe phenotype trajectories or inspect a focal contrast.
+[accessibility-label; line 676] Octant survival outcome level
+[page-copy; line 679] ·
+[accessibility-label; line 684] Significance scope
+[display-text; line 686] All gated
+[display-text; line 687] FDR
+[display-text; line 688] Bonferroni
+[page-copy; line 695] Search outcomes
+[placeholder; line 695] Try hypertension or a PheCode
+[placeholder; line 695] Try cardiovascular
+[page-copy; line 696] Focal phenotype
+[page-copy; line 696] All eight phenotypes
+[page-copy; line 697] of
+[page-copy; line 697] panels
+[page-copy; line 701] How correction works
+[page-copy; line 706] No panel matches the current filters.
+[page-copy; line 709] Analysis and disclosure details
+
+website/app/components/PhenotypeExplorer.tsx
+============================================
+[display-text; line 28] All measures
+[display-text; line 29] Physiology
+[display-text; line 30] Symptoms
+[display-text; line 31] Comorbidity
+[display-text; line 32] AHI / severity
+[display-text; line 33] Demographic
+[display-text; line 34] Follow-up
+[display-text; line 35] Utilization
+[text-template; line 52] {{value_1}}{{value_2}} SD
+[page-copy; line 67] Suppressed (<11)
+[page-copy; line 70] %
+[page-copy; line 70] /
+[page-copy; line 72] %
+[page-copy; line 72] of
+[display-text; line 87] All phenotypes
+[accessibility-label; line 92] Select {{value_1}}
+[page-copy; line 96] ALL
+[accessibility-label; line 101] {{value_1}}%, {{value_2}} of {{value_3}}
+[accessibility-label; line 141] {{value_1}} axes above their medians
+[page-copy; line 143] ·
+[page-copy; line 143] %
+[accessibility-label; line 162] {{value_1}}. Open full-resolution image.
+[page-copy; line 165] Open full resolution ↗
+[page-copy; line 186] from the containing cohort
+[page-copy; line 190] Mean ± SD
+[page-copy; line 190] ±
+[page-copy; line 191] Median [Q1–Q3]
+[page-copy; line 191] [
+[page-copy; line 191] –
+[page-copy; line 191] ]
+[page-copy; line 192] Cohort mean
+[page-copy; line 196] Count / denominator
+[page-copy; line 196] /
+[page-copy; line 197] Cohort proportion
+[page-copy; line 200] Coverage
+[page-copy; line 200] %
+[page-copy; line 200] n =
+[page-copy; line 219] Aggregate cluster measures. Cell text is in native units; color is the standardized difference from the containing cohort.
+[page-copy; line 222] Measure
+[accessibility-label; line 225] Select {{value_1}}
+[accessibility-label; line 245] {{value_1}} in {{value_2}}: {{value_3}}; {{value_4}} from the cohort
+[page-copy; line 264] Score dependence check
+[page-copy; line 264] Pairwise Spearman correlations
+[page-copy; line 264] Values near zero indicate that the three cohort scores capture largely distinct dimensions.
+[page-copy; line 266] Pairwise Spearman correlation matrix for the three phenotype scores.
+[page-copy; line 267] Axis
+[accessibility-label; line 347] Interactive octant cube. Drag to rotate, use arrow keys, or select an octant cell.
+[page-copy; line 356] Less severe
+[page-copy; line 356] Physiologic severity
+[page-copy; line 356] More severe
+[page-copy; line 359] More symptoms
+[page-copy; line 359] Symptom burden
+[page-copy; line 359] Fewer symptoms
+[page-copy; line 362] Lower burden
+[page-copy; line 362] Comorbidity burden
+[page-copy; line 362] Higher burden
+[display-text; line 369] Higher physiology
+[display-text; line 369] Lower physiology
+[page-copy; line 369] ·
+[display-text; line 369] higher symptoms
+[display-text; line 369] lower symptoms
+[page-copy; line 369] ·
+[display-text; line 369] higher comorbidity
+[display-text; line 369] lower comorbidity
+[accessibility-label; line 391] Select {{value_1}} phenotype
+[page-copy; line 421] Drag to rotate · select an octant
+[page-copy; line 422] Reset view
+[page-copy; line 448] Atlas
+[page-copy; line 448] /
+[page-copy; line 448] Phenotypes
+[page-copy; line 453] Cross-domain OSA phenotypes
+[page-copy; line 454] Eight octant phenotypes.
+[page-copy; line 461] Octant explorer
+[page-copy; line 461] What characterizes each phenotype?
+[page-copy; line 462] Select an octant, then search or filter 26 aggregate measures to inspect its distribution and coverage.
+[page-copy; line 471] Selected phenotype
+[display-text; line 474] Above median
+[display-text; line 474] Below median
+[page-copy; line 477] Phenotype cohort
+[page-copy; line 477] (
+[page-copy; line 477] %)
+[page-copy; line 478] Median AHI
+[page-copy; line 478] events/h
+[page-copy; line 479] Median PheCodes
+[page-copy; line 483] Aggregate phenotype profile
+[page-copy; line 483] of
+[page-copy; line 483] measures
+[page-copy; line 484] Find a measure
+[placeholder; line 484] Try hypertension, BMI, or sleepiness
+[accessibility-label; line 486] Clinical measure domain
+[page-copy; line 492] No aggregate measure matches this search and domain.
+[page-copy; line 498] CPAP treatment documentation
+[page-copy; line 498] Documented PAP setup by phenotype
+[page-copy; line 499] This section summarizes documented setup signals in the retained CPAP extract. It does not estimate true treatment initiation, uptake, adherence, or effectiveness.
+[accessibility-label; line 502] Documented PAP setup window
+[page-copy; line 518] Selected phenotype
+[page-copy; line 518] view,
+[page-copy; line 518] observable through this window
+[page-copy; line 521] Documented PAP setup signal
+[page-copy; line 522] Retained CPAP record
+[page-copy; line 523] Adherence data available
+[page-copy; line 524] Usage measure available
+[page-copy; line 529] Outcome not released
+[page-copy; line 530] Distribution not released
+[page-copy; line 535] All-phenotype comparison for
+[page-copy; line 535] . Availability percentages use documented setups as their denominator.
+[page-copy; line 536] Phenotype
+[page-copy; line 536] Observable
+[page-copy; line 536] Documented setup
+[page-copy; line 536] Retained record
+[page-copy; line 536] Adherence data
+[page-copy; line 536] Usage data
+[page-copy; line 547] Definitions and interpretation limits
+[page-copy; line 553] Cluster comparison
+[page-copy; line 553] Compare all eight phenotypes in native units
+[page-copy; line 553] Blue cells are below and orange cells above the containing cohort. Select any column to update the profile.
+[accessibility-label; line 554] Standardized difference color key
+[page-copy; line 554] − Lower than cohort
+[page-copy; line 554] Higher than cohort +
+[page-copy; line 556] Standardized difference means group estimate minus cohort estimate, divided by the cohort SD. Each octant is part of that cohort; this is not a two-independent-group standardized mean difference. Coverage is shown on every profile card.
+[page-copy; line 559] Supplemental phenotype-construction figures
+[page-copy; line 560] The data-driven comparison above is the primary cluster view. These source figures remain available for publication context and full-resolution download.
+[alt; line 561] Octant construction from median splits of three nearly independent phenotype scores
+[caption; line 561] The three score planes are nearly uncorrelated, yielding eight groups of similar size and complete cohort coverage.
+[alt; line 562] Heatmap of the aggregate clinical signature for each octant phenotype
+[caption; line 562] The source clinical-signature figure is retained as a supplement; the interactive table above includes the expanded 26-measure export.
+[page-copy; line 567] Interpretation guardrails
+[page-copy; line 567] A research taxonomy—not a clinical diagnostic rule
+[page-copy; line 571] Phenotype outcomes
+[page-copy; line 571] Continue to the incident-outcome panels
+[page-copy; line 571] Search all 168 octant–outcome models and open the interactive cumulative-incidence curves on their dedicated page.
+[page-copy; line 571] Open outcome panels →
+
+website/app/components/PhenotypeSubnav.tsx
+==========================================
+[accessibility-label; line 5] Phenotype section
+[page-copy; line 7] Phenotypes
+[page-copy; line 8] Cross-domain OSA research taxonomy
+[page-copy; line 12] Profiles & clusters
+[page-copy; line 15] Outcome panels
+[page-copy; line 16] 168
+
+website/app/components/SurvivalExplorer.tsx
+===========================================
+[display-text; line 104] Years since index
+[display-text; line 104] Years since landmark
+[text-template; line 118] {{value_1}} | Year {{chart_value_1}} | Cumulative incidence {{chart_value_2}}%
+[display-text; line 140] Cumulative incidence (%)
+[page-copy; line 169] Group
+[page-copy; line 169] Year
+[display-text; line 178] Severe vs None
+[display-text; line 179] Moderate vs None
+[display-text; line 180] Mild vs None
+[display-text; line 181] AHI ≥5
+[display-text; line 182] AHI ≥15
+[display-text; line 183] Severity trend
+[display-text; line 184] Severity omnibus
+[page-copy; line 212] Filter the selected outcomes
+[placeholder; line 213] Try hypertension or 401.1
+[page-copy; line 216] Outcome
+[page-copy; line 218] Loading curve index…
+[page-copy; line 219] ·
+[display-text; line 219] · methodological control
+[text-template; line 222] {{value_1}} findings + 1 control
+[display-text; line 222] FDR-selected Incidence PheDAS outcomes
+[display-text; line 264] Curve data could not be loaded.
+[text-template; line 273] /survival?{{value_1}}
+[text-template; line 293] Years since landmark (index + {{value_1}} days)
+[page-copy; line 303] Atlas
+[page-copy; line 303] /
+[page-copy; line 303] Incidence PheDAS
+[page-copy; line 303] /
+[page-copy; line 303] Cumulative incidence
+[page-copy; line 307] Incidence PheDAS · survival analysis
+[page-copy; line 308] Cumulative incidence after index
+[page-copy; line 309] Follow FDR-selected incident disease outcomes by OSA severity, or from a landmark CPAP adherence analysis designed to address immortal-time bias.
+[page-copy; line 312] Observed absolute incidence
+[page-copy; line 313] Aalen–Johansen · death competing
+[page-copy; line 314] These curves are descriptive and unadjusted. They answer a different question from the adjacent M4 cause-specific Cox hazard ratios.
+[page-copy; line 320] Methodological control.
+[page-copy; line 320] PheCode 327.3 is the circular OSA-recoding phenotype and should not be interpreted as an incident disease finding.
+[accessibility-label; line 322] Curve stratification
+[page-copy; line 323] OSA severity
+[page-copy; line 324] Landmark CPAP adherence
+[page-copy; line 325] Event-time steps · cumulative incidence (%)
+[accessibility-label; line 329] Landmark grace period
+[page-copy; line 330] Grace period
+[page-copy; line 331] days
+[display-text; line 331] · primary
+[display-text; line 331] · sensitivity
+[page-copy; line 333] Landmark design addresses immortal-time bias—not confounding.
+[page-copy; line 333] The clock begins at index +
+[page-copy; line 333] days among OSA patients who remain observed and event-free. Curves are unadjusted; healthy-adherer confounding remains. “Unknown” means a device was set up but usage was not captured.
+[page-copy; line 337] Selected outcome
+[page-copy; line 337] PheCode
+[page-copy; line 339] M4 Severe-vs-None HR
+[page-copy; line 340] FDR-significant contrasts
+[page-copy; line 341] Follow-up displayed
+[display-text; line 341] 0–6 years from index
+[text-template; line 341] 0–5 years from the {{value_1}}-day landmark
+[page-copy; line 343] Methodological control.
+[page-copy; line 343] This is the circular OSA-recoding phenotype and should not be interpreted as an incident disease finding.
+[page-copy; line 346] Loading aggregate cumulative-incidence curves…
+[page-copy; line 350] OSA severity
+[page-copy; line 350] Cumulative incidence by sleep-study severity
+[page-copy; line 350] Reference: AHI <5 (“No OSA”) within the referred cohort.
+[text-template; line 351] {{value_1}} cumulative incidence by OSA severity
+[page-copy; line 352] Annual cumulative-incidence values
+[caption; line 352] {{value_1}}: cumulative incidence percent by OSA severity
+[page-copy; line 356] -day landmark · OSA patients
+[page-copy; line 356] Cumulative incidence by CPAP adherence
+[display-text; line 356] Primary landmark: the adherence window is closed for most participants.
+[display-text; line 356] Sensitivity landmark: adherence classification is sparser and should be read cautiously.
+[text-template; line 357] {{value_1}} cumulative incidence by CPAP adherence from the {{value_2}}-day landmark
+[page-copy; line 358] Unavailable source strata:
+[page-copy; line 358] . Missing strata were not emitted by the aggregate source and do not indicate zero incidence.
+[page-copy; line 359] Annual cumulative-incidence values
+[caption; line 359] {{value_1}}: cumulative incidence percent by CPAP adherence from the {{value_2}}-day landmark
+[page-copy; line 363] How to read this view
+[page-copy; line 363] Curve context stays attached
+[page-copy; line 365] Selected outcomes
+[page-copy; line 365] Only PheCodes FDR-significant in at least one M4 OSA-severity contrast are shown. The curves are post-selection descriptions, not independent validation.
+[page-copy; line 366] Source threshold
+[page-copy; line 366] Severity curves contain at least 20 participants and 5 incident events per stratum; landmark curves contain at least 20 and 3. A missing stratum is unavailable, not zero incidence.
+[page-copy; line 367] Disclosure status
+[page-copy; line 367] Aggregate cumulative-incidence percentages are public. Exact timepoint at-risk and cumulative-event cells, uncertainty bands, and curve downloads remain outside the browser bundle.
+[page-copy; line 368] Follow-up horizon
+[page-copy; line 368] Follow-up ends May 31, 2023. Severity curves extend six years from index; landmark curves extend five years from index plus the selected grace period.
+[page-copy; line 372] Public research release. Cumulative incidence is an observed absolute-risk summary within a sleep-clinic referral cohort and should not be interpreted as an adjusted effect, a causal contrast, or population OSA prevalence.
+
+website/app/components/UtilizationProfile.tsx
+=============================================
+[display-text; line 13] Overall
+[display-text; line 13] None
+[display-text; line 13] Mild
+[display-text; line 13] Moderate
+[display-text; line 13] Severe
+[display-text; line 28] 5-year pre-index
+[display-text; line 28] 1-year pre-index
+[page-copy; line 44] Not released
+[text-template; line 47] {{value_1}} admissions with LOS
+[text-template; line 48] {{value_1}} patients with use
+[title; line 52] {{value_1}}; median {{value_2}} {{value_3}}
+[page-copy; line 55] ±
+[page-copy; line 56] contributing
+[display-text; line 106] The utilization profile could not be loaded.
+[page-copy; line 131] Descriptive care-use context
+[page-copy; line 132] Utilization profile
+[page-copy; line 133] Mean ± SD across OSA severity strata. Rates include patients with no qualifying visits.
+[page-copy; line 139] Loading utilization profile…
+[page-copy; line 140] This profile is unavailable in the current release.
+[page-copy; line 145] Mean and standard deviation of healthcare utilization by OSA severity
+[page-copy; line 148] Measure
+[page-copy; line 152] N =
+[page-copy; line 158] Encounter rates
+[page-copy; line 160] Stay duration
+[page-copy; line 166] Rate denominator.
+[page-copy; line 166] Distinct encounters per observed person-year, including zero-use patients. Hospital LOS is summarized per qualifying admission.
+[page-copy; line 167] Care groups.
+[page-copy; line 167] Primary care includes
+[page-copy; line 167] ; specialty care is the complementary approved outpatient-specialty group, excluding exact Urgent Care.
+[page-copy; line 168] Overlap.
+[page-copy; line 168] ED and inpatient categories intentionally share ED-to-inpatient encounter subtypes and should not be added as mutually exclusive totals.
+
+website/app/components/WasExplorer.tsx
+======================================
+[display-text; line 44] Severe vs None
+[display-text; line 45] Moderate vs None
+[display-text; line 46] Mild vs None
+[display-text; line 47] AHI ≥15 vs <15
+[display-text; line 48] AHI ≥5 vs <5
+[display-text; line 49] Severity trend
+[display-text; line 50] Any severity difference
+[display-text; line 64] All available time
+[display-text; line 65] 1 year
+[display-text; line 66] 5 years
+[display-text; line 67] Closest pre-index questionnaire
+[display-text; line 73] M4 · primary
+[text-template; line 153] {{value_1}} · {{value_2}}
+[text-template; line 182] | {{value_1}} {{chart_value_1}} | p = {{chart_value_2}}
+[text-template; line 242] {{chart_value_1}} | {{value_1}} {{chart_value_2}} · {{chart_value_3}}
+[text-template; line 245] ({{chart_value_1}}–{{chart_value_2}})
+[text-template; line 247] | p = {{chart_value_1}}
+[text-template; line 273] log({{value_1}})
+[display-text; line 279] −log₁₀(p-value)
+[display-text; line 334] −log₁₀(p-value)
+[display-text; line 372] The WAS manifest could not be loaded.
+[display-text; line 429] Association data could not be loaded.
+[text-template; line 439] /was?{{value_1}}
+[display-text; line 491] Effect
+[text-template; line 515] {{value_1}} and significance
+[display-text; line 517] Strongest directional estimates
+[display-text; line 519] Ranked association results
+[display-text; line 520] Association-wide significance landscape
+[page-copy; line 524] Atlas
+[page-copy; line 524] /
+[page-copy; line 524] Other WAS analyses
+[page-copy; line 526] Cross-domain association scan
+[page-copy; line 531] Analysis settings
+[page-copy; line 533] Show
+[page-copy; line 534] Analysis family
+[page-copy; line 535] Analysis target
+[page-copy; line 536] within
+[page-copy; line 537] Time window
+[page-copy; line 538] for
+[page-copy; line 539] OSA contrast
+[page-copy; line 540] with
+[page-copy; line 541] Adjustment model
+[page-copy; line 542] across
+[page-copy; line 543] Feature category
+[page-copy; line 543] all categories
+[page-copy; line 546] Significance
+[page-copy; line 546] All results
+[page-copy; line 546] FDR-significant
+[page-copy; line 546] Bonferroni-significant
+[page-copy; line 547] Find in scan
+[placeholder; line 547] Name or {{value_1}}
+[placeholder; line 547] feature code
+[page-copy; line 548] Stable estimates only
+[page-copy; line 549] Reset
+[page-copy; line 551] M4 and Severe vs None are the primary defaults where available. Model IDs retain their family-specific source definitions. Each selection loads one homogeneous estimand; unlike effect measures never share an axis. Multiplicity badges preserve the source analysis flags; the browser does not recompute thresholds after filtering.
+[accessibility-label; line 554] Analysis release status
+[text-template; line 554] · {{value_1}}
+[accessibility-label; line 558] Current scan summary
+[page-copy; line 559] features displayed
+[page-copy; line 560] FDR-significant
+[display-text; line 561] None
+[page-copy; line 561] selected feature
+[accessibility-label; line 564] Result view
+[title; line 567] This non-directional analysis supports Manhattan and table views only
+[page-copy; line 569] Above null
+[page-copy; line 569] Below null
+[page-copy; line 569] Not FDR-significant
+[page-copy; line 569] Omnibus · non-directional
+[page-copy; line 574] ·
+[title; line 574] Pending disclosure review
+[page-copy; line 574] CSV pending review
+[page-copy; line 575] Loading aggregate results…
+[text-template; line 575] {{value_1}} {{value_2}} plot. Use the synchronized table for keyboard access.
+[page-copy; line 580] Selected feature
+[text-template; line 580] · {{value_1}}
+[text-template; line 581] {{value_1}}–{{value_2}} interval · null {{value_3}}
+[display-text; line 581] Non-directional omnibus statistic
+[page-copy; line 581] Scale:
+[page-copy; line 582] p-value
+[page-copy; line 582] FDR
+[display-text; line 582] Significant
+[display-text; line 582] Not significant
+[display-text; line 582] Feature-positive N
+[page-copy; line 582] Overall feature prevalence
+[page-copy; line 583] Estimate flagged as unstable
+[page-copy; line 584] Ascertainment-sensitive item: this response can help drive sleep-study referral, so the association may partly reflect the referral pathway.
+[page-copy; line 585] The display name is a conservative concept label and remains under review; the source feature code is shown above.
+[display-text; line 586] This is the itemwise answered N supplied to the source model, not a model-specific fitted N after covariate missingness.
+[display-text; line 586] These are analytic or overall feature-positive counts, not OSA exposure-by-outcome cells.
+[page-copy; line 587] is interpreted only within
+[page-copy; line 587] ; it is not combined with other WAS effect measures.
+[page-copy; line 588] Open full feature page →
+[page-copy; line 589] Select a point or table row to inspect it.
+[page-copy; line 593] Keyboard-accessible companion
+[page-copy; line 593] Association results
+[page-copy; line 593] Showing the 60 strongest displayed results
+[page-copy; line 594] Research preview. Aggregate associations describe relationships within a sleep-clinic referral cohort; they do not establish causality or describe population OSA prevalence. Family-specific release and disclosure status remains visible above each scan.
+[text-template; line 595] Selected {{value_1}}, {{value_2}}
+[text-template; line 595] {{value_1}} results
+[display-text; line 613] Effect
+[page-copy; line 615] Ranked WAS association results
+[page-copy; line 615] Feature
+[page-copy; line 615] Category
+[page-copy; line 615] p-value
+[display-text; line 615] Analytic N
+[page-copy; line 615] Significance
+[page-copy; line 615] Quality
+[display-text; line 615] Code
+[page-copy; line 615] (
+[page-copy; line 615] –
+[page-copy; line 615] )
+[page-copy; line 615] Bonf.
+[page-copy; line 615] FDR
+[page-copy; line 615] —
+[page-copy; line 615] Review
+[page-copy; line 615] Ascertainment
+[page-copy; line 615] Stable
+
+website/app/components/WasFeatureDetail.tsx
+===========================================
+[display-text; line 26] M1
+[display-text; line 26] M2
+[display-text; line 26] M3
+[display-text; line 26] M4
+[display-text; line 91] No aggregate partitions are listed for this estimand.
+[text-template; line 134] One {{value_1}} {{value_2}} partition could not be loaded.
+[text-template; line 159] {{value_1}} is unavailable for this feature; showing {{value_2}} as the primary evidence.
+[display-text; line 185] Closest questionnaire on or before index
+[display-text; line 186] 1 year pre-index
+[display-text; line 187] 5 years pre-index
+[display-text; line 188] Available lifetime history
+[display-text; line 189] All applicable windows
+[display-text; line 195] OR
+[display-text; line 196] IRR
+[display-text; line 197] HR
+[display-text; line 198] Beta
+[display-text; line 216] Behavioral outcomes are a curated, preliminary scan. Binary and continuous estimands remain separate, and adherence-source definitions require follow-up.
+[display-text; line 219] Sleep-study, sleep-testing, and CPAP pathway procedures were excluded to reduce circular associations with the OSA exposure.
+[display-text; line 222] Utilization subgroups can overlap. Interpret each estimand separately and do not add counts across utilization families.
+[display-text; line 225] QWAS is cross-sectional and itemwise complete-case. Binary odds ratios and rank-normalized continuous betas are separate estimands; referral-driving items may also reflect ascertainment.
+[display-text; line 227] Each block preserves its source estimand and effect scale; estimates are not pooled across analyses.
+[display-text; line 240] 0
+[text-template; line 243] /was?{{value_1}}
+[display-text; line 266] This cross-domain feature link is incomplete or invalid.
+[display-text; line 278] No aggregate feature matches this link.
+[display-text; line 281] Feature evidence could not be loaded.
+[display-text; line 297] Feature evidence could not be loaded.
+[text-template; line 312] /feature?{{value_1}}
+[page-copy; line 339] Atlas
+[page-copy; line 339] /
+[page-copy; line 339] Other WAS analyses
+[page-copy; line 339] /
+[page-copy; line 344] Cross-domain feature
+[display-text; line 347] Feature
+[display-text; line 350] Feature evidence
+[display-text; line 351] Aggregate clinical feature
+[text-template; line 351] · {{value_1}}
+[accessibility-label; line 356] Preferred evidence dimensions
+[page-copy; line 357] Primary presentation
+[page-copy; line 357] M4 · Severe vs None · family-specific index or window
+[page-copy; line 358] Preferred window
+[page-copy; line 360] (fallback where unavailable)
+[page-copy; line 364] Preferred contrast
+[page-copy; line 366] (fallback where unavailable)
+[page-copy; line 373] This conservative concept label remains under domain review; the source feature code is retained alongside it.
+[page-copy; line 376] Loading aggregate evidence…
+[accessibility-label; line 379] Feature estimands
+[accessibility-label; line 387] Interpretation and disclosure notes
+[page-copy; line 388] Family-specific QC
+[page-copy; line 388] Read within the source analysis
+[page-copy; line 389] Count interpretation
+[page-copy; line 389] Counts are not contrast cells
+[display-text; line 389] Displayed counts are itemwise answered N supplied to the source formula. They can exceed the fitted N after covariate missingness and are not OSA-by-response cells.
+[display-text; line 389] Displayed counts are model-specific analytic N or overall feature-positive totals. They are not OSA exposure-by-outcome cells and are not used to infer suppressed subgroup counts.
+[page-copy; line 390] Research interpretation
+[page-copy; line 390] Association, not causation
+[page-copy; line 390] Results come from a sleep-clinic referral cohort. They do not estimate population prevalence and do not establish causal, protective, or independent effects.
+[text-template; line 404] Estimate flagged as unstable{{value_1}}
+[display-text; line 405] Ascertainment-sensitive item: this response can help drive sleep-study referral, so the association may partly reflect the referral pathway.
+[display-text; line 410] Aggregate association estimand
+[page-copy; line 418] Window used
+[page-copy; line 419] Contrast used
+[page-copy; line 420] Primary model
+[display-text; line 420] M4 unavailable
+[page-copy; line 421] Effect scale
+[display-text; line 421] Not available
+[page-copy; line 422] Coding system
+[page-copy; line 425] Open this feature in the full scan →
+[title; line 433] Adjustment ladder
+[description; line 434] The same contrast across the available M1-M4 models. Missing models are shown explicitly.
+[title; line 441] OSA severity comparisons
+[description; line 442] M4 estimates for Mild, Moderate, and Severe OSA versus the AHI <5 reference group, where available.
+[display-text; line 456] Effect
+[accessibility-label; line 459] Primary fully adjusted estimate
+[page-copy; line 460] Primary fully adjusted evidence
+[text-template; line 463] {{value_1}}–{{value_2}} interval
+[display-text; line 463] Non-directional omnibus statistic
+[page-copy; line 465] p-value
+[page-copy; line 466] FDR
+[display-text; line 466] Significant
+[display-text; line 466] Not significant
+[page-copy; line 467] Bonferroni
+[display-text; line 467] Significant
+[display-text; line 467] Not significant
+[display-text; line 468] Analytic N
+[display-text; line 469] Feature-positive N
+[page-copy; line 470] Overall feature prevalence
+[page-copy; line 472] Counts are analytic or overall feature-positive totals, not OSA exposure-by-outcome cells.
+[page-copy; line 474] No estimate is available for this feature in the preferred partition.
+[display-text; line 488] Effect
+[page-copy; line 496] Comparison
+[page-copy; line 496] Interval
+[page-copy; line 496] p-value
+[page-copy; line 496] FDR
+[page-copy; line 496] Quality
+[display-text; line 504] Unavailable
+[display-text; line 506] Yes
+[display-text; line 506] No
+[page-copy; line 507] Flagged
+[page-copy; line 507] Stable
+[page-copy; line 507] Not modeled
+
+website/app/feature/page.tsx
+============================
+[display-text; line 18] 401.1
+
+website/app/layout.tsx
+======================
+[display-text; line 14] Explore aggregate associations, octant phenotypes, and cumulative-incidence curves linking obstructive sleep apnea with diseases, laboratory patterns, medications, questionnaires, behaviors, procedures, and healthcare use.
+[display-text; line 18] OSA Association Atlas
+[display-text; line 19] %s · OSA Association Atlas
+[display-text; line 27] OSA Association Atlas
+[display-text; line 30] OSA Association Atlas — Explore the clinical phenome
+[display-text; line 34] OSA Association Atlas
+
+website/app/methods/page.tsx
+============================
+[display-text; line 5] M1
+[display-text; line 5] Crude
+[display-text; line 5] Unadjusted association model.
+[display-text; line 6] M2
+[display-text; line 6] Demographics
+[display-text; line 6] Adds demographic adjustment.
+[display-text; line 8] M3
+[display-text; line 9] Extended · excludes BMI
+[display-text; line 10] Adds family-specific adjustment while excluding BMI. Incidence PheDAS M3 also includes baseline encounter rate.
+[display-text; line 13] M4
+[display-text; line 14] Primary · adds BMI
+[display-text; line 15] Adds BMI to M3. M3 remains adjacent because BMI may be treated as a confounder or as part of the pathway, depending on the scientific question.
+[display-text; line 20] Prevalence PheDAS
+[display-text; line 20] Existing disease · OR
+[display-text; line 20] Research preview
+[display-text; line 21] Incidence PheDAS
+[display-text; line 21] New-onset disease · HR
+[display-text; line 21] Research preview
+[display-text; line 22] LabWAS
+[display-text; line 22] Values, ordering propensity, and ordering rate
+[display-text; line 22] Archived snapshot
+[display-text; line 23] MedWAS
+[display-text; line 23] Medication fills · OR
+[display-text; line 23] Archived snapshot
+[display-text; line 24] BehWAS
+[display-text; line 24] EHR-derived behaviors · OR or β
+[display-text; line 24] Preliminary archived
+[display-text; line 25] QWAS
+[display-text; line 25] Index-anchored questionnaire responses · OR or β
+[display-text; line 25] Research preview
+[display-text; line 26] ProcWAS
+[display-text; line 26] Procedure rates · IRR
+[display-text; line 26] Archived snapshot
+[display-text; line 27] UtilWAS
+[display-text; line 27] Healthcare-use presence and counts
+[display-text; line 27] Archived review
+[display-text; line 31] LabWAS
+[display-text; line 31] β / OR / IRR
+[display-text; line 31] Mean and median value betas use rank-inverse-normal standard-deviation units and condition on being tested. Ordering propensity and ordering rate remain separate extensive and intensive signals.
+[display-text; line 32] MedWAS
+[display-text; line 32] OR
+[display-text; line 32] Binary ever-filled medication classes use zero-preserved GPI-4 codes. Fallback class labels remain visibly marked for review.
+[display-text; line 33] BehWAS
+[display-text; line 33] OR or β
+[display-text; line 33] Binary and rank-inverse-normal standardized continuous representations remain on separate axes. This small curated scan is preliminary and forest-first.
+[display-text; line 34] QWAS
+[display-text; line 34] OR or β
+[display-text; line 34] Binary positive-or-worse response states use logistic odds ratios; continuous and ordinal responses use rank-inverse-normal betas. Both are itemwise complete-case and index-anchored.
+[display-text; line 35] ProcWAS
+[display-text; line 35] IRR
+[display-text; line 35] Procedure counts are annualized rates over one- and five-year pre-index windows; sleep-study and PAP-pathway procedures were excluded.
+[display-text; line 36] UtilWAS
+[display-text; line 36] OR / IRR
+[display-text; line 36] Presence and count among present are a two-part analysis. Physician and allied-health definitions must not be summed while their overlap rule remains under review.
+[page-copy; line 45] Atlas
+[page-copy; line 46] /
+[page-copy; line 47] Methods & interpretation
+[page-copy; line 52] Research guide
+[page-copy; line 53] Methods & interpretation
+[page-copy; line 55] How to read OSA associations across disease endpoints, adjustment models, statistical flags, and staged atlas releases.
+[accessibility-label; line 59] Primary atlas settings
+[page-copy; line 60] Primary presentation
+[page-copy; line 61] M4 · Severe vs None
+[page-copy; line 63] In PheDAS, M4 includes BMI. M3 is kept one step away so researchers can inspect attenuation without assigning BMI a causal role.
+[page-copy; line 72] Study frame
+[page-copy; line 73] Cohort, reference, and time direction
+[page-copy; line 75] Interpret every estimate within the sleep-clinic referral cohort.
+[page-copy; line 79] Reference
+[page-copy; line 80] “None” means AHI <5
+[page-copy; line 82] The reference group comprises referred adults with sleep studies and AHI below 5. It is not a population-level healthy control. Severe versus None is the default pairwise contrast.
+[page-copy; line 88] Prevalence PheDAS
+[page-copy; line 89] Disease already present
+[page-copy; line 91] L1-regularized logistic models summarize disease presence before index as odds ratios. Estimates are shrunk and intervals are non-classical; they should be labeled accordingly.
+[page-copy; line 97] Incidence PheDAS
+[page-copy; line 98] Disease arising during follow-up
+[page-copy; line 100] Ridge cause-specific Cox models follow at-risk participants after index and report hazard ratios. At-risk counts, event counts, and proportional-hazards diagnostics belong with each result.
+[page-copy; line 107] Odds ratios and hazard ratios answer different questions. They are shown in separate views and should not be compared as though they were the same estimand.
+[page-copy; line 116] Questionnaire-wide association study
+[page-copy; line 117] Questionnaire responses anchored to the sleep-study index
+[page-copy; line 119] QWAS asks how questionnaire responses vary with OSA severity within the referred cohort.
+[page-copy; line 123] Study frame
+[page-copy; line 124] 74,061 pre-index questionnaires
+[page-copy; line 126] The analysis selects the closest questionnaire on or before the sleep-study index for each participant. It is cross-sectional, not a one- or five-year longitudinal window, and no selection weighting was applied for questionnaire availability.
+[page-copy; line 133] Two response forms
+[page-copy; line 134] 83 binary · 49 continuous
+[page-copy; line 136] Binary positive-or-worse response states use logistic odds ratios. Ordinal and continuous responses are rank-inverse-normalized before linear modeling and report standardized betas. The 92 unique items include 40 represented in both forms; the two scales never share an axis.
+[page-copy; line 143] Adjustment ladder
+[page-copy; line 144] M4 adds BMI
+[page-copy; line 146] M1 includes the OSA exposure; M2 adds age, sex, race/ethnicity, and study year; M3 adds smoking, income, and observation window; M4 adds BMI. The AHI below 5 reference remains a symptomatic referral group, not a population control.
+[page-copy; line 154] Models are complete-case for each item. Displayed N is the answered sample supplied to the source formula and can exceed the fitted N after covariate missingness. FDR and Bonferroni flags are calculated within contrast, model, and effect type. STOP1, STOP3, GASP, and the snoring/apnea chief-complaint item are flagged because they can help drive referral, making ascertainment part of their observed association. Numbered instrument labels are conservative concepts rather than verbatim questionnaire text and remain under review.
+[page-copy; line 163] Explore QWAS →
+[page-copy; line 170] Cross-domain OSA phenotypes
+[page-copy; line 171] Three gradients combined into eight octants
+[page-copy; line 173] The taxonomy separates physiologic severity, symptom burden, and coded comorbidity burden.
+[page-copy; line 177] Domain models
+[page-copy; line 178] Complementary latent axes
+[page-copy; line 180] Model-derived scores summarize sleep-study physiology, symptoms, and comorbidities. The axes are nearly independent and should be described as regions of continuous gradients—not biological subpopulations.
+[page-copy; line 187] Octant construction
+[page-copy; line 188] Median split × three axes
+[page-copy; line 190] Each score is split at its shared-cohort median, classifying all 70,880 people into eight near-balanced groups. The three-square glyph records whether physiology, symptoms, and comorbidity are above the median, in that order.
+[page-copy; line 197] Interpretation
+[page-copy; line 198] Cohort-specific research taxonomy
+[page-copy; line 200] Cut points are not clinical thresholds and do not transfer unchanged. The comorbidity axis also reflects healthcare contact and record completeness; downstream M4 models adjust for age and sex because octants are strongly structured by both.
+[page-copy; line 209] Cluster summaries
+[page-copy; line 210] Measure-specific denominators
+[page-copy; line 212] The phenotype explorer reports 26 aggregate measures with their own coverage. Follow-up and encounter measures cover the 25,380-person IncWAS spine; age, BMI, and sex cover 53,012 people. The displayed standardized difference is the octant estimate minus the containing cohort estimate, divided by cohort SD—not a two-independent-group SMD.
+[page-copy; line 220] Octant-exposure model
+[page-copy; line 221] M4 ridge Cox
+[page-copy; line 223] Each focal octant is compared with the pooled other seven. M4 adjusts for an age spline, sex, study year, race/ethnicity, smoking, income, baseline observation and encounter measures, and BMI. CPAP is not adjusted because it is treated as a mediator.
+[page-copy; line 230] Hierarchical testing
+[page-copy; line 231] Omnibus gate, then one-vs-rest
+[page-copy; line 233] All eight contrasts are shown only for outcomes whose 7-df M4 omnibus test reached nominal p < 0.05. Within each focal-octant contrast, Bonferroni uses 0.05/15 for gated PheCodes and 0.05/6 for gated systems; it is not 0.05/168.
+[page-copy; line 241] Octant cumulative-incidence curves are unadjusted tie-aware Aalen–Johansen estimates with death competing. Every incident-event step is retained, with pointwise 95% confidence intervals and annual risk tables. OSA curves require AHI ≥5 (25,226 participants); No OSA (AHI <5) is compared with all eight OSA phenotypes pooled and is excluded from each other-seven pool. Pairwise log-rank p values are unadjusted and uncorrected for multiplicity, with deaths censored; they test cause-specific hazards rather than cumulative incidence. M4 hazard ratios retain the original 25,380-person cohort in a separate model. Eighty of 168 panels have EPV below 10, and proportional-hazards diagnostics were not computed for any octant model.
+[page-copy; line 254] The phenotype explorer releases documented PAP setup, retained-record, adherence-field, and usage-field coverage across five display windows. These are extract-documentation measures, not true initiation or adherence: absent rows cannot distinguish no treatment from no capture, and fixed-window eligibility uses an existing diagnosis, insurance, and death censor rather than a confirmed PAP-capture boundary. Adherent percentages and usage distributions remain unavailable because those estimates are absent and their implementation or averaging window is not fully confirmed. Race/ethnicity remains an M4 adjustment covariate, but its descriptive octant breakdown is not published because one cell is below the disclosure threshold and release is not approved. Curve coordinates are withheld for the 17 panels whose three-year focal event count is suppressed below 11.
+[page-copy; line 268] Explore octant phenotypes →
+[page-copy; line 275] Incidence PheDAS survival analysis
+[page-copy; line 276] Cumulative incidence, with death treated as competing
+[page-copy; line 278] The curves describe absolute observed incidence; they are not M4-adjusted hazard ratios.
+[page-copy; line 282] Estimator
+[page-copy; line 283] Aalen–Johansen curves
+[page-copy; line 285] Severity curves report cumulative incidence from index through six years. Landmark CPAP curves report five years from index plus the selected grace period. Both treat death as a competing event and do not use one minus Kaplan–Meier. Every fitted incident-event step is retained; the displayed curves are not sampled into monthly intervals.
+[page-copy; line 293] Outcome selection
+[page-copy; line 294] Post-selection description
+[page-copy; line 296] Curves are available for the 39 PheCodes that were FDR-significant in at least one M4 OSA-severity contrast after excluding the sleep apnea outcome. The curves describe those selected outcomes; they are not independent confirmation.
+[page-copy; line 303] Landmark CPAP adherence
+[page-copy; line 304] Landmark-based, still descriptive
+[page-copy; line 306] The 90- and 180-day grace-period landmarks require OSA patients to remain observed and event-free to the landmark, then restart the analysis clock. This design addresses immortal-time bias. It does not remove healthy-adherer confounding, so curves remain associational rather than treatment effects; 180 days is the primary view.
+[page-copy; line 315] Aggregate cumulative-incidence percentages are released publicly. Exact timepoint at-risk and cumulative-event arrays, uncertainty bands, and curve downloads remain outside the browser bundle. Follow-up ends May 31, 2023, and late curve tails may be supported by thinner risk sets.
+[page-copy; line 321] Explore cumulative incidence curves →
+[page-copy; line 326] PheDAS adjustment ladder
+[page-copy; line 327] Read disease-model M1 through M4 as a sequence
+[accessibility-label; line 328] PheDAS adjustment model definitions
+[page-copy; line 330] Model
+[page-copy; line 331] Framing
+[page-copy; line 332] Interpretation
+[page-copy; line 333] Display
+[display-text; line 344] Primary
+[display-text; line 344] Adjacent
+[display-text; line 344] Comparison
+[page-copy; line 350] Model labels are family-specific. Other WAS views therefore retain neutral M1-M4 identifiers and do not assume that their covariate sets are interchangeable with PheDAS.
+[page-copy; line 359] Statistical reading
+[page-copy; line 360] Multiplicity, diagnostics, and uncertainty
+[page-copy; line 362] Significance is context for an estimate, not a scientific conclusion.
+[page-copy; line 366] Multiplicity
+[page-copy; line 367] Keep correction families intact
+[page-copy; line 369] Current disease outputs expose FDR and Bonferroni significance flags. Exact adjusted q-values are not generally available. The atlas does not infer one global correction across incompatible analyses, models, or contrasts.
+[page-copy; line 376] Quality flags
+[page-copy; line 377] Warnings stay visible
+[page-copy; line 379] Unstable estimates remain labeled rather than silently removed. Incidence results additionally expose event-per-variable warnings and proportional-hazards diagnostic information where available.
+[page-copy; line 385] Scientific language
+[page-copy; line 386] Association, not causation
+[page-copy; line 388] Results support hypothesis generation. They do not establish causal, protective, or independent risk effects, and they do not estimate population OSA prevalence.
+[page-copy; line 397] Other association families
+[page-copy; line 398] Keep each clinical signal on its native scale
+[accessibility-label; line 399] Non-disease analysis interpretation
+[page-copy; line 401] Analysis
+[page-copy; line 402] Estimand
+[page-copy; line 403] Interpretation rule
+[page-copy; line 404] Default
+[page-copy; line 411] M4 · Severe vs None
+[page-copy; line 416] Omnibus rows are non-directional Wald statistics. They appear only in Manhattan and table views, never on a signed volcano or forest axis.
+[page-copy; line 422] Release roadmap
+[page-copy; line 423] Eight clinical lenses, released in stages
+[accessibility-label; line 424] Analysis family release roadmap
+[page-copy; line 426] Analysis
+[page-copy; line 427] Scientific focus
+[page-copy; line 428] Status
+[page-copy; line 429] Release rule
+[display-text; line 443] Disease scan
+[display-text; line 444] Visible with snapshot or review warning
+[page-copy; line 453] Aggregate-only release gate
+[page-copy; line 454] The browser never runs patient-level analyses
+[page-copy; line 456] This research preview consumes only allowlisted, precomputed aggregate results. The prevalence PheDAS association table does not contain cases and non-cases for each PheCode within each OSA severity or contrast group. A total cohort size cannot substitute for those cells: without them, a release process cannot identify rare endpoints, apply the approved small-cell threshold, or test complementary disclosure across related tables.
+[page-copy; line 465] The required companion should be keyed to the result version and include analytic N, cases, non-cases, excluded or missing counts, OSA-group counts, and a policy-approved suppression decision. Until that join exists, public downloads and deployment remain gated.
+[accessibility-label; line 471] Release safeguards
+[page-copy; line 472] Aggregate results
+[page-copy; line 473] Schema checked
+[page-copy; line 474] Provenance retained
+[page-copy; line 475] Disclosure pending
+[accessibility-label; line 479] Methods navigation
+[page-copy; line 481] Ready to explore?
+[page-copy; line 483] Begin with the primary M4 Severe-versus-None view, then inspect M3 and the alternate contrasts before drawing a scientific conclusion.
+[page-copy; line 487] Explore other WAS families →
+
+website/app/page.tsx
+====================
+[display-text; line 7] PheDAS
+[display-text; line 7] Which diseases are already present?
+[display-text; line 7] OR
+[display-text; line 7] Research preview
+[display-text; line 7] /explore?analysis=prevalence
+[display-text; line 8] Incidence PheDAS
+[display-text; line 8] Which diseases arise during follow-up?
+[display-text; line 8] HR
+[display-text; line 8] Research preview
+[display-text; line 8] /explore?analysis=incidence
+[display-text; line 9] LabWAS
+[display-text; line 9] How do laboratory values and ordering differ?
+[display-text; line 9] β / OR / IRR
+[display-text; line 9] Archived snapshot
+[display-text; line 9] /was?family=labwas&analysis=labwas_mean
+[display-text; line 10] MedWAS
+[display-text; line 10] Which medication classes are filled?
+[display-text; line 10] OR
+[display-text; line 10] Archived snapshot
+[display-text; line 10] /was?family=medwas&analysis=medwas_fill
+[display-text; line 11] BehWAS
+[display-text; line 11] How do EHR-derived behaviors differ?
+[display-text; line 11] OR / β
+[display-text; line 11] Preliminary
+[display-text; line 11] /was?family=behwas&analysis=behwas_binary&view=forest
+[display-text; line 12] QWAS
+[display-text; line 12] How do sleep-questionnaire responses differ?
+[display-text; line 12] OR / β
+[display-text; line 12] Research preview
+[display-text; line 12] /was?family=qwas&analysis=qwas_binary
+[display-text; line 13] ProcWAS
+[display-text; line 13] How do procedure rates differ?
+[display-text; line 13] IRR
+[display-text; line 13] Archived snapshot
+[display-text; line 13] /was?family=procwas&analysis=procwas_rate
+[display-text; line 14] UtilWAS
+[display-text; line 14] How does healthcare use differ?
+[display-text; line 14] OR / IRR
+[display-text; line 14] Review needed
+[display-text; line 14] /was?family=utilwas&analysis=utilwas_presence
+[page-copy; line 22] OSA / CLINICAL PHENOME
+[page-copy; line 25] How is obstructive sleep apnea associated with the clinical phenome?
+[page-copy; line 26] Explore adjusted relationships between OSA severity or cross-domain phenotypes and diseases, laboratory patterns, medication fills, questionnaires, EHR-derived behaviors, procedures, and healthcare use in a sleep-clinic referral cohort.
+[accessibility-label; line 28] Primary analysis settings
+[page-copy; line 29] Primary presentation
+[page-copy; line 30] M4 · Severe vs None
+[page-copy; line 31] M4 includes BMI. M3 remains adjacent so researchers can inspect attenuation without assigning it a causal interpretation.
+[page-copy; line 38] Two views of disease
+[page-copy; line 39] Start with the scientific question
+[page-copy; line 42] 01
+[page-copy; line 43] Existing diagnoses
+[page-copy; line 43] Prevalence PheDAS
+[page-copy; line 43] Odds ratios across 1,700+ PheCodes
+[page-copy; line 44] →
+[page-copy; line 47] 02
+[page-copy; line 48] New diagnoses during follow-up
+[page-copy; line 48] Incidence PheDAS
+[page-copy; line 48] Cause-specific hazard ratios across 1,000+ PheCodes
+[page-copy; line 49] →
+[page-copy; line 55] Phenotype taxonomy
+[page-copy; line 56] Explore eight octant phenotypes
+[page-copy; line 57] See how physiologic severity, symptoms, and comorbidity burden combine—and how the octants relate to incident outcomes.
+[page-copy; line 59] Explore phenotypes →
+[page-copy; line 63] Survival analysis
+[page-copy; line 64] Trace cumulative incidence after index
+[page-copy; line 65] Explore Aalen–Johansen curves by OSA severity or landmark CPAP adherence designed to address immortal-time bias.
+[page-copy; line 67] Explore incidence curves →
+[page-copy; line 73] Atlas index
+[page-copy; line 74] Eight clinical lenses on OSA severity
+[accessibility-label; line 75] Analysis family release index
+[page-copy; line 77] Analysis
+[page-copy; line 77] Question
+[page-copy; line 77] Primary measure
+[page-copy; line 77] Status
+[page-copy; line 81] →
+[page-copy; line 90] Interpret within the cohort.
+[page-copy; line 91] “None” means AHI <5 among referred adults with sleep studies—not a population control. These results support hypothesis generation; they do not estimate population OSA prevalence or establish causality.
+[page-copy; line 92] Read methods →
+
+website/app/phenotype-data.ts
+=============================
+[display-text; line 330] Phenotype data contain an unsafe public asset path.
+[text-template; line 341] {{value_1}} is not a valid event-time numeric series.
+[text-template; line 347] {{value_1}} is missing.
+[text-template; line 348] {{value_1}} times
+[text-template; line 349] {{value_1}} cumulative incidence
+[text-template; line 350] {{value_1}} lower confidence limits
+[text-template; line 351] {{value_1}} upper confidence limits
+[text-template; line 365] {{value_1}} contains values outside the released range.
+[text-template; line 372] {{value_1}} is not a valid annual risk table.
+[text-template; line 386] {{value_1}} contains an invalid or undisclosed count.
+[text-template; line 391] {{value_1}} contains an increasing risk set.
+[text-template; line 397] {{value_1}} contains a decreasing cumulative event count.
+[display-text; line 404] The phenotype curve asset is missing the pooled-cohort curve.
+[display-text; line 406] Pooled-cohort curve
+[display-text; line 407] Pooled-cohort risk table
+[display-text; line 409] Pooled-cohort event counts are not complementarily suppressed.
+[display-text; line 413] The pooled-cohort curve is missing metadata.
+[display-text; line 446] The pooled-cohort curve metadata are invalid.
+[display-text; line 453] The pooled-cohort curve does not reconcile with its metadata.
+[display-text; line 472] The phenotype curve asset does not match the selected outcome.
+[display-text; line 476] The phenotype curve asset is missing the No OSA group.
+[display-text; line 477] No OSA risk table
+[display-text; line 480] No OSA curve
+[display-text; line 482] The No OSA curve has an invalid disclosure status.
+[display-text; line 485] The phenotype curve asset does not contain all eight octants.
+[display-text; line 491] The phenotype curve asset contains an invalid octant panel.
+[display-text; line 496] The phenotype curve asset is missing an annual risk table.
+[display-text; line 499] Phenotype-panel risk table
+[display-text; line 502] A withheld phenotype curve unexpectedly contains coordinates.
+[display-text; line 503] A withheld phenotype curve unexpectedly contains a log-rank p value.
+[display-text; line 507] The phenotype curve asset has an invalid curve status.
+[display-text; line 511] Phenotype-panel curve
+[display-text; line 519] The phenotype curve asset has an invalid log-rank p value.
+[display-text; line 529] The selected phenotype outcome has an unsafe curve asset path.
+[text-template; line 532] Curve asset request failed ({{value_1}}).
+
+website/app/phenotypes/outcomes/page.tsx
+========================================
+[display-text; line 10] Phenotype outcome panels
+[display-text; line 12] Search 168 octant-exposure Incidence PheDAS panels and inspect interactive cumulative-incidence curves with adjusted M4 associations.
+[page-copy; line 26] Atlas
+[page-copy; line 26] /
+[page-copy; line 26] Phenotypes
+[page-copy; line 26] /
+[page-copy; line 26] Outcome panels
+[page-copy; line 31] Phenotype-exposure Incidence PheDAS
+[page-copy; line 32] Outcome panels without the long scroll.
+[page-copy; line 33] Search by outcome, PheCode, body system, or focal octant. Compare all eight OSA phenotypes and No OSA with 95% confidence intervals, or inspect a focal contrast with its log-rank p value. No OSA is excluded from pooled OSA comparators.
+[page-copy; line 36] Panels
+[page-copy; line 36] one-vs-rest M4 models
+[page-copy; line 37] Outcomes
+[page-copy; line 37] nominally omnibus-gated
+[page-copy; line 38] Interactive curves
+[page-copy; line 38] disclosure-withheld
+[page-copy; line 44] Related evidence
+[page-copy; line 44] Compare with OSA severity and landmark CPAP adherence
+[page-copy; line 44] The phenotype-exposure curves complement—rather than replace—the main Incidence PheDAS severity analysis.
+[page-copy; line 44] Open landmark incidence curves →
+
+website/app/phenotypes/page.tsx
+===============================
+[display-text; line 8] Octant phenotypes
+[display-text; line 10] Explore eight OSA phenotypes defined across physiologic severity, symptom burden, and comorbidity burden.
+
+website/app/survival-data.ts
+============================
+[display-text; line 106] Survival manifest contains an unsafe feature path.
+[text-template; line 117] {{value_1}} has an invalid row count.
+[text-template; line 121] {{value_1}} column {{value_2}} is not aligned.
+[text-template; line 128] Curve index is unavailable ({{value_1}}).
+[display-text; line 137] Curve index has an invalid shape.
+[display-text; line 140] Curve index contains duplicate features.
+[text-template; line 149] Curve data are unavailable ({{value_1}}).
+[display-text; line 152] Curve data do not match the selected feature.
+[display-text; line 155] Severity curves
+[display-text; line 159] Landmark CPAP curves
+
+website/app/survival/page.tsx
+=============================
+[display-text; line 9] Incidence curves
+[display-text; line 11] Explore cumulative incidence by OSA severity and landmark CPAP adherence designed to address immortal-time bias.
+
+website/app/was-config.ts
+=========================
+[display-text; line 46] LabWAS
+[display-text; line 47] MedWAS
+[display-text; line 48] BehWAS
+[display-text; line 49] ProcWAS
+[display-text; line 50] UtilWAS
+[display-text; line 51] QWAS
+[display-text; line 55] Laboratory values and ordering patterns around the sleep-study index.
+[display-text; line 56] Medication-fill associations within the defined observation window.
+[display-text; line 57] Preliminary EHR-derived behavioral features, separated by outcome type.
+[display-text; line 58] Procedure-rate associations within the defined observation window.
+[display-text; line 59] Healthcare-use presence, counts, and specialty rates as distinct estimands.
+[display-text; line 60] Index-anchored sleep-questionnaire responses, separated by binary and continuous form.
+[display-text; line 67] LabWAS · mean observed value
+[display-text; line 68] Mean value
+[display-text; line 69] How do mean observed laboratory values differ with OSA severity?
+[display-text; line 72] Laboratory feature
+[display-text; line 77] LabWAS · median observed value
+[display-text; line 78] Median value
+[display-text; line 79] How do median observed laboratory values differ with OSA severity?
+[display-text; line 82] Laboratory feature
+[display-text; line 87] LabWAS · ordering rate
+[display-text; line 88] Ordering rate
+[display-text; line 89] How do laboratory ordering rates differ with OSA severity?
+[display-text; line 92] Laboratory feature
+[display-text; line 97] LabWAS · ordering propensity
+[display-text; line 98] Ordering propensity
+[display-text; line 99] How does the probability of a laboratory order differ with OSA severity?
+[display-text; line 102] Laboratory feature
+[display-text; line 107] MedWAS · medication fill
+[display-text; line 108] Medication fills
+[display-text; line 109] Which medication classes are filled at different rates across OSA severity?
+[display-text; line 112] Medication feature
+[display-text; line 117] BehWAS · binary behavior
+[display-text; line 118] Binary behaviors
+[display-text; line 119] How do binary EHR-derived behaviors differ with OSA severity?
+[display-text; line 122] Behavior feature
+[display-text; line 127] BehWAS · continuous behavior
+[display-text; line 128] Continuous behaviors
+[display-text; line 129] How do continuous EHR-derived behaviors differ with OSA severity?
+[display-text; line 132] Behavior feature
+[display-text; line 137] ProcWAS · procedure rate
+[display-text; line 138] Procedure rates
+[display-text; line 139] How do procedure rates differ with OSA severity?
+[display-text; line 142] Procedure feature
+[display-text; line 147] UtilWAS · any use
+[display-text; line 148] Any utilization
+[display-text; line 149] How does the presence of healthcare use differ with OSA severity?
+[display-text; line 152] Utilization feature
+[display-text; line 157] UtilWAS · count among users
+[display-text; line 158] Count among users
+[display-text; line 159] Among people with use, how do utilization counts differ with OSA severity?
+[display-text; line 162] Utilization feature
+[display-text; line 167] UtilWAS · specialty rate
+[display-text; line 168] Specialty rates
+[display-text; line 169] How do specialty-specific utilization rates differ with OSA severity?
+[display-text; line 172] Specialty feature
+[display-text; line 177] QWAS · binary questionnaire response
+[display-text; line 178] Binary responses
+[display-text; line 179] Which positive or worse questionnaire response states differ with OSA severity?
+[display-text; line 182] Questionnaire item
+[display-text; line 187] QWAS · ordinal or continuous response
+[display-text; line 188] Continuous responses
+[display-text; line 189] How do rank-normalized questionnaire responses differ with OSA severity?
+[display-text; line 192] Questionnaire item
+
+website/app/was-data.ts
+=======================
+[text-template; line 157] WAS manifest is missing {{value_1}}.
+[display-text; line 167] partition path
+[display-text; line 170] label
+[display-text; line 184] Analytic N
+[display-text; line 194] WAS manifest contains an invalid analysis entry.
+[display-text; line 208] WAS manifest contains an invalid utilization profile reference.
+[display-text; line 215] WAS manifest contains an incomplete utilization profile reference.
+[display-text; line 218] utilization profile path
+[display-text; line 220] utilization profile release_status
+[text-template; line 230] WAS manifest is unavailable ({{value_1}}).
+[display-text; line 240] WAS manifest has an invalid shape.
+[display-text; line 256] WAS manifest contains an unsafe partition path.
+[display-text; line 271] Overall
+[display-text; line 272] None
+[display-text; line 273] Mild
+[display-text; line 274] Moderate
+[display-text; line 275] Severe
+[text-template; line 281] Utilization profile has an invalid {{value_1}} column.
+[text-template; line 289] Utilization profile contains an invalid {{value_1}}.
+[text-template; line 299] Utilization profile is unavailable ({{value_1}}).
+[display-text; line 307] Utilization profile has an invalid shape.
+[display-text; line 313] Utilization profile is not approved for this release.
+[display-text; line 331] Utilization profile contains an unsupported key.
+[display-text; line 334] Utilization profile contains a duplicate row.
+[display-text; line 342] Utilization profile contains inconsistent suppressed statistics.
+[display-text; line 346] utilization metric_label
+[display-text; line 355] utilization unit
+[display-text; line 358] utilization denominator_definition
+[display-text; line 360] utilization metric_definition
+[display-text; line 367] Utilization profile grid is incomplete.
+[display-text; line 376] Utilization profile metadata are incomplete.
+[display-text; line 380] utilization dataset
+[display-text; line 381] utilization generated_at_utc
+[display-text; line 383] utilization release_status
+[display-text; line 384] utilization release_note
+[display-text; line 393] utilization rate_denominator_definition
+[display-text; line 397] utilization los_denominator_definition
+[display-text; line 402] utilization specialty_care_definition
+[display-text; line 406] utilization ed_inpatient_overlap_warning
+[display-text; line 428] Unknown feature
+[display-text; line 429] Other
+[text-template; line 458] Association data are unavailable ({{value_1}}).
+[display-text; line 462] Association data have an invalid shape.
+[display-text; line 470] Partition metadata do not match the manifest.
+[display-text; line 495] β
+[display-text; line 496] OR
+[display-text; line 497] HR
+[display-text; line 498] IRR
+
+website/app/was-state.ts
+========================
+[display-text; line 33] M4
+[display-text; line 96] 0
+[display-text; line 124] 1
+[display-text; line 124] 0
+
+STATIC DEFINITIONS
+
+ANALYSES (website/app/atlas-state.ts:1)
+[
+  "prevalence",
+  "incidence"
+]
+
+MODELS (website/app/atlas-state.ts:2)
+[
+  "M1",
+  "M2",
+  "M3",
+  "M4"
+]
+
+VIEWS (website/app/atlas-state.ts:3)
+[
+  "manhattan",
+  "volcano",
+  "table"
+]
+
+DEFAULT_ATLAS_STATE (website/app/atlas-state.ts:18)
+{
+  "analysis": "prevalence",
+  "contrast": "severe_vs_none",
+  "model": "M4",
+  "view": "manhattan",
+  "significance": "all"
+}
+
+CONTRASTS (website/app/atlas-state.ts:26)
+{
+  "prevalence": [
+    "severe_vs_none",
+    "moderate_vs_none",
+    "mild_vs_none",
+    "ahi_ge15",
+    "ahi_ge5"
+  ],
+  "incidence": [
+    "severe_vs_none",
+    "moderate_vs_none",
+    "mild_vs_none",
+    "trend",
+    "ahi_ge15",
+    "ahi_ge5",
+    "omnibus"
+  ]
+}
+
+CONTRAST_LABELS (website/app/atlas-state.ts:45)
+{
+  "severe_vs_none": "Severe vs None",
+  "moderate_vs_none": "Moderate vs None",
+  "mild_vs_none": "Mild vs None",
+  "trend": "Severity trend",
+  "ahi_ge15": "AHI ≥15 vs <15",
+  "ahi_ge5": "AHI ≥5 vs <5",
+  "omnibus": "Any severity difference"
+}
+
+MODEL_LABELS (website/app/atlas-state.ts:55)
+{
+  "M1": "M1 · crude",
+  "M2": "M2 · demographics",
+  "M3": "M3 · excludes BMI",
+  "M4": "M4 · + BMI · primary"
+}
+
+CATEGORY_ORDER (website/app/components/AtlasExplorer.tsx:18)
+[
+  "circulatory system",
+  "endocrine/metabolic",
+  "respiratory",
+  "neurological",
+  "digestive",
+  "genitourinary",
+  "hematopoietic",
+  "mental disorders",
+  "musculoskeletal",
+  "infectious diseases",
+  "neoplasms",
+  "sense organs",
+  "dermatologic",
+  "injuries & poisonings",
+  "pregnancy complications",
+  "congenital anomalies",
+  "symptoms",
+  "other"
+]
+
+MODELS (website/app/components/FeatureDetail.tsx:10)
+[
+  "M1",
+  "M2",
+  "M3",
+  "M4"
+]
+
+SEVERITY_CONTRASTS (website/app/components/FeatureDetail.tsx:11)
+[
+  "mild_vs_none",
+  "moderate_vs_none",
+  "severe_vs_none"
+]
+
+DETAIL_CONTRASTS (website/app/components/FeatureDetail.tsx:12)
+[
+  "mild_vs_none",
+  "moderate_vs_none",
+  "severe_vs_none",
+  "ahi_ge15",
+  "ahi_ge5"
+]
+
+POOLED_OSA_LABEL (website/app/components/OctantSurvivalExplorer.tsx:34)
+"All eight OSA phenotypes (pooled)"
+
+metricDomainOptions (website/app/components/PhenotypeExplorer.tsx:27)
+[
+  {
+    "id": "all",
+    "label": "All measures"
+  },
+  {
+    "id": "physiologic",
+    "label": "Physiology"
+  },
+  {
+    "id": "symptom",
+    "label": "Symptoms"
+  },
+  {
+    "id": "comorbidity",
+    "label": "Comorbidity"
+  },
+  {
+    "id": "external",
+    "label": "AHI / severity"
+  },
+  {
+    "id": "demographic",
+    "label": "Demographic"
+  },
+  {
+    "id": "follow-up",
+    "label": "Follow-up"
+  },
+  {
+    "id": "utilisation",
+    "label": "Utilization"
+  }
+]
+
+severityOrder (website/app/components/UtilizationProfile.tsx:13)
+[
+  "Overall",
+  "None",
+  "Mild",
+  "Moderate",
+  "Severe"
+]
+
+encounterMetrics (website/app/components/UtilizationProfile.tsx:14)
+[
+  "outpatient_rate",
+  "inpatient_rate",
+  "ed_rate",
+  "urgent_care_rate",
+  "primary_care_rate",
+  "specialty_rate"
+]
+
+contrastLabels (website/app/components/WasExplorer.tsx:43)
+{
+  "severe_vs_none": "Severe vs None",
+  "moderate_vs_none": "Moderate vs None",
+  "mild_vs_none": "Mild vs None",
+  "ahi_ge15": "AHI ≥15 vs <15",
+  "ahi_ge5": "AHI ≥5 vs <5",
+  "trend": "Severity trend",
+  "omnibus": "Any severity difference"
+}
+
+MODELS (website/app/components/WasFeatureDetail.tsx:26)
+[
+  "M1",
+  "M2",
+  "M3",
+  "M4"
+]
+
+SEVERITY_CONTRASTS (website/app/components/WasFeatureDetail.tsx:27)
+[
+  "mild_vs_none",
+  "moderate_vs_none",
+  "severe_vs_none"
+]
+
+CONTRAST_ORDER (website/app/components/WasFeatureDetail.tsx:28)
+[
+  "severe_vs_none",
+  "moderate_vs_none",
+  "mild_vs_none",
+  "trend",
+  "ahi_ge15",
+  "ahi_ge5",
+  "omnibus"
+]
+
+description (website/app/layout.tsx:13)
+"Explore aggregate associations, octant phenotypes, and cumulative-incidence curves linking obstructive sleep apnea with diseases, laboratory patterns, medications, questionnaires, behaviors, procedures, and healthcare use."
+
+models (website/app/methods/page.tsx:4)
+[
+  [
+    "M1",
+    "Crude",
+    "Unadjusted association model."
+  ],
+  [
+    "M2",
+    "Demographics",
+    "Adds demographic adjustment."
+  ],
+  [
+    "M3",
+    "Extended · excludes BMI",
+    "Adds family-specific adjustment while excluding BMI. Incidence PheDAS M3 also includes baseline encounter rate."
+  ],
+  [
+    "M4",
+    "Primary · adds BMI",
+    "Adds BMI to M3. M3 remains adjacent because BMI may be treated as a confounder or as part of the pathway, depending on the scientific question."
+  ]
+]
+
+releaseRoadmap (website/app/methods/page.tsx:19)
+[
+  [
+    "Prevalence PheDAS",
+    "Existing disease · OR",
+    "Research preview"
+  ],
+  [
+    "Incidence PheDAS",
+    "New-onset disease · HR",
+    "Research preview"
+  ],
+  [
+    "LabWAS",
+    "Values, ordering propensity, and ordering rate",
+    "Archived snapshot"
+  ],
+  [
+    "MedWAS",
+    "Medication fills · OR",
+    "Archived snapshot"
+  ],
+  [
+    "BehWAS",
+    "EHR-derived behaviors · OR or β",
+    "Preliminary archived"
+  ],
+  [
+    "QWAS",
+    "Index-anchored questionnaire responses · OR or β",
+    "Research preview"
+  ],
+  [
+    "ProcWAS",
+    "Procedure rates · IRR",
+    "Archived snapshot"
+  ],
+  [
+    "UtilWAS",
+    "Healthcare-use presence and counts",
+    "Archived review"
+  ]
+]
+
+otherFamilies (website/app/methods/page.tsx:30)
+[
+  [
+    "LabWAS",
+    "β / OR / IRR",
+    "Mean and median value betas use rank-inverse-normal standard-deviation units and condition on being tested. Ordering propensity and ordering rate remain separate extensive and intensive signals."
+  ],
+  [
+    "MedWAS",
+    "OR",
+    "Binary ever-filled medication classes use zero-preserved GPI-4 codes. Fallback class labels remain visibly marked for review."
+  ],
+  [
+    "BehWAS",
+    "OR or β",
+    "Binary and rank-inverse-normal standardized continuous representations remain on separate axes. This small curated scan is preliminary and forest-first."
+  ],
+  [
+    "QWAS",
+    "OR or β",
+    "Binary positive-or-worse response states use logistic odds ratios; continuous and ordinal responses use rank-inverse-normal betas. Both are itemwise complete-case and index-anchored."
+  ],
+  [
+    "ProcWAS",
+    "IRR",
+    "Procedure counts are annualized rates over one- and five-year pre-index windows; sleep-study and PAP-pathway procedures were excluded."
+  ],
+  [
+    "UtilWAS",
+    "OR / IRR",
+    "Presence and count among present are a two-part analysis. Physician and allied-health definitions must not be summed while their overlap rule remains under review."
+  ]
+]
+
+families (website/app/page.tsx:6)
+[
+  {
+    "name": "PheDAS",
+    "question": "Which diseases are already present?",
+    "measure": "OR",
+    "status": "Research preview",
+    "href": "/explore?analysis=prevalence"
+  },
+  {
+    "name": "Incidence PheDAS",
+    "question": "Which diseases arise during follow-up?",
+    "measure": "HR",
+    "status": "Research preview",
+    "href": "/explore?analysis=incidence"
+  },
+  {
+    "name": "LabWAS",
+    "question": "How do laboratory values and ordering differ?",
+    "measure": "β / OR / IRR",
+    "status": "Archived snapshot",
+    "href": "/was?family=labwas&analysis=labwas_mean"
+  },
+  {
+    "name": "MedWAS",
+    "question": "Which medication classes are filled?",
+    "measure": "OR",
+    "status": "Archived snapshot",
+    "href": "/was?family=medwas&analysis=medwas_fill"
+  },
+  {
+    "name": "BehWAS",
+    "question": "How do EHR-derived behaviors differ?",
+    "measure": "OR / β",
+    "status": "Preliminary",
+    "href": "/was?family=behwas&analysis=behwas_binary&view=forest"
+  },
+  {
+    "name": "QWAS",
+    "question": "How do sleep-questionnaire responses differ?",
+    "measure": "OR / β",
+    "status": "Research preview",
+    "href": "/was?family=qwas&analysis=qwas_binary"
+  },
+  {
+    "name": "ProcWAS",
+    "question": "How do procedure rates differ?",
+    "measure": "IRR",
+    "status": "Archived snapshot",
+    "href": "/was?family=procwas&analysis=procwas_rate"
+  },
+  {
+    "name": "UtilWAS",
+    "question": "How does healthcare use differ?",
+    "measure": "OR / IRR",
+    "status": "Review needed",
+    "href": "/was?family=utilwas&analysis=utilwas_presence"
+  }
+]
+
+metadata (website/app/phenotypes/outcomes/page.tsx:9)
+{
+  "title": "Phenotype outcome panels",
+  "description": "Search 168 octant-exposure Incidence PheDAS panels and inspect interactive cumulative-incidence curves with adjusted M4 associations."
+}
+
+metadata (website/app/phenotypes/page.tsx:7)
+{
+  "title": "Octant phenotypes",
+  "description": "Explore eight OSA phenotypes defined across physiologic severity, symptom burden, and comorbidity burden."
+}
+
+metadata (website/app/survival/page.tsx:8)
+{
+  "title": "Incidence curves",
+  "description": "Explore cumulative incidence by OSA severity and landmark CPAP adherence designed to address immortal-time bias."
+}
+
+WAS_FAMILIES (website/app/was-config.ts:1)
+[
+  "labwas",
+  "medwas",
+  "behwas",
+  "procwas",
+  "utilwas",
+  "qwas"
+]
+
+WAS_ANALYSIS_IDS (website/app/was-config.ts:10)
+[
+  "labwas_mean",
+  "labwas_median",
+  "labwas_order_rate",
+  "labwas_order_propensity",
+  "medwas_fill",
+  "behwas_binary",
+  "behwas_continuous",
+  "procwas_rate",
+  "utilwas_presence",
+  "utilwas_count_present",
+  "utilwas_specialty_rate",
+  "qwas_binary",
+  "qwas_continuous"
+]
+
+WAS_VIEWS (website/app/was-config.ts:26)
+[
+  "manhattan",
+  "volcano",
+  "forest",
+  "table"
+]
+
+WAS_SIGNIFICANCE (website/app/was-config.ts:27)
+[
+  "all",
+  "fdr",
+  "bonferroni"
+]
+
+WAS_FAMILY_LABELS (website/app/was-config.ts:45)
+{
+  "labwas": "LabWAS",
+  "medwas": "MedWAS",
+  "behwas": "BehWAS",
+  "procwas": "ProcWAS",
+  "utilwas": "UtilWAS",
+  "qwas": "QWAS"
+}
+
+WAS_FAMILY_DESCRIPTIONS (website/app/was-config.ts:54)
+{
+  "labwas": "Laboratory values and ordering patterns around the sleep-study index.",
+  "medwas": "Medication-fill associations within the defined observation window.",
+  "behwas": "Preliminary EHR-derived behavioral features, separated by outcome type.",
+  "procwas": "Procedure-rate associations within the defined observation window.",
+  "utilwas": "Healthcare-use presence, counts, and specialty rates as distinct estimands.",
+  "qwas": "Index-anchored sleep-questionnaire responses, separated by binary and continuous form."
+}
+
+WAS_ANALYSES (website/app/was-config.ts:63)
+{
+  "labwas_mean": {
+    "id": "labwas_mean",
+    "family": "labwas",
+    "label": "LabWAS · mean observed value",
+    "shortLabel": "Mean value",
+    "question": "How do mean observed laboratory values differ with OSA severity?",
+    "defaultWindow": "1yr",
+    "defaultView": "manhattan",
+    "codeLabel": "Laboratory feature"
+  },
+  "labwas_median": {
+    "id": "labwas_median",
+    "family": "labwas",
+    "label": "LabWAS · median observed value",
+    "shortLabel": "Median value",
+    "question": "How do median observed laboratory values differ with OSA severity?",
+    "defaultWindow": "1yr",
+    "defaultView": "manhattan",
+    "codeLabel": "Laboratory feature"
+  },
+  "labwas_order_rate": {
+    "id": "labwas_order_rate",
+    "family": "labwas",
+    "label": "LabWAS · ordering rate",
+    "shortLabel": "Ordering rate",
+    "question": "How do laboratory ordering rates differ with OSA severity?",
+    "defaultWindow": "1yr",
+    "defaultView": "manhattan",
+    "codeLabel": "Laboratory feature"
+  },
+  "labwas_order_propensity": {
+    "id": "labwas_order_propensity",
+    "family": "labwas",
+    "label": "LabWAS · ordering propensity",
+    "shortLabel": "Ordering propensity",
+    "question": "How does the probability of a laboratory order differ with OSA severity?",
+    "defaultWindow": "1yr",
+    "defaultView": "manhattan",
+    "codeLabel": "Laboratory feature"
+  },
+  "medwas_fill": {
+    "id": "medwas_fill",
+    "family": "medwas",
+    "label": "MedWAS · medication fill",
+    "shortLabel": "Medication fills",
+    "question": "Which medication classes are filled at different rates across OSA severity?",
+    "defaultWindow": "1yr",
+    "defaultView": "manhattan",
+    "codeLabel": "Medication feature"
+  },
+  "behwas_binary": {
+    "id": "behwas_binary",
+    "family": "behwas",
+    "label": "BehWAS · binary behavior",
+    "shortLabel": "Binary behaviors",
+    "question": "How do binary EHR-derived behaviors differ with OSA severity?",
+    "defaultWindow": "1yr",
+    "defaultView": "forest",
+    "codeLabel": "Behavior feature"
+  },
+  "behwas_continuous": {
+    "id": "behwas_continuous",
+    "family": "behwas",
+    "label": "BehWAS · continuous behavior",
+    "shortLabel": "Continuous behaviors",
+    "question": "How do continuous EHR-derived behaviors differ with OSA severity?",
+    "defaultWindow": "1yr",
+    "defaultView": "forest",
+    "codeLabel": "Behavior feature"
+  },
+  "procwas_rate": {
+    "id": "procwas_rate",
+    "family": "procwas",
+    "label": "ProcWAS · procedure rate",
+    "shortLabel": "Procedure rates",
+    "question": "How do procedure rates differ with OSA severity?",
+    "defaultWindow": "1yr",
+    "defaultView": "manhattan",
+    "codeLabel": "Procedure feature"
+  },
+  "utilwas_presence": {
+    "id": "utilwas_presence",
+    "family": "utilwas",
+    "label": "UtilWAS · any use",
+    "shortLabel": "Any utilization",
+    "question": "How does the presence of healthcare use differ with OSA severity?",
+    "defaultWindow": "1yr",
+    "defaultView": "manhattan",
+    "codeLabel": "Utilization feature"
+  },
+  "utilwas_count_present": {
+    "id": "utilwas_count_present",
+    "family": "utilwas",
+    "label": "UtilWAS · count among users",
+    "shortLabel": "Count among users",
+    "question": "Among people with use, how do utilization counts differ with OSA severity?",
+    "defaultWindow": "1yr",
+    "defaultView": "manhattan",
+    "codeLabel": "Utilization feature"
+  },
+  "utilwas_specialty_rate": {
+    "id": "utilwas_specialty_rate",
+    "family": "utilwas",
+    "label": "UtilWAS · specialty rate",
+    "shortLabel": "Specialty rates",
+    "question": "How do specialty-specific utilization rates differ with OSA severity?",
+    "defaultWindow": "1yr",
+    "defaultView": "manhattan",
+    "codeLabel": "Specialty feature"
+  },
+  "qwas_binary": {
+    "id": "qwas_binary",
+    "family": "qwas",
+    "label": "QWAS · binary questionnaire response",
+    "shortLabel": "Binary responses",
+    "question": "Which positive or worse questionnaire response states differ with OSA severity?",
+    "defaultWindow": "index",
+    "defaultView": "manhattan",
+    "codeLabel": "Questionnaire item"
+  },
+  "qwas_continuous": {
+    "id": "qwas_continuous",
+    "family": "qwas",
+    "label": "QWAS · ordinal or continuous response",
+    "shortLabel": "Continuous responses",
+    "question": "How do rank-normalized questionnaire responses differ with OSA severity?",
+    "defaultWindow": "index",
+    "defaultView": "manhattan",
+    "codeLabel": "Questionnaire item"
+  }
+}
+
+WAS_FAMILY_DEFAULT_ANALYSIS (website/app/was-config.ts:196)
+{
+  "labwas": "labwas_mean",
+  "medwas": "medwas_fill",
+  "behwas": "behwas_binary",
+  "procwas": "procwas_rate",
+  "utilwas": "utilwas_presence",
+  "qwas": "qwas_binary"
+}
+
+DEFAULT_WAS_STATE (website/app/was-state.ts:29)
+{
+  "family": "labwas",
+  "analysis": "labwas_mean",
+  "window": "1yr",
+  "model": "M4",
+  "contrast": "severe_vs_none",
+  "view": "manhattan",
+  "category": "all",
+  "significance": "all",
+  "stableOnly": true,
+  "query": ""
+}
+

@@ -1,0 +1,1904 @@
+{
+  "snapshot_date": "2026-10-08",
+  "description": "Source-ordered headings, paragraphs, labels, table cells, buttons, and captions. Dynamic expression values are neutral placeholders. Nested static text is joined; alternative strings and fine-grained fragments remain in website-text.json.",
+  "sources": [
+    {
+      "source": "website/app/components/AtlasExplorer.tsx",
+      "blocks": [
+        {
+          "role": "h2",
+          "text": "Analysis settings",
+          "line": 218
+        },
+        {
+          "role": "label",
+          "text": "Analysis family | Prevalence PheDAS | Incidence PheDAS",
+          "line": 221
+        },
+        {
+          "role": "option",
+          "text": "Prevalence PheDAS",
+          "line": 221
+        },
+        {
+          "role": "option",
+          "text": "Incidence PheDAS",
+          "line": 221
+        },
+        {
+          "role": "label",
+          "text": "OSA contrast | {{value_1}}",
+          "line": 223,
+          "dynamic_placeholders": [
+            "value_1"
+          ]
+        },
+        {
+          "role": "label",
+          "text": "Adjustment model | {{value_1}}",
+          "line": 225,
+          "dynamic_placeholders": [
+            "value_1"
+          ]
+        },
+        {
+          "role": "label",
+          "text": "Disease category | all disease categories | {{value_1}}",
+          "line": 227,
+          "dynamic_placeholders": [
+            "value_1"
+          ]
+        },
+        {
+          "role": "option",
+          "text": "all disease categories",
+          "line": 227
+        },
+        {
+          "role": "label",
+          "text": "Significance | All results | FDR-significant | Bonferroni-significant",
+          "line": 230
+        },
+        {
+          "role": "option",
+          "text": "All results",
+          "line": 230
+        },
+        {
+          "role": "option",
+          "text": "FDR-significant",
+          "line": 230
+        },
+        {
+          "role": "option",
+          "text": "Bonferroni-significant",
+          "line": 230
+        },
+        {
+          "role": "label",
+          "text": "Find in scan",
+          "line": 231
+        },
+        {
+          "role": "label",
+          "text": "Stable estimates only",
+          "line": 232
+        },
+        {
+          "role": "button",
+          "text": "Reset",
+          "line": 233
+        },
+        {
+          "role": "p",
+          "text": "Reference: AHI <5 (“None”) within a sleep-clinic referral cohort. M4 is the primary presentation model and includes BMI.",
+          "line": 235
+        },
+        {
+          "role": "button",
+          "text": "CSV pending review",
+          "line": 254
+        },
+        {
+          "role": "dt",
+          "text": "p-value",
+          "line": 262
+        },
+        {
+          "role": "dt",
+          "text": "FDR",
+          "line": 262
+        },
+        {
+          "role": "dt",
+          "text": "At risk",
+          "line": 262
+        },
+        {
+          "role": "dt",
+          "text": "Events",
+          "line": 262
+        },
+        {
+          "role": "p",
+          "text": "Estimate flagged as unstable{{value_1}}",
+          "line": 263,
+          "dynamic_placeholders": [
+            "value_1"
+          ]
+        },
+        {
+          "role": "p",
+          "text": "Proportional-hazards diagnostic flagged (p {{value_1}}).",
+          "line": 264,
+          "dynamic_placeholders": [
+            "value_1"
+          ]
+        },
+        {
+          "role": "p",
+          "text": "Select a point or table row to inspect it.",
+          "line": 267
+        },
+        {
+          "role": "h2",
+          "text": "Association results",
+          "line": 271
+        },
+        {
+          "role": "p",
+          "text": "Showing the 60 strongest displayed results",
+          "line": 271
+        },
+        {
+          "role": "p",
+          "text": "Research preview. Aggregate associations describe relationships within a sleep-clinic referral cohort; they do not estimate population OSA prevalence or establish causality. Prevalence downloads remain unavailable pending per-feature disclosure review.",
+          "line": 272
+        },
+        {
+          "role": "th",
+          "text": "Feature",
+          "line": 279
+        },
+        {
+          "role": "th",
+          "text": "Category",
+          "line": 279
+        },
+        {
+          "role": "th",
+          "text": "{{value_1}} (interval)",
+          "line": 279,
+          "dynamic_placeholders": [
+            "value_1"
+          ]
+        },
+        {
+          "role": "th",
+          "text": "p-value",
+          "line": 279
+        },
+        {
+          "role": "th",
+          "text": "Significance",
+          "line": 279
+        },
+        {
+          "role": "th",
+          "text": "Quality",
+          "line": 279
+        },
+        {
+          "role": "td",
+          "text": "{{value_1}} ({{value_2}}–{{value_3}})",
+          "line": 279,
+          "dynamic_placeholders": [
+            "value_1",
+            "value_2",
+            "value_3"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "website/app/components/FeatureDetail.tsx",
+      "blocks": [
+        {
+          "role": "label",
+          "text": "Contrast | Severe vs None | Moderate vs None | Mild vs None | AHI ≥15 vs <15 | AHI ≥5 vs <5",
+          "line": 105
+        },
+        {
+          "role": "option",
+          "text": "Severe vs None",
+          "line": 105
+        },
+        {
+          "role": "option",
+          "text": "Moderate vs None",
+          "line": 105
+        },
+        {
+          "role": "option",
+          "text": "Mild vs None",
+          "line": 105
+        },
+        {
+          "role": "option",
+          "text": "AHI ≥15 vs <15",
+          "line": 105
+        },
+        {
+          "role": "option",
+          "text": "AHI ≥5 vs <5",
+          "line": 105
+        },
+        {
+          "role": "h2",
+          "text": "How the estimate changes from M1 to M4",
+          "line": 114
+        },
+        {
+          "role": "p",
+          "text": "M4 is emphasized as the primary presentation model. M3 excludes BMI.",
+          "line": 114
+        },
+        {
+          "role": "p",
+          "text": "Attenuation between M3 and M4 may be scientifically informative because BMI can be conceptualized differently across questions. The atlas presents both estimates without assigning a causal role.",
+          "line": 119
+        },
+        {
+          "role": "h2",
+          "text": "M4 associations across OSA severity",
+          "line": 123
+        },
+        {
+          "role": "p",
+          "text": "Each row compares an OSA severity group with AHI <5 in the referred cohort.",
+          "line": 123
+        },
+        {
+          "role": "h2",
+          "text": "Existing disease evidence",
+          "line": 128
+        },
+        {
+          "role": "p",
+          "text": "L1-regularized logistic models summarize disease presence before index. Odds ratios are shrunk and intervals are non-classical.",
+          "line": 128
+        },
+        {
+          "role": "p",
+          "text": "Per-feature case counts are not present in the current combined output. Public data downloads remain disabled pending approved disclosure checks.",
+          "line": 128
+        },
+        {
+          "role": "h2",
+          "text": "New-onset disease evidence",
+          "line": 129
+        },
+        {
+          "role": "p",
+          "text": "Ridge cause-specific Cox models follow at-risk participants after index. Disease-specific at-risk and event counts, stability, and proportional-hazards diagnostics appear beside each result.",
+          "line": 129
+        },
+        {
+          "role": "p",
+          "text": "Incidence M3 also includes baseline encounter rate; model labels are analysis-specific.",
+          "line": 129
+        },
+        {
+          "role": "h2",
+          "text": "Association, not causation",
+          "line": 130
+        },
+        {
+          "role": "p",
+          "text": "The reference is a symptomatic referral group. These estimates do not measure population OSA prevalence and should not be described as causal, protective, or independent risk effects.",
+          "line": 130
+        },
+        {
+          "role": "h2",
+          "text": "Related cross-domain evidence",
+          "line": 133
+        },
+        {
+          "role": "p",
+          "text": "Medication, laboratory, questionnaire, procedure, behavior, and utilization matches will appear here in a future linked view. They will be labeled as related evidence—not silently merged with this disease phenotype.",
+          "line": 133
+        },
+        {
+          "role": "p",
+          "text": "Loading evidence…",
+          "line": 140
+        },
+        {
+          "role": "dt",
+          "text": "p-value",
+          "line": 140
+        },
+        {
+          "role": "dt",
+          "text": "FDR",
+          "line": 140
+        },
+        {
+          "role": "dt",
+          "text": "At risk",
+          "line": 140
+        },
+        {
+          "role": "dt",
+          "text": "Events",
+          "line": 140
+        },
+        {
+          "role": "p",
+          "text": "Unstable estimate{{value_1}}",
+          "line": 140,
+          "dynamic_placeholders": [
+            "value_1"
+          ]
+        },
+        {
+          "role": "p",
+          "text": "PH diagnostic p {{value_1}}",
+          "line": 140,
+          "dynamic_placeholders": [
+            "value_1"
+          ]
+        },
+        {
+          "role": "p",
+          "text": "No estimate is available for this contrast.",
+          "line": 140
+        },
+        {
+          "role": "h3",
+          "text": "{{value_1}} by severity",
+          "line": 157,
+          "dynamic_placeholders": [
+            "value_1"
+          ]
+        },
+        {
+          "role": "th",
+          "text": "Contrast",
+          "line": 157
+        },
+        {
+          "role": "th",
+          "text": "Interval",
+          "line": 157
+        },
+        {
+          "role": "th",
+          "text": "FDR",
+          "line": 157
+        },
+        {
+          "role": "td",
+          "text": "{{value_1}}–{{value_2}}",
+          "line": 157,
+          "dynamic_placeholders": [
+            "value_1",
+            "value_2"
+          ]
+        }
+      ]
+    },
+    {
+      "source": "website/app/components/FeatureSearch.tsx",
+      "blocks": [
+        {
+          "role": "button",
+          "text": "View feature",
+          "line": 116
+        },
+        {
+          "role": "p",
+          "text": "No matching aggregate feature was found.",
+          "line": 157
+        },
+        {
+          "role": "p",
+          "text": "Results identify the analysis family and coding system before opening evidence.",
+          "line": 160
+        }
+      ]
+    },
+    {
+      "source": "website/app/components/OctantSurvivalExplorer.tsx",
+      "blocks": [
+        {
+          "role": "th",
+          "text": "Outcome",
+          "line": 267
+        },
+        {
+          "role": "th",
+          "text": "Focal phenotype",
+          "line": 268
+        },
+        {
+          "role": "th",
+          "text": "Adjusted M4 HR (95% CI)",
+          "line": 269
+        },
+        {
+          "role": "th",
+          "text": "q / status",
+          "line": 270
+        },
+        {
+          "role": "th",
+          "text": "Quality",
+          "line": 271
+        },
+        {
+          "role": "td",
+          "text": "{{value_1}} ({{value_2}}–{{value_3}})",
+          "line": 286,
+          "dynamic_placeholders": [
+            "value_1",
+            "value_2",
+            "value_3"
+          ]
+        },
+        {
+          "role": "td",
+          "text": "No panel matches the current filters.",
+          "line": 298
+        },
+        {
+          "role": "th",
+          "text": "Group",
+          "line": 330
+        },
+        {
+          "role": "th",
+          "text": "Year {{value_1}}",
+          "line": 330,
+          "dynamic_placeholders": [
+            "value_1"
+          ]
+        },
+        {
+          "role": "th",
+          "text": "Group",
+          "line": 399
+        },
+        {
+          "role": "th",
+          "text": "Year {{value_1}}",
+          "line": 400,
+          "dynamic_placeholders": [
+            "value_1"
+          ]
+        },
+        {
+          "role": "th",
+          "text": "All eight OSA phenotypes (pooled)",
+          "line": 405
+        },
+        {
+          "role": "th",
+          "text": "No OSA",
+          "line": 424
+        },
+        {
+          "role": "button",
+          "text": "All phenotypes",
+          "line": 497
+        },
+        {
+          "role": "button",
+          "text": "Focal vs other seven",
+          "line": 498
+        },
+        {
+          "role": "button",
+          "text": "No OSA vs all eight",
+          "line": 499
+        },
+        {
+          "role": "p",
+          "text": "Retrieving the aggregate outcome asset.",
+          "line": 512
+        },
+        {
+          "role": "p",
+          "text": "Event count below 11: {{value_1}}. Suppressed counts remain null rather than being displayed as zero.",
+          "line": 527,
+          "dynamic_placeholders": [
+            "value_1"
+          ]
+        },
+        {
+          "role": "p",
+          "text": "All eight focal OSA phenotype curves are available for this outcome.",
+          "line": 529
+        },
+        {
+          "role": "p",
+          "text": "The No OSA curve is withheld because its event count is below 11.",
+          "line": 530
+        },
+        {
+          "role": "p",
+          "text": "The No OSA event count is below 11.",
+          "line": 543
+        },
+        {
+          "role": "p",
+          "text": "The focal event count is below 11. The model estimate remains searchable, but the high-precision trajectory is not published because it could reveal a rare-event pattern.",
+          "line": 557
+        },
+        {
+          "role": "dt",
+          "text": "No OSA 3-year CIF",
+          "line": 568
+        },
+        {
+          "role": "dt",
+          "text": "Pooled OSA 3-year CIF",
+          "line": 569
+        },
+        {
+          "role": "dd",
+          "text": "{{value_1}}%",
+          "line": 569,
+          "dynamic_placeholders": [
+            "value_1"
+          ]
+        },
+        {
+          "role": "dt",
+          "text": "No OSA at baseline",
+          "line": 570
+        },
+        {
+          "role": "dt",
+          "text": "Log-rank p",
+          "line": 571
+        },
+        {
+          "role": "dt",
+          "text": "Pooled OSA 3-year CIF",
+          "line": 575
+        },
+        {
+          "role": "dd",
+          "text": "{{value_1}}%",
+          "line": 575,
+          "dynamic_placeholders": [
+            "value_1"
+          ]
+        },
+        {
+          "role": "dt",
+          "text": "Pooled OSA events",
+          "line": 576
+        },
+        {
+          "role": "dd",
+          "text": "Withheld",
+          "line": 576
+        },
+        {
+          "role": "dt",
+          "text": "Mean follow-up",
+          "line": 577
+        },
+        {
+          "role": "dd",
+          "text": "{{value_1}} y",
+          "line": 577,
+          "dynamic_placeholders": [
+            "value_1"
+          ]
+        },
+        {
+          "role": "dt",
+          "text": "At risk at 3 years",
+          "line": 578
+        },
+        {
+          "role": "dt",
+          "text": "Focal 3-year CIF",
+          "line": 582
+        },
+        {
+          "role": "dt",
+          "text": "Pooled 3-year CIF",
+          "line": 583
+        },
+        {
+          "role": "dt",
+          "text": "Penalizer",
+          "line": 584
+        },
+        {
+          "role": "dt",
+          "text": "Omnibus gate",
+          "line": 585
+        },
+        {
+          "role": "dd",
+          "text": "p {{value_1}}",
+          "line": 585,
+          "dynamic_placeholders": [
+            "value_1"
+          ]
+        },
+        {
+          "role": "h2",
+          "text": "Look up any gated phenotype–outcome panel",
+          "line": 672
+        },
+        {
+          "role": "p",
+          "text": "Search 168 one-vs-rest M4 panels across 21 nominally omnibus-gated outcomes, then compare all disclosure-safe phenotype trajectories or inspect a focal contrast.",
+          "line": 673
+        },
+        {
+          "role": "button",
+          "text": "{{value_1}} · {{value_2}}",
+          "line": 678,
+          "dynamic_placeholders": [
+            "value_1",
+            "value_2"
+          ]
+        },
+        {
+          "role": "label",
+          "text": "Search outcomes",
+          "line": 695
+        },
+        {
+          "role": "label",
+          "text": "Focal phenotype | All eight phenotypes | {{value_1}}",
+          "line": 696,
+          "dynamic_placeholders": [
+            "value_1"
+          ]
+        },
+        {
+          "role": "option",
+          "text": "All eight phenotypes",
+          "line": 696
+        },
+        {
+          "role": "p",
+          "text": "No panel matches the current filters.",
+          "line": 706
+        }
+      ]
+    },
+    {
+      "source": "website/app/components/PhenotypeExplorer.tsx",
+      "blocks": [
+        {
+          "role": "button",
+          "text": "{{value_1}} {{value_2}} {{value_3}} · {{value_4}}%",
+          "line": 134,
+          "dynamic_placeholders": [
+            "value_1",
+            "value_2",
+            "value_3",
+            "value_4"
+          ]
+        },
+        {
+          "role": "figcaption",
+          "text": "{{value_1}} Open full resolution ↗",
+          "line": 165,
+          "dynamic_placeholders": [
+            "value_1"
+          ]
+        },
+        {
+          "role": "dt",
+          "text": "Mean ± SD",
+          "line": 190
+        },
+        {
+          "role": "dd",
+          "text": "{{value_1}} ± {{value_2}}",
+          "line": 190,
+          "dynamic_placeholders": [
+            "value_1",
+            "value_2"
+          ]
+        },
+        {
+          "role": "dt",
+          "text": "Median [Q1–Q3]",
+          "line": 191
+        },
+        {
+          "role": "dd",
+          "text": "{{value_1}} [{{value_2}}–{{value_3}}]",
+          "line": 191,
+          "dynamic_placeholders": [
+            "value_1",
+            "value_2",
+            "value_3"
+          ]
+        },
+        {
+          "role": "dt",
+          "text": "Cohort mean",
+          "line": 192
+        },
+        {
+          "role": "dt",
+          "text": "Count / denominator",
+          "line": 196
+        },
+        {
+          "role": "dd",
+          "text": "{{value_1}} / {{value_2}}",
+          "line": 196,
+          "dynamic_placeholders": [
+            "value_1",
+            "value_2"
+          ]
+        },
+        {
+          "role": "dt",
+          "text": "Cohort proportion",
+          "line": 197
+        },
+        {
+          "role": "th",
+          "text": "Measure",
+          "line": 222
+        },
+        {
+          "role": "h3",
+          "text": "Pairwise Spearman correlations",
+          "line": 264
+        },
+        {
+          "role": "p",
+          "text": "Values near zero indicate that the three cohort scores capture largely distinct dimensions.",
+          "line": 264
+        },
+        {
+          "role": "th",
+          "text": "Axis",
+          "line": 267
+        },
+        {
+          "role": "button",
+          "text": "Reset view",
+          "line": 422
+        },
+        {
+          "role": "h1",
+          "text": "Eight octant phenotypes.",
+          "line": 454
+        },
+        {
+          "role": "h2",
+          "text": "What characterizes each phenotype?",
+          "line": 461
+        },
+        {
+          "role": "p",
+          "text": "Select an octant, then search or filter 26 aggregate measures to inspect its distribution and coverage.",
+          "line": 462
+        },
+        {
+          "role": "dt",
+          "text": "Phenotype cohort",
+          "line": 477
+        },
+        {
+          "role": "dd",
+          "text": "{{value_1}} ({{value_2}}%)",
+          "line": 477,
+          "dynamic_placeholders": [
+            "value_1",
+            "value_2"
+          ]
+        },
+        {
+          "role": "dt",
+          "text": "Median AHI",
+          "line": 478
+        },
+        {
+          "role": "dd",
+          "text": "{{value_1}} events/h",
+          "line": 478,
+          "dynamic_placeholders": [
+            "value_1"
+          ]
+        },
+        {
+          "role": "dt",
+          "text": "Median PheCodes",
+          "line": 479
+        },
+        {
+          "role": "label",
+          "text": "Find a measure",
+          "line": 484
+        },
+        {
+          "role": "p",
+          "text": "No aggregate measure matches this search and domain.",
+          "line": 492
+        },
+        {
+          "role": "h2",
+          "text": "Documented PAP setup by phenotype",
+          "line": 498
+        },
+        {
+          "role": "p",
+          "text": "This section summarizes documented setup signals in the retained CPAP extract. It does not estimate true treatment initiation, uptake, adherence, or effectiveness.",
+          "line": 499
+        },
+        {
+          "role": "p",
+          "text": "{{value_1}} view, {{value_2}} observable through this window",
+          "line": 518,
+          "dynamic_placeholders": [
+            "value_1",
+            "value_2"
+          ]
+        },
+        {
+          "role": "th",
+          "text": "Phenotype",
+          "line": 536
+        },
+        {
+          "role": "th",
+          "text": "Observable",
+          "line": 536
+        },
+        {
+          "role": "th",
+          "text": "Documented setup",
+          "line": 536
+        },
+        {
+          "role": "th",
+          "text": "Retained record",
+          "line": 536
+        },
+        {
+          "role": "th",
+          "text": "Adherence data",
+          "line": 536
+        },
+        {
+          "role": "th",
+          "text": "Usage data",
+          "line": 536
+        },
+        {
+          "role": "h2",
+          "text": "Compare all eight phenotypes in native units",
+          "line": 553
+        },
+        {
+          "role": "p",
+          "text": "Blue cells are below and orange cells above the containing cohort. Select any column to update the profile.",
+          "line": 553
+        },
+        {
+          "role": "p",
+          "text": "Standardized difference means group estimate minus cohort estimate, divided by the cohort SD. Each octant is part of that cohort; this is not a two-independent-group standardized mean difference. Coverage is shown on every profile card.",
+          "line": 556
+        },
+        {
+          "role": "p",
+          "text": "The data-driven comparison above is the primary cluster view. These source figures remain available for publication context and full-resolution download.",
+          "line": 560
+        },
+        {
+          "role": "h2",
+          "text": "A research taxonomy—not a clinical diagnostic rule",
+          "line": 567
+        },
+        {
+          "role": "h2",
+          "text": "Continue to the incident-outcome panels",
+          "line": 571
+        },
+        {
+          "role": "p",
+          "text": "Search all 168 octant–outcome models and open the interactive cumulative-incidence curves on their dedicated page.",
+          "line": 571
+        }
+      ]
+    },
+    {
+      "source": "website/app/components/SurvivalExplorer.tsx",
+      "blocks": [
+        {
+          "role": "th",
+          "text": "Group",
+          "line": 169
+        },
+        {
+          "role": "th",
+          "text": "Year {{value_1}}",
+          "line": 169,
+          "dynamic_placeholders": [
+            "value_1"
+          ]
+        },
+        {
+          "role": "label",
+          "text": "Filter the selected outcomes",
+          "line": 211
+        },
+        {
+          "role": "label",
+          "text": "Outcome | {{value_1}} {{value_2}}",
+          "line": 215,
+          "dynamic_placeholders": [
+            "value_1",
+            "value_2"
+          ]
+        },
+        {
+          "role": "option",
+          "text": "Loading curve index…",
+          "line": 218
+        },
+        {
+          "role": "option",
+          "text": "{{value_1}} · {{value_2}}{{value_3}}",
+          "line": 219,
+          "dynamic_placeholders": [
+            "value_1",
+            "value_2",
+            "value_3"
+          ]
+        },
+        {
+          "role": "h1",
+          "text": "Cumulative incidence after index",
+          "line": 308
+        },
+        {
+          "role": "p",
+          "text": "Follow FDR-selected incident disease outcomes by OSA severity, or from a landmark CPAP adherence analysis designed to address immortal-time bias.",
+          "line": 309
+        },
+        {
+          "role": "p",
+          "text": "These curves are descriptive and unadjusted. They answer a different question from the adjacent M4 cause-specific Cox hazard ratios.",
+          "line": 314
+        },
+        {
+          "role": "p",
+          "text": "Methodological control. PheCode 327.3 is the circular OSA-recoding phenotype and should not be interpreted as an incident disease finding.",
+          "line": 320
+        },
+        {
+          "role": "button",
+          "text": "OSA severity",
+          "line": 323
+        },
+        {
+          "role": "button",
+          "text": "Landmark CPAP adherence",
+          "line": 324
+        },
+        {
+          "role": "button",
+          "text": "{{value_1}} days{{value_2}}",
+          "line": 331,
+          "dynamic_placeholders": [
+            "value_1",
+            "value_2"
+          ]
+        },
+        {
+          "role": "dt",
+          "text": "M4 Severe-vs-None HR",
+          "line": 339
+        },
+        {
+          "role": "dt",
+          "text": "FDR-significant contrasts",
+          "line": 340
+        },
+        {
+          "role": "dt",
+          "text": "Follow-up displayed",
+          "line": 341
+        },
+        {
+          "role": "p",
+          "text": "Methodological control. This is the circular OSA-recoding phenotype and should not be interpreted as an incident disease finding.",
+          "line": 343
+        },
+        {
+          "role": "h2",
+          "text": "Cumulative incidence by sleep-study severity",
+          "line": 350
+        },
+        {
+          "role": "p",
+          "text": "Reference: AHI <5 (“No OSA”) within the referred cohort.",
+          "line": 350
+        },
+        {
+          "role": "h2",
+          "text": "Cumulative incidence by CPAP adherence",
+          "line": 356
+        },
+        {
+          "role": "p",
+          "text": "Unavailable source strata: {{value_1}}. Missing strata were not emitted by the aggregate source and do not indicate zero incidence.",
+          "line": 358,
+          "dynamic_placeholders": [
+            "value_1"
+          ]
+        },
+        {
+          "role": "h2",
+          "text": "Curve context stays attached",
+          "line": 363
+        },
+        {
+          "role": "p",
+          "text": "Only PheCodes FDR-significant in at least one M4 OSA-severity contrast are shown. The curves are post-selection descriptions, not independent validation.",
+          "line": 365
+        },
+        {
+          "role": "p",
+          "text": "Severity curves contain at least 20 participants and 5 incident events per stratum; landmark curves contain at least 20 and 3. A missing stratum is unavailable, not zero incidence.",
+          "line": 366
+        },
+        {
+          "role": "p",
+          "text": "Aggregate cumulative-incidence percentages are public. Exact timepoint at-risk and cumulative-event cells, uncertainty bands, and curve downloads remain outside the browser bundle.",
+          "line": 367
+        },
+        {
+          "role": "p",
+          "text": "Follow-up ends May 31, 2023. Severity curves extend six years from index; landmark curves extend five years from index plus the selected grace period.",
+          "line": 368
+        },
+        {
+          "role": "p",
+          "text": "Public research release. Cumulative incidence is an observed absolute-risk summary within a sleep-clinic referral cohort and should not be interpreted as an adjusted effect, a causal contrast, or population OSA prevalence.",
+          "line": 372
+        }
+      ]
+    },
+    {
+      "source": "website/app/components/UtilizationProfile.tsx",
+      "blocks": [
+        {
+          "role": "h2",
+          "text": "Utilization profile",
+          "line": 132
+        },
+        {
+          "role": "p",
+          "text": "Mean ± SD across OSA severity strata. Rates include patients with no qualifying visits.",
+          "line": 133
+        },
+        {
+          "role": "th",
+          "text": "Measure",
+          "line": 148
+        },
+        {
+          "role": "th",
+          "text": "Encounter rates",
+          "line": 158
+        },
+        {
+          "role": "th",
+          "text": "Stay duration",
+          "line": 160
+        },
+        {
+          "role": "p",
+          "text": "Rate denominator. Distinct encounters per observed person-year, including zero-use patients. Hospital LOS is summarized per qualifying admission.",
+          "line": 166
+        },
+        {
+          "role": "p",
+          "text": "Care groups. Primary care includes {{value_1}}; specialty care is the complementary approved outpatient-specialty group, excluding exact Urgent Care.",
+          "line": 167,
+          "dynamic_placeholders": [
+            "value_1"
+          ]
+        },
+        {
+          "role": "p",
+          "text": "Overlap. ED and inpatient categories intentionally share ED-to-inpatient encounter subtypes and should not be added as mutually exclusive totals.",
+          "line": 168
+        }
+      ]
+    },
+    {
+      "source": "website/app/components/WasExplorer.tsx",
+      "blocks": [
+        {
+          "role": "h2",
+          "text": "Analysis settings",
+          "line": 531
+        },
+        {
+          "role": "label",
+          "text": "Analysis family | {{value_1}}",
+          "line": 534,
+          "dynamic_placeholders": [
+            "value_1"
+          ]
+        },
+        {
+          "role": "label",
+          "text": "Analysis target | {{value_1}}",
+          "line": 535,
+          "dynamic_placeholders": [
+            "value_1"
+          ]
+        },
+        {
+          "role": "label",
+          "text": "Time window | {{value_1}}",
+          "line": 537,
+          "dynamic_placeholders": [
+            "value_1"
+          ]
+        },
+        {
+          "role": "label",
+          "text": "OSA contrast | {{value_1}}",
+          "line": 539,
+          "dynamic_placeholders": [
+            "value_1"
+          ]
+        },
+        {
+          "role": "label",
+          "text": "Adjustment model | {{value_1}}",
+          "line": 541,
+          "dynamic_placeholders": [
+            "value_1"
+          ]
+        },
+        {
+          "role": "label",
+          "text": "Feature category | all categories | {{value_1}}",
+          "line": 543,
+          "dynamic_placeholders": [
+            "value_1"
+          ]
+        },
+        {
+          "role": "option",
+          "text": "all categories",
+          "line": 543
+        },
+        {
+          "role": "label",
+          "text": "Significance | All results | FDR-significant | Bonferroni-significant",
+          "line": 546
+        },
+        {
+          "role": "option",
+          "text": "All results",
+          "line": 546
+        },
+        {
+          "role": "option",
+          "text": "FDR-significant",
+          "line": 546
+        },
+        {
+          "role": "option",
+          "text": "Bonferroni-significant",
+          "line": 546
+        },
+        {
+          "role": "label",
+          "text": "Find in scan",
+          "line": 547
+        },
+        {
+          "role": "label",
+          "text": "Stable estimates only",
+          "line": 548
+        },
+        {
+          "role": "button",
+          "text": "Reset",
+          "line": 549
+        },
+        {
+          "role": "p",
+          "text": "M4 and Severe vs None are the primary defaults where available. Model IDs retain their family-specific source definitions. Each selection loads one homogeneous estimand; unlike effect measures never share an axis. Multiplicity badges preserve the source analysis flags; the browser does not recompute thresholds after filtering.",
+          "line": 551
+        },
+        {
+          "role": "button",
+          "text": "CSV pending review",
+          "line": 574
+        },
+        {
+          "role": "dt",
+          "text": "p-value",
+          "line": 582
+        },
+        {
+          "role": "dt",
+          "text": "FDR",
+          "line": 582
+        },
+        {
+          "role": "dt",
+          "text": "Overall feature prevalence",
+          "line": 582
+        },
+        {
+          "role": "p",
+          "text": "Estimate flagged as unstable{{value_1}}",
+          "line": 583,
+          "dynamic_placeholders": [
+            "value_1"
+          ]
+        },
+        {
+          "role": "p",
+          "text": "Ascertainment-sensitive item: this response can help drive sleep-study referral, so the association may partly reflect the referral pathway.",
+          "line": 584
+        },
+        {
+          "role": "p",
+          "text": "The display name is a conservative concept label and remains under review; the source feature code is shown above.",
+          "line": 585
+        },
+        {
+          "role": "p",
+          "text": "{{value_1}} is interpreted only within {{value_2}}; it is not combined with other WAS effect measures.",
+          "line": 587,
+          "dynamic_placeholders": [
+            "value_1",
+            "value_2"
+          ]
+        },
+        {
+          "role": "p",
+          "text": "Select a point or table row to inspect it.",
+          "line": 589
+        },
+        {
+          "role": "h2",
+          "text": "Association results",
+          "line": 593
+        },
+        {
+          "role": "p",
+          "text": "Showing the 60 strongest displayed results",
+          "line": 593
+        },
+        {
+          "role": "p",
+          "text": "Research preview. Aggregate associations describe relationships within a sleep-clinic referral cohort; they do not establish causality or describe population OSA prevalence. Family-specific release and disclosure status remains visible above each scan.",
+          "line": 594
+        },
+        {
+          "role": "th",
+          "text": "Feature",
+          "line": 615
+        },
+        {
+          "role": "th",
+          "text": "Category",
+          "line": 615
+        },
+        {
+          "role": "th",
+          "text": "p-value",
+          "line": 615
+        },
+        {
+          "role": "th",
+          "text": "Significance",
+          "line": 615
+        },
+        {
+          "role": "th",
+          "text": "Quality",
+          "line": 615
+        }
+      ]
+    },
+    {
+      "source": "website/app/components/WasFeatureDetail.tsx",
+      "blocks": [
+        {
+          "role": "label",
+          "text": "Preferred window | {{value_1}} {{value_2}}",
+          "line": 358,
+          "dynamic_placeholders": [
+            "value_1",
+            "value_2"
+          ]
+        },
+        {
+          "role": "option",
+          "text": "{{value_1}} (fallback where unavailable)",
+          "line": 360,
+          "dynamic_placeholders": [
+            "value_1"
+          ]
+        },
+        {
+          "role": "label",
+          "text": "Preferred contrast | {{value_1}} {{value_2}}",
+          "line": 364,
+          "dynamic_placeholders": [
+            "value_1",
+            "value_2"
+          ]
+        },
+        {
+          "role": "option",
+          "text": "{{value_1}} (fallback where unavailable)",
+          "line": 366,
+          "dynamic_placeholders": [
+            "value_1"
+          ]
+        },
+        {
+          "role": "p",
+          "text": "This conservative concept label remains under domain review; the source feature code is retained alongside it.",
+          "line": 373
+        },
+        {
+          "role": "h2",
+          "text": "Read within the source analysis",
+          "line": 388
+        },
+        {
+          "role": "h2",
+          "text": "Counts are not contrast cells",
+          "line": 389
+        },
+        {
+          "role": "h2",
+          "text": "Association, not causation",
+          "line": 390
+        },
+        {
+          "role": "p",
+          "text": "Results come from a sleep-clinic referral cohort. They do not estimate population prevalence and do not establish causal, protective, or independent effects.",
+          "line": 390
+        },
+        {
+          "role": "dt",
+          "text": "Window used",
+          "line": 418
+        },
+        {
+          "role": "dt",
+          "text": "Contrast used",
+          "line": 419
+        },
+        {
+          "role": "dt",
+          "text": "Primary model",
+          "line": 420
+        },
+        {
+          "role": "dt",
+          "text": "Effect scale",
+          "line": 421
+        },
+        {
+          "role": "dt",
+          "text": "Coding system",
+          "line": 422
+        },
+        {
+          "role": "dt",
+          "text": "p-value",
+          "line": 465
+        },
+        {
+          "role": "dt",
+          "text": "FDR",
+          "line": 466
+        },
+        {
+          "role": "dt",
+          "text": "Bonferroni",
+          "line": 467
+        },
+        {
+          "role": "dt",
+          "text": "Overall feature prevalence",
+          "line": 470
+        },
+        {
+          "role": "p",
+          "text": "Counts are analytic or overall feature-positive totals, not OSA exposure-by-outcome cells.",
+          "line": 472
+        },
+        {
+          "role": "p",
+          "text": "No estimate is available for this feature in the preferred partition.",
+          "line": 474
+        },
+        {
+          "role": "th",
+          "text": "Comparison",
+          "line": 496
+        },
+        {
+          "role": "th",
+          "text": "Interval",
+          "line": 496
+        },
+        {
+          "role": "th",
+          "text": "p-value",
+          "line": 496
+        },
+        {
+          "role": "th",
+          "text": "FDR",
+          "line": 496
+        },
+        {
+          "role": "th",
+          "text": "Quality",
+          "line": 496
+        }
+      ]
+    },
+    {
+      "source": "website/app/methods/page.tsx",
+      "blocks": [
+        {
+          "role": "h1",
+          "text": "Methods & interpretation",
+          "line": 53
+        },
+        {
+          "role": "p",
+          "text": "How to read OSA associations across disease endpoints, adjustment models, statistical flags, and staged atlas releases.",
+          "line": 54
+        },
+        {
+          "role": "p",
+          "text": "In PheDAS, M4 includes BMI. M3 is kept one step away so researchers can inspect attenuation without assigning BMI a causal role.",
+          "line": 62
+        },
+        {
+          "role": "h2",
+          "text": "Cohort, reference, and time direction",
+          "line": 73
+        },
+        {
+          "role": "p",
+          "text": "Interpret every estimate within the sleep-clinic referral cohort.",
+          "line": 75
+        },
+        {
+          "role": "h2",
+          "text": "“None” means AHI <5",
+          "line": 80
+        },
+        {
+          "role": "p",
+          "text": "The reference group comprises referred adults with sleep studies and AHI below 5. It is not a population-level healthy control. Severe versus None is the default pairwise contrast.",
+          "line": 81
+        },
+        {
+          "role": "h2",
+          "text": "Disease already present",
+          "line": 89
+        },
+        {
+          "role": "p",
+          "text": "L1-regularized logistic models summarize disease presence before index as odds ratios. Estimates are shrunk and intervals are non-classical; they should be labeled accordingly.",
+          "line": 90
+        },
+        {
+          "role": "h2",
+          "text": "Disease arising during follow-up",
+          "line": 98
+        },
+        {
+          "role": "p",
+          "text": "Ridge cause-specific Cox models follow at-risk participants after index and report hazard ratios. At-risk counts, event counts, and proportional-hazards diagnostics belong with each result.",
+          "line": 99
+        },
+        {
+          "role": "p",
+          "text": "Odds ratios and hazard ratios answer different questions. They are shown in separate views and should not be compared as though they were the same estimand.",
+          "line": 106
+        },
+        {
+          "role": "h2",
+          "text": "Questionnaire responses anchored to the sleep-study index",
+          "line": 117
+        },
+        {
+          "role": "p",
+          "text": "QWAS asks how questionnaire responses vary with OSA severity within the referred cohort.",
+          "line": 119
+        },
+        {
+          "role": "h2",
+          "text": "74,061 pre-index questionnaires",
+          "line": 124
+        },
+        {
+          "role": "p",
+          "text": "The analysis selects the closest questionnaire on or before the sleep-study index for each participant. It is cross-sectional, not a one- or five-year longitudinal window, and no selection weighting was applied for questionnaire availability.",
+          "line": 125
+        },
+        {
+          "role": "h2",
+          "text": "83 binary · 49 continuous",
+          "line": 134
+        },
+        {
+          "role": "p",
+          "text": "Binary positive-or-worse response states use logistic odds ratios. Ordinal and continuous responses are rank-inverse-normalized before linear modeling and report standardized betas. The 92 unique items include 40 represented in both forms; the two scales never share an axis.",
+          "line": 135
+        },
+        {
+          "role": "h2",
+          "text": "M4 adds BMI",
+          "line": 144
+        },
+        {
+          "role": "p",
+          "text": "M1 includes the OSA exposure; M2 adds age, sex, race/ethnicity, and study year; M3 adds smoking, income, and observation window; M4 adds BMI. The AHI below 5 reference remains a symptomatic referral group, not a population control.",
+          "line": 145
+        },
+        {
+          "role": "p",
+          "text": "Models are complete-case for each item. Displayed N is the answered sample supplied to the source formula and can exceed the fitted N after covariate missingness. FDR and Bonferroni flags are calculated within contrast, model, and effect type. STOP1, STOP3, GASP, and the snoring/apnea chief-complaint item are flagged because they can help drive referral, making ascertainment part of their observed association. Numbered instrument labels are conservative concepts rather than verbatim questionnaire text and remain under review.",
+          "line": 153
+        },
+        {
+          "role": "h2",
+          "text": "Three gradients combined into eight octants",
+          "line": 171
+        },
+        {
+          "role": "p",
+          "text": "The taxonomy separates physiologic severity, symptom burden, and coded comorbidity burden.",
+          "line": 173
+        },
+        {
+          "role": "h2",
+          "text": "Complementary latent axes",
+          "line": 178
+        },
+        {
+          "role": "p",
+          "text": "Model-derived scores summarize sleep-study physiology, symptoms, and comorbidities. The axes are nearly independent and should be described as regions of continuous gradients—not biological subpopulations.",
+          "line": 179
+        },
+        {
+          "role": "h2",
+          "text": "Median split × three axes",
+          "line": 188
+        },
+        {
+          "role": "p",
+          "text": "Each score is split at its shared-cohort median, classifying all 70,880 people into eight near-balanced groups. The three-square glyph records whether physiology, symptoms, and comorbidity are above the median, in that order.",
+          "line": 189
+        },
+        {
+          "role": "h2",
+          "text": "Cohort-specific research taxonomy",
+          "line": 198
+        },
+        {
+          "role": "p",
+          "text": "Cut points are not clinical thresholds and do not transfer unchanged. The comorbidity axis also reflects healthcare contact and record completeness; downstream M4 models adjust for age and sex because octants are strongly structured by both.",
+          "line": 199
+        },
+        {
+          "role": "h2",
+          "text": "Measure-specific denominators",
+          "line": 210
+        },
+        {
+          "role": "p",
+          "text": "The phenotype explorer reports 26 aggregate measures with their own coverage. Follow-up and encounter measures cover the 25,380-person IncWAS spine; age, BMI, and sex cover 53,012 people. The displayed standardized difference is the octant estimate minus the containing cohort estimate, divided by cohort SD—not a two-independent-group SMD.",
+          "line": 211
+        },
+        {
+          "role": "h2",
+          "text": "M4 ridge Cox",
+          "line": 221
+        },
+        {
+          "role": "p",
+          "text": "Each focal octant is compared with the pooled other seven. M4 adjusts for an age spline, sex, study year, race/ethnicity, smoking, income, baseline observation and encounter measures, and BMI. CPAP is not adjusted because it is treated as a mediator.",
+          "line": 222
+        },
+        {
+          "role": "h2",
+          "text": "Omnibus gate, then one-vs-rest",
+          "line": 231
+        },
+        {
+          "role": "p",
+          "text": "All eight contrasts are shown only for outcomes whose 7-df M4 omnibus test reached nominal p < 0.05. Within each focal-octant contrast, Bonferroni uses 0.05/15 for gated PheCodes and 0.05/6 for gated systems; it is not 0.05/168.",
+          "line": 232
+        },
+        {
+          "role": "p",
+          "text": "Octant cumulative-incidence curves are unadjusted tie-aware Aalen–Johansen estimates with death competing. Every incident-event step is retained, with pointwise 95% confidence intervals and annual risk tables. OSA curves require AHI ≥5 (25,226 participants); No OSA (AHI <5) is compared with all eight OSA phenotypes pooled and is excluded from each other-seven pool. Pairwise log-rank p values are unadjusted and uncorrected for multiplicity, with deaths censored; they test cause-specific hazards rather than cumulative incidence. M4 hazard ratios retain the original 25,380-person cohort in a separate model. Eighty of 168 panels have EPV below 10, and proportional-hazards diagnostics were not computed for any octant model.",
+          "line": 240
+        },
+        {
+          "role": "p",
+          "text": "The phenotype explorer releases documented PAP setup, retained-record, adherence-field, and usage-field coverage across five display windows. These are extract-documentation measures, not true initiation or adherence: absent rows cannot distinguish no treatment from no capture, and fixed-window eligibility uses an existing diagnosis, insurance, and death censor rather than a confirmed PAP-capture boundary. Adherent percentages and usage distributions remain unavailable because those estimates are absent and their implementation or averaging window is not fully confirmed. Race/ethnicity remains an M4 adjustment covariate, but its descriptive octant breakdown is not published because one cell is below the disclosure threshold and release is not approved. Curve coordinates are withheld for the 17 panels whose three-year focal event count is suppressed below 11.",
+          "line": 253
+        },
+        {
+          "role": "h2",
+          "text": "Cumulative incidence, with death treated as competing",
+          "line": 276
+        },
+        {
+          "role": "p",
+          "text": "The curves describe absolute observed incidence; they are not M4-adjusted hazard ratios.",
+          "line": 278
+        },
+        {
+          "role": "h2",
+          "text": "Aalen–Johansen curves",
+          "line": 283
+        },
+        {
+          "role": "p",
+          "text": "Severity curves report cumulative incidence from index through six years. Landmark CPAP curves report five years from index plus the selected grace period. Both treat death as a competing event and do not use one minus Kaplan–Meier. Every fitted incident-event step is retained; the displayed curves are not sampled into monthly intervals.",
+          "line": 284
+        },
+        {
+          "role": "h2",
+          "text": "Post-selection description",
+          "line": 294
+        },
+        {
+          "role": "p",
+          "text": "Curves are available for the 39 PheCodes that were FDR-significant in at least one M4 OSA-severity contrast after excluding the sleep apnea outcome. The curves describe those selected outcomes; they are not independent confirmation.",
+          "line": 295
+        },
+        {
+          "role": "h2",
+          "text": "Landmark-based, still descriptive",
+          "line": 304
+        },
+        {
+          "role": "p",
+          "text": "The 90- and 180-day grace-period landmarks require OSA patients to remain observed and event-free to the landmark, then restart the analysis clock. This design addresses immortal-time bias. It does not remove healthy-adherer confounding, so curves remain associational rather than treatment effects; 180 days is the primary view.",
+          "line": 305
+        },
+        {
+          "role": "p",
+          "text": "Aggregate cumulative-incidence percentages are released publicly. Exact timepoint at-risk and cumulative-event arrays, uncertainty bands, and curve downloads remain outside the browser bundle. Follow-up ends May 31, 2023, and late curve tails may be supported by thinner risk sets.",
+          "line": 314
+        },
+        {
+          "role": "h2",
+          "text": "Read disease-model M1 through M4 as a sequence",
+          "line": 327
+        },
+        {
+          "role": "p",
+          "text": "Model labels are family-specific. Other WAS views therefore retain neutral M1-M4 identifiers and do not assume that their covariate sets are interchangeable with PheDAS.",
+          "line": 349
+        },
+        {
+          "role": "h2",
+          "text": "Multiplicity, diagnostics, and uncertainty",
+          "line": 360
+        },
+        {
+          "role": "p",
+          "text": "Significance is context for an estimate, not a scientific conclusion.",
+          "line": 362
+        },
+        {
+          "role": "h2",
+          "text": "Keep correction families intact",
+          "line": 367
+        },
+        {
+          "role": "p",
+          "text": "Current disease outputs expose FDR and Bonferroni significance flags. Exact adjusted q-values are not generally available. The atlas does not infer one global correction across incompatible analyses, models, or contrasts.",
+          "line": 368
+        },
+        {
+          "role": "h2",
+          "text": "Warnings stay visible",
+          "line": 377
+        },
+        {
+          "role": "p",
+          "text": "Unstable estimates remain labeled rather than silently removed. Incidence results additionally expose event-per-variable warnings and proportional-hazards diagnostic information where available.",
+          "line": 378
+        },
+        {
+          "role": "h2",
+          "text": "Association, not causation",
+          "line": 386
+        },
+        {
+          "role": "p",
+          "text": "Results support hypothesis generation. They do not establish causal, protective, or independent risk effects, and they do not estimate population OSA prevalence.",
+          "line": 387
+        },
+        {
+          "role": "h2",
+          "text": "Keep each clinical signal on its native scale",
+          "line": 398
+        },
+        {
+          "role": "p",
+          "text": "Omnibus rows are non-directional Wald statistics. They appear only in Manhattan and table views, never on a signed volcano or forest axis.",
+          "line": 415
+        },
+        {
+          "role": "h2",
+          "text": "Eight clinical lenses, released in stages",
+          "line": 423
+        },
+        {
+          "role": "h2",
+          "text": "The browser never runs patient-level analyses",
+          "line": 454
+        },
+        {
+          "role": "p",
+          "text": "This research preview consumes only allowlisted, precomputed aggregate results. The prevalence PheDAS association table does not contain cases and non-cases for each PheCode within each OSA severity or contrast group. A total cohort size cannot substitute for those cells: without them, a release process cannot identify rare endpoints, apply the approved small-cell threshold, or test complementary disclosure across related tables.",
+          "line": 455
+        },
+        {
+          "role": "p",
+          "text": "The required companion should be keyed to the result version and include analytic N, cases, non-cases, excluded or missing counts, OSA-group counts, and a policy-approved suppression decision. Until that join exists, public downloads and deployment remain gated.",
+          "line": 464
+        },
+        {
+          "role": "p",
+          "text": "Begin with the primary M4 Severe-versus-None view, then inspect M3 and the alternate contrasts before drawing a scientific conclusion.",
+          "line": 482
+        }
+      ]
+    },
+    {
+      "source": "website/app/page.tsx",
+      "blocks": [
+        {
+          "role": "h1",
+          "text": "How is obstructive sleep apnea associated with the clinical phenome?",
+          "line": 25
+        },
+        {
+          "role": "p",
+          "text": "Explore adjusted relationships between OSA severity or cross-domain phenotypes and diseases, laboratory patterns, medication fills, questionnaires, EHR-derived behaviors, procedures, and healthcare use in a sleep-clinic referral cohort.",
+          "line": 26
+        },
+        {
+          "role": "p",
+          "text": "M4 includes BMI. M3 remains adjacent so researchers can inspect attenuation without assigning it a causal interpretation.",
+          "line": 31
+        },
+        {
+          "role": "h2",
+          "text": "Start with the scientific question",
+          "line": 39
+        },
+        {
+          "role": "p",
+          "text": "Existing diagnoses",
+          "line": 43
+        },
+        {
+          "role": "h3",
+          "text": "Prevalence PheDAS",
+          "line": 43
+        },
+        {
+          "role": "p",
+          "text": "New diagnoses during follow-up",
+          "line": 48
+        },
+        {
+          "role": "h3",
+          "text": "Incidence PheDAS",
+          "line": 48
+        },
+        {
+          "role": "h3",
+          "text": "Explore eight octant phenotypes",
+          "line": 56
+        },
+        {
+          "role": "p",
+          "text": "See how physiologic severity, symptoms, and comorbidity burden combine—and how the octants relate to incident outcomes.",
+          "line": 57
+        },
+        {
+          "role": "h3",
+          "text": "Trace cumulative incidence after index",
+          "line": 64
+        },
+        {
+          "role": "p",
+          "text": "Explore Aalen–Johansen curves by OSA severity or landmark CPAP adherence designed to address immortal-time bias.",
+          "line": 65
+        },
+        {
+          "role": "h2",
+          "text": "Eight clinical lenses on OSA severity",
+          "line": 74
+        },
+        {
+          "role": "p",
+          "text": "“None” means AHI <5 among referred adults with sleep studies—not a population control. These results support hypothesis generation; they do not estimate population OSA prevalence or establish causality.",
+          "line": 91
+        }
+      ]
+    },
+    {
+      "source": "website/app/phenotypes/outcomes/page.tsx",
+      "blocks": [
+        {
+          "role": "h1",
+          "text": "Outcome panels without the long scroll.",
+          "line": 32
+        },
+        {
+          "role": "p",
+          "text": "Search by outcome, PheCode, body system, or focal octant. Compare all eight OSA phenotypes and No OSA with 95% confidence intervals, or inspect a focal contrast with its log-rank p value. No OSA is excluded from pooled OSA comparators.",
+          "line": 33
+        },
+        {
+          "role": "dt",
+          "text": "Panels",
+          "line": 36
+        },
+        {
+          "role": "dt",
+          "text": "Outcomes",
+          "line": 37
+        },
+        {
+          "role": "dt",
+          "text": "Interactive curves",
+          "line": 38
+        },
+        {
+          "role": "h2",
+          "text": "Compare with OSA severity and landmark CPAP adherence",
+          "line": 44
+        },
+        {
+          "role": "p",
+          "text": "The phenotype-exposure curves complement—rather than replace—the main Incidence PheDAS severity analysis.",
+          "line": 44
+        }
+      ]
+    }
+  ]
+}

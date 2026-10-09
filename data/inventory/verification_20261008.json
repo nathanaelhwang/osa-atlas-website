@@ -1,0 +1,78 @@
+{
+  "snapshot_date": "2026-10-08",
+  "timezone": "America/Los_Angeles",
+  "source_basis": "Current local website/public files and website/app content; no remote deployment comparison.",
+  "status": "PASS",
+  "public_files": {
+    "expected": 692,
+    "copied": 692,
+    "sha256_matches_to_current_source": 692,
+    "json_files": 683,
+    "public_assets": 9,
+    "bytes": 59656261
+  },
+  "data_validation": {
+    "json_parse_errors": 0,
+    "nested_columnar_tables_checked": 697,
+    "column_alignment_errors": 0,
+    "manifest_and_table_row_count_errors": 0,
+    "public_reference_occurrences_checked": 686,
+    "distinct_referenced_assets": 683,
+    "unresolved_references": 0,
+    "note": "Includes all 21 data/phenotype-survival outcome asset_path references, extending the initial public-verification.json check."
+  },
+  "content": {
+    "counts": {
+      "source_files": 29,
+      "text_entries": 1365,
+      "semantic_blocks": 335,
+      "static_definitions": 36,
+      "navigation_links": 41,
+      "routes": 8
+    },
+    "files": [
+      {
+        "path": "content/extraction-report.json",
+        "bytes": 9143,
+        "sha256": "94ed6d048d140a9ba7e849a665284f3dc331c4559a6e03c10f8e431bd1aff897"
+      },
+      {
+        "path": "content/navigation.json",
+        "bytes": 9372,
+        "sha256": "652a276132c6613c6a10cc89c2d4df5a3d9e7c78be712bfe5e3c6fc41c7673f4"
+      },
+      {
+        "path": "content/page-copy.json",
+        "bytes": 57471,
+        "sha256": "c0e200f0991b0f56c971e7681dc89b344920b75b63b7f769034cdc8c57444d9c"
+      },
+      {
+        "path": "content/static-definitions.json",
+        "bytes": 21339,
+        "sha256": "720359a9e601cc00b8428c5dfc61e3b522534e5c64c68a334f567d7a50214b65"
+      },
+      {
+        "path": "content/WEBSITE-CONTENT.txt",
+        "bytes": 99980,
+        "sha256": "3a58b99b779cbc86f2c148eb02d64647eb998bd7abdf4637ae9ce05cf515d582"
+      },
+      {
+        "path": "content/website-text.json",
+        "bytes": 190965,
+        "sha256": "c07ea8474987df9841e569fc9c37ab48b57b311c4d450f650f3cbd96b9f07f65"
+      }
+    ],
+    "limitations": [
+      "This is a local-source snapshot, not a crawl or verification of a remote deployment.",
+      "Runtime study data and figures live in the sibling data and images folders supplied by the transfer package.",
+      "Dynamic content is not evaluated; numbers, feature names, categories, counts, and study-specific caveats are supplied by the copied study JSON data.",
+      "Conditional display text is included even when not visible in the initial page view.",
+      "Whitespace and HTML entities are normalized for reuse. Chart hover markup is converted to plain text, preserving text order.",
+      "{{value_1}} and {{chart_value_1}} are content-template placeholders; source line metadata identifies the original occurrence.",
+      "No executable source, imports, CSS classes, event handlers, credentials, raw patient records, or notebook contents are copied."
+    ]
+  },
+  "development_code_files_in_package": 0,
+  "original_website_modified": false,
+  "independent_audit": "A separate read-only audit confirmed exact public-file coverage, manifest/index joins, nested column alignment, and all 168 phenotype panels."
+}

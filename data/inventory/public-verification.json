@@ -1,0 +1,14 @@
+{
+  "snapshot_date": "2026-10-08",
+  "source_basis": "Current local website/public directory; no deployed-site comparison performed.",
+  "copied_files": 692,
+  "json_files": 683,
+  "asset_files": 9,
+  "copied_bytes": 59656261,
+  "sha256_identical_files": 692,
+  "json_parse_errors": 0,
+  "column_alignment_errors": 0,
+  "resolved_public_reference_occurrences": 665,
+  "missing_public_references": [],
+  "source_files_modified": false
+}

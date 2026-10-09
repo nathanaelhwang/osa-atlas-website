@@ -1,0 +1,287 @@
+{
+  "snapshot_date": "2026-10-08",
+  "counts": {
+    "source_files": 29,
+    "text_entries": 1365,
+    "semantic_blocks": 335,
+    "static_definitions": 36,
+    "navigation_links": 41,
+    "routes": 8
+  },
+  "source_files": [
+    "website/app/atlas-data.ts",
+    "website/app/atlas-state.ts",
+    "website/app/components/AtlasExplorer.tsx",
+    "website/app/components/AtlasHeader.tsx",
+    "website/app/components/FeatureDetail.tsx",
+    "website/app/components/FeatureSearch.tsx",
+    "website/app/components/OctantSurvivalExplorer.tsx",
+    "website/app/components/PhenotypeExplorer.tsx",
+    "website/app/components/PhenotypeSubnav.tsx",
+    "website/app/components/PlotlyChart.tsx",
+    "website/app/components/SurvivalExplorer.tsx",
+    "website/app/components/UtilizationProfile.tsx",
+    "website/app/components/WasExplorer.tsx",
+    "website/app/components/WasFeatureDetail.tsx",
+    "website/app/explore/page.tsx",
+    "website/app/feature/page.tsx",
+    "website/app/layout.tsx",
+    "website/app/methods/page.tsx",
+    "website/app/page.tsx",
+    "website/app/phenotype-data.ts",
+    "website/app/phenotypes/outcomes/page.tsx",
+    "website/app/phenotypes/page.tsx",
+    "website/app/survival-data.ts",
+    "website/app/survival-state.ts",
+    "website/app/survival/page.tsx",
+    "website/app/was-config.ts",
+    "website/app/was-data.ts",
+    "website/app/was-state.ts",
+    "website/app/was/page.tsx"
+  ],
+  "excluded_source_files": [
+    {
+      "source": "website/app/chatgpt-auth.ts",
+      "reason": "Authentication utility, not website editorial content."
+    },
+    {
+      "source": "website/app/plotly.d.ts",
+      "reason": "Type declarations, not user-facing content."
+    },
+    {
+      "source": "website/app/globals.css",
+      "reason": "Presentation styles, not user-facing content."
+    }
+  ],
+  "literal_exclusion_counts": {
+    "website/app/atlas-data.ts": {
+      "module-or-type": 5,
+      "comparison-value": 18,
+      "empty": 14,
+      "internal-value": 10,
+      "implementation-property": 8,
+      "style-or-data-address": 5,
+      "non-prose-token": 4,
+      "dynamic-values-only": 4
+    },
+    "website/app/atlas-state.ts": {
+      "internal-value": 24,
+      "module-or-type": 4,
+      "empty": 2,
+      "state-or-lookup-value": 1
+    },
+    "website/app/components/AtlasExplorer.tsx": {
+      "internal-value": 18,
+      "module-or-type": 6,
+      "non-prose-token": 12,
+      "comparison-value": 17,
+      "implementation-property": 28,
+      "style-or-data-address": 4,
+      "empty": 7,
+      "presentation-or-behavior-attribute": 68,
+      "link-or-asset-reference": 3,
+      "dynamic-values-only": 4
+    },
+    "website/app/components/AtlasHeader.tsx": {
+      "module-or-type": 1,
+      "presentation-or-behavior-attribute": 6,
+      "link-or-asset-reference": 7
+    },
+    "website/app/components/FeatureDetail.tsx": {
+      "internal-value": 23,
+      "module-or-type": 6,
+      "empty": 3,
+      "comparison-value": 9,
+      "presentation-or-behavior-attribute": 37,
+      "link-or-asset-reference": 4,
+      "dynamic-values-only": 3,
+      "implementation-property": 17,
+      "non-prose-token": 1
+    },
+    "website/app/components/FeatureSearch.tsx": {
+      "internal-value": 1,
+      "module-or-type": 3,
+      "comparison-value": 7,
+      "empty": 4,
+      "dynamic-values-only": 1,
+      "non-prose-token": 4,
+      "presentation-or-behavior-attribute": 22
+    },
+    "website/app/components/OctantSurvivalExplorer.tsx": {
+      "internal-value": 8,
+      "module-or-type": 13,
+      "property-key": 8,
+      "style-or-data-address": 11,
+      "dynamic-values-only": 7,
+      "empty": 10,
+      "comparison-value": 46,
+      "implementation-property": 48,
+      "non-prose-token": 26,
+      "presentation-or-behavior-attribute": 92
+    },
+    "website/app/components/PhenotypeExplorer.tsx": {
+      "internal-value": 17,
+      "module-or-type": 6,
+      "comparison-value": 14,
+      "dynamic-values-only": 4,
+      "empty": 6,
+      "presentation-or-behavior-attribute": 102,
+      "non-prose-token": 20,
+      "implementation-property": 2,
+      "style-or-data-address": 8,
+      "link-or-asset-reference": 2
+    },
+    "website/app/components/PhenotypeSubnav.tsx": {
+      "module-or-type": 3,
+      "presentation-or-behavior-attribute": 5,
+      "link-or-asset-reference": 2
+    },
+    "website/app/components/PlotlyChart.tsx": {
+      "internal-value": 4,
+      "module-or-type": 1,
+      "non-prose-token": 6,
+      "chart-control-identifier": 1,
+      "presentation-or-behavior-attribute": 1
+    },
+    "website/app/components/SurvivalExplorer.tsx": {
+      "internal-value": 4,
+      "module-or-type": 5,
+      "property-key": 1,
+      "implementation-property": 35,
+      "comparison-value": 14,
+      "non-prose-token": 8,
+      "dynamic-values-only": 6,
+      "presentation-or-behavior-attribute": 48,
+      "empty": 8,
+      "link-or-asset-reference": 2
+    },
+    "website/app/components/UtilizationProfile.tsx": {
+      "internal-value": 9,
+      "module-or-type": 2,
+      "non-prose-token": 4,
+      "comparison-value": 3,
+      "dynamic-values-only": 2,
+      "presentation-or-behavior-attribute": 22,
+      "state-or-lookup-value": 4,
+      "empty": 1
+    },
+    "website/app/components/WasExplorer.tsx": {
+      "internal-value": 19,
+      "module-or-type": 8,
+      "empty": 10,
+      "comparison-value": 17,
+      "style-or-data-address": 5,
+      "implementation-property": 32,
+      "dynamic-values-only": 7,
+      "non-prose-token": 5,
+      "presentation-or-behavior-attribute": 84,
+      "link-or-asset-reference": 2
+    },
+    "website/app/components/WasFeatureDetail.tsx": {
+      "internal-value": 29,
+      "module-or-type": 6,
+      "comparison-value": 19,
+      "empty": 7,
+      "non-prose-token": 4,
+      "dynamic-values-only": 7,
+      "implementation-property": 3,
+      "presentation-or-behavior-attribute": 32,
+      "link-or-asset-reference": 2
+    },
+    "website/app/explore/page.tsx": {
+      "module-or-type": 3
+    },
+    "website/app/feature/page.tsx": {
+      "module-or-type": 3,
+      "comparison-value": 2,
+      "empty": 1,
+      "internal-value": 4
+    },
+    "website/app/layout.tsx": {
+      "module-or-type": 3,
+      "state-or-lookup-value": 3,
+      "dynamic-values-only": 3,
+      "internal-value": 5,
+      "non-prose-token": 4,
+      "implementation-property": 1
+    },
+    "website/app/methods/page.tsx": {
+      "module-or-type": 2,
+      "presentation-or-behavior-attribute": 111,
+      "link-or-asset-reference": 5,
+      "comparison-value": 3
+    },
+    "website/app/page.tsx": {
+      "module-or-type": 3,
+      "presentation-or-behavior-attribute": 47,
+      "link-or-asset-reference": 5
+    },
+    "website/app/phenotype-data.ts": {
+      "module-or-type": 56,
+      "non-prose-token": 5,
+      "dynamic-values-only": 3,
+      "empty": 1,
+      "comparison-value": 15,
+      "internal-value": 10
+    },
+    "website/app/phenotypes/outcomes/page.tsx": {
+      "module-or-type": 7,
+      "presentation-or-behavior-attribute": 6,
+      "link-or-asset-reference": 3,
+      "non-prose-token": 1
+    },
+    "website/app/phenotypes/page.tsx": {
+      "module-or-type": 5
+    },
+    "website/app/survival-data.ts": {
+      "module-or-type": 3,
+      "non-prose-token": 2,
+      "dynamic-values-only": 3,
+      "empty": 1,
+      "style-or-data-address": 2
+    },
+    "website/app/survival-state.ts": {
+      "module-or-type": 2,
+      "implementation-property": 5,
+      "comparison-value": 1,
+      "state-or-lookup-value": 1
+    },
+    "website/app/survival/page.tsx": {
+      "module-or-type": 6
+    },
+    "website/app/was-config.ts": {
+      "non-prose-token": 19,
+      "internal-value": 65,
+      "comparison-value": 2
+    },
+    "website/app/was-data.ts": {
+      "module-or-type": 17,
+      "comparison-value": 23,
+      "empty": 7,
+      "internal-value": 34,
+      "implementation-property": 3,
+      "style-or-data-address": 2,
+      "non-prose-token": 7,
+      "dynamic-values-only": 5
+    },
+    "website/app/was-state.ts": {
+      "module-or-type": 1,
+      "non-prose-token": 2,
+      "internal-value": 9,
+      "empty": 2,
+      "state-or-lookup-value": 2
+    },
+    "website/app/was/page.tsx": {
+      "module-or-type": 3
+    }
+  },
+  "notes": [
+    "This is a local-source snapshot, not a crawl or verification of a remote deployment.",
+    "Runtime study data and figures live in the sibling data and images folders supplied by the transfer package.",
+    "Dynamic content is not evaluated; numbers, feature names, categories, counts, and study-specific caveats are supplied by the copied study JSON data.",
+    "Conditional display text is included even when not visible in the initial page view.",
+    "Whitespace and HTML entities are normalized for reuse. Chart hover markup is converted to plain text, preserving text order.",
+    "{{value_1}} and {{chart_value_1}} are content-template placeholders; source line metadata identifies the original occurrence.",
+    "No executable source, imports, CSS classes, event handlers, credentials, raw patient records, or notebook contents are copied."
+  ]
+}

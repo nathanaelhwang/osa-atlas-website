@@ -1,0 +1,128 @@
+OSA ASSOCIATION ATLAS — DATA AND CONTENT TRANSFER
+Snapshot: October 8, 2026 (America/Los_Angeles)
+
+PURPOSE AND SCOPE
+
+This folder contains the existing website's published data, public assets, and
+extracted page content for use in a redesign. The source is the current local
+website directory in this project. It has not been compared with a remote live
+deployment. The original website and source datasets have not been changed.
+
+All 692 files from website/public were copied byte for byte: 683 JSON files and
+9 image/icon assets, totaling 59,656,261 bytes (about 59.7 MB). The content and
+inventory folders contain supplementary exports and descriptions. There is no
+application source, styling, build configuration, dependency installation,
+backend, or data-generation code in this package.
+
+WHERE TO START
+
+data/atlas-manifest.json
+  Disease association releases, models, defaults, feature index, and paths to
+  all 48 prevalence/incidence PheDAS partitions.
+
+data/was-manifest.json
+  All 13 non-disease analysis definitions, labels, release status, windows,
+  models, contrasts, and paths to 568 LabWAS, MedWAS, BehWAS, ProcWAS, UtilWAS,
+  and QWAS partitions. It also references the descriptive utilization profile.
+
+data/features.json and data/was-features.json
+  Searchable feature registries: 1,803 disease features and 1,362 non-disease
+  features, including display names, categories, aliases, and availability.
+
+data/survival-manifest.json
+  Selection, disclosure, group definitions, defaults, and paths to 39 disease
+  cumulative-incidence payloads for OSA severity and landmark CPAP comparisons.
+
+data/phenotypes.json
+  Eight octants; phenotype construction; 26 cluster measures; five-window CPAP
+  setup/coverage summaries (45 rows); adjusted model records; interpretation
+  notes; and references to phenotype survival data and publication figures.
+
+content/
+  Text, labels, configuration values, and metadata extracted from the website
+  pages and components. These complement the text already in the data JSON.
+  Source paths/line numbers describe provenance; they are not dependencies.
+
+inventory/public-files.csv
+  One row per original public file, with its transfer path, original source
+  path, byte size, SHA-256 checksum, and file category.
+
+inventory/data-catalog.json
+  Dataset counts and observed JSON fields and column types. This is an
+  inventory, not a replacement for the meaning and notes in each manifest.
+
+inventory/public-verification.json
+  Results of the initial copy, checksum, JSON, column-alignment, and public
+  reference checks.
+
+DATA LAYOUT
+
+data/phedas/{analysis}/{model}/{contrast}.json
+  48 disease association partitions; 63,619 association rows in total.
+
+data/was/{analysis_id}/{window}/{model}/{contrast}.json
+  568 non-disease association partitions; 81,833 association rows in total.
+
+data/was-utilization-profile.json
+  70 aggregate descriptive rows across seven metrics, two windows, and five
+  severity groups.
+
+data/survival/{phecode}.json
+  39 disease cumulative-incidence payloads. Severity and landmark CPAP sections
+  contain their own aligned columns and group definitions.
+
+data/phenotype-survival/{level}/{outcome}.json
+  21 outcome payloads supporting 168 phenotype-by-outcome model panels, with
+  the existing available curves, comparator data, and disclosure-controlled
+  risk tables.
+
+The row totals above count repeated features across analysis settings; they
+are not unique-feature counts or participant counts.
+
+READING AND REUSING THE DATA
+
+Most feature and association JSON uses a "columns" object containing parallel
+arrays. The values at the same index across all arrays form one record. Keep
+those arrays aligned. The manifests and each file's "metadata" object provide
+analysis context and, where present, expected row counts.
+
+Manifest paths such as phedas/prevalence/m4/severe_vs_none.json are relative to
+data/. Paths beginning /data/ or /images/ are relative to this package's root.
+Preserving those directories in a new site's public assets keeps those paths
+usable. Provenance paths in "sources" describe original research inputs and
+are not files that the redesigned website needs to read.
+
+Keep feature identifiers as strings, including decimal PheCodes, LOINC codes,
+GPI codes, and namespaced feature keys. Retain null values, suppression flags,
+precision, confidence intervals, significance flags, and release notes. Null
+or withheld data must not become zero. Unsupported partitions are absent;
+their absence does not establish a null association.
+
+Read effect_type, effect_scale, and neutral_value where supplied; effects from
+different analysis families are not interchangeable. Existing model and
+contrast definitions are included in the data and extracted content.
+
+Some curve and model cohorts differ, and some counts are intentionally
+withheld. Preserve the supplied estimand, cohort, count-definition, and
+interpretation notes. The package does not reconstruct missing counts, create
+new estimates, or regenerate exports from research inputs.
+
+PUBLIC ASSETS
+
+images/phenotypes/ contains the four publication figures. og.png and
+favicon.svg are website metadata assets. file.svg, globe.svg, and window.svg
+are also preserved because they were in public/; the source audit found no
+current app references to these three starter icons.
+
+EXISTING CONTENT CAVEAT
+
+The source README describes an approved public aggregate research release,
+while the current Methods page still contains wording that public downloads
+and deployment are gated pending a prevalence disclosure-cell companion.
+The transferred data and extracted page wording preserve those existing
+statuses. This copy does not resolve that documentation discrepancy or change
+any release status.
+
+No raw participant files, restricted paths, credentials, notebook outputs,
+research scripts, or private source datasets were included. The snapshot date
+above describes this transfer; original dataset release dates are unchanged.

@@ -1,0 +1,329 @@
+{
+  "snapshot_date": "2026-10-08",
+  "routes": [
+    {
+      "route": "/",
+      "title": "Home",
+      "sources": [
+        "website/app/page.tsx",
+        "website/app/components/AtlasHeader.tsx",
+        "website/app/components/FeatureSearch.tsx"
+      ]
+    },
+    {
+      "route": "/explore",
+      "title": "Disease scans",
+      "sources": [
+        "website/app/explore/page.tsx",
+        "website/app/components/AtlasExplorer.tsx",
+        "website/app/components/AtlasHeader.tsx"
+      ]
+    },
+    {
+      "route": "/feature",
+      "title": "Feature lookup",
+      "sources": [
+        "website/app/feature/page.tsx",
+        "website/app/components/FeatureDetail.tsx",
+        "website/app/components/WasFeatureDetail.tsx",
+        "website/app/components/FeatureSearch.tsx",
+        "website/app/components/AtlasHeader.tsx"
+      ]
+    },
+    {
+      "route": "/methods",
+      "title": "Methods & interpretation",
+      "sources": [
+        "website/app/methods/page.tsx",
+        "website/app/components/AtlasHeader.tsx"
+      ]
+    },
+    {
+      "route": "/phenotypes",
+      "title": "Octant phenotypes",
+      "sources": [
+        "website/app/phenotypes/page.tsx",
+        "website/app/components/PhenotypeExplorer.tsx",
+        "website/app/components/PhenotypeSubnav.tsx",
+        "website/app/components/AtlasHeader.tsx"
+      ]
+    },
+    {
+      "route": "/phenotypes/outcomes",
+      "title": "Phenotype outcome panels",
+      "sources": [
+        "website/app/phenotypes/outcomes/page.tsx",
+        "website/app/components/OctantSurvivalExplorer.tsx",
+        "website/app/components/PhenotypeSubnav.tsx",
+        "website/app/components/AtlasHeader.tsx"
+      ]
+    },
+    {
+      "route": "/survival",
+      "title": "Incidence curves",
+      "sources": [
+        "website/app/survival/page.tsx",
+        "website/app/components/SurvivalExplorer.tsx",
+        "website/app/components/AtlasHeader.tsx"
+      ]
+    },
+    {
+      "route": "/was",
+      "title": "Other WAS",
+      "sources": [
+        "website/app/was/page.tsx",
+        "website/app/components/WasExplorer.tsx",
+        "website/app/components/UtilizationProfile.tsx",
+        "website/app/components/AtlasHeader.tsx"
+      ]
+    }
+  ],
+  "links": [
+    {
+      "source": "website/app/components/AtlasExplorer.tsx",
+      "line": 211,
+      "text": "Atlas",
+      "destination": "/"
+    },
+    {
+      "source": "website/app/components/AtlasExplorer.tsx",
+      "line": 265,
+      "text": "Open full feature page →",
+      "destination": "/feature?code={{value_1}}&contrast={{value_2}}"
+    },
+    {
+      "source": "website/app/components/AtlasExplorer.tsx",
+      "line": 266,
+      "text": "View cumulative-incidence curves →",
+      "destination": "/survival?code={{value_1}}&view=severity"
+    },
+    {
+      "source": "website/app/components/AtlasHeader.tsx",
+      "line": 7,
+      "text": "OSA Association Atlas",
+      "destination": "/"
+    },
+    {
+      "source": "website/app/components/AtlasHeader.tsx",
+      "line": 13,
+      "text": "Disease scans",
+      "destination": "/explore"
+    },
+    {
+      "source": "website/app/components/AtlasHeader.tsx",
+      "line": 14,
+      "text": "Phenotypes",
+      "destination": "/phenotypes"
+    },
+    {
+      "source": "website/app/components/AtlasHeader.tsx",
+      "line": 15,
+      "text": "Incidence curves",
+      "destination": "/survival"
+    },
+    {
+      "source": "website/app/components/AtlasHeader.tsx",
+      "line": 16,
+      "text": "Other WAS",
+      "destination": "/was"
+    },
+    {
+      "source": "website/app/components/AtlasHeader.tsx",
+      "line": 17,
+      "text": "Feature lookup",
+      "destination": "/feature?code=401.1"
+    },
+    {
+      "source": "website/app/components/AtlasHeader.tsx",
+      "line": 18,
+      "text": "Methods",
+      "destination": "/methods"
+    },
+    {
+      "source": "website/app/components/FeatureDetail.tsx",
+      "line": 96,
+      "text": "Atlas",
+      "destination": "/"
+    },
+    {
+      "source": "website/app/components/FeatureDetail.tsx",
+      "line": 96,
+      "text": "Explore",
+      "destination": "/explore"
+    },
+    {
+      "source": "website/app/components/FeatureDetail.tsx",
+      "line": 129,
+      "text": "View cumulative-incidence curves →",
+      "destination": "/survival?code={{value_1}}&view=severity"
+    },
+    {
+      "source": "website/app/components/FeatureDetail.tsx",
+      "line": 130,
+      "text": "Return to this feature in the scan →",
+      "destination": "/explore?analysis=prevalence&contrast={{value_1}}&model=m4&feature={{value_2}}"
+    },
+    {
+      "source": "website/app/components/PhenotypeExplorer.tsx",
+      "line": 162,
+      "text": "",
+      "destination": "{{dynamic_destination}}"
+    },
+    {
+      "source": "website/app/components/PhenotypeExplorer.tsx",
+      "line": 165,
+      "text": "Open full resolution ↗",
+      "destination": "{{dynamic_destination}}"
+    },
+    {
+      "source": "website/app/components/PhenotypeExplorer.tsx",
+      "line": 448,
+      "text": "Atlas",
+      "destination": "/"
+    },
+    {
+      "source": "website/app/components/PhenotypeExplorer.tsx",
+      "line": 571,
+      "text": "Open outcome panels →",
+      "destination": "/phenotypes/outcomes"
+    },
+    {
+      "source": "website/app/components/PhenotypeSubnav.tsx",
+      "line": 11,
+      "text": "Profiles & clusters",
+      "destination": "/phenotypes"
+    },
+    {
+      "source": "website/app/components/PhenotypeSubnav.tsx",
+      "line": 14,
+      "text": "Outcome panels 168",
+      "destination": "/phenotypes/outcomes"
+    },
+    {
+      "source": "website/app/components/SurvivalExplorer.tsx",
+      "line": 303,
+      "text": "Atlas",
+      "destination": "/"
+    },
+    {
+      "source": "website/app/components/SurvivalExplorer.tsx",
+      "line": 303,
+      "text": "Incidence PheDAS",
+      "destination": "/explore?analysis=incidence"
+    },
+    {
+      "source": "website/app/components/WasExplorer.tsx",
+      "line": 524,
+      "text": "Atlas",
+      "destination": "/"
+    },
+    {
+      "source": "website/app/components/WasExplorer.tsx",
+      "line": 588,
+      "text": "Open full feature page →",
+      "destination": "/feature?family={{value_1}}&key={{value_2}}&analysis={{value_3}}&window={{value_4}}&contrast={{value_5}}"
+    },
+    {
+      "source": "website/app/components/WasFeatureDetail.tsx",
+      "line": 339,
+      "text": "Atlas",
+      "destination": "/"
+    },
+    {
+      "source": "website/app/components/WasFeatureDetail.tsx",
+      "line": 339,
+      "text": "Other WAS analyses",
+      "destination": "/was"
+    },
+    {
+      "source": "website/app/components/WasFeatureDetail.tsx",
+      "line": 425,
+      "text": "Open this feature in the full scan →",
+      "destination": "{{dynamic_destination}}"
+    },
+    {
+      "source": "website/app/methods/page.tsx",
+      "line": 45,
+      "text": "Atlas",
+      "destination": "/"
+    },
+    {
+      "source": "website/app/methods/page.tsx",
+      "line": 162,
+      "text": "Explore QWAS →",
+      "destination": "/was?family=qwas&analysis=qwas_binary&window=index&model=m4&contrast=severe_vs_none"
+    },
+    {
+      "source": "website/app/methods/page.tsx",
+      "line": 267,
+      "text": "Explore octant phenotypes →",
+      "destination": "/phenotypes"
+    },
+    {
+      "source": "website/app/methods/page.tsx",
+      "line": 320,
+      "text": "Explore cumulative incidence curves →",
+      "destination": "/survival?code=401.1&view=severity"
+    },
+    {
+      "source": "website/app/methods/page.tsx",
+      "line": 486,
+      "text": "Explore other WAS families →",
+      "destination": "/was?family=labwas&analysis=labwas_mean&model=m4&contrast=severe_vs_none"
+    },
+    {
+      "source": "website/app/page.tsx",
+      "line": 41,
+      "text": "01 | Existing diagnoses | Prevalence PheDAS | Odds ratios across 1,700+ PheCodes | →",
+      "destination": "/explore?analysis=prevalence"
+    },
+    {
+      "source": "website/app/page.tsx",
+      "line": 46,
+      "text": "02 | New diagnoses during follow-up | Incidence PheDAS | Cause-specific hazard ratios across 1,000+ PheCodes | →",
+      "destination": "/explore?analysis=incidence"
+    },
+    {
+      "source": "website/app/page.tsx",
+      "line": 59,
+      "text": "Explore phenotypes →",
+      "destination": "/phenotypes"
+    },
+    {
+      "source": "website/app/page.tsx",
+      "line": 67,
+      "text": "Explore incidence curves →",
+      "destination": "/survival?code=401.1&view=severity"
+    },
+    {
+      "source": "website/app/page.tsx",
+      "line": 81,
+      "text": "{{value_1}} →",
+      "destination": "{{dynamic_destination}}"
+    },
+    {
+      "source": "website/app/page.tsx",
+      "line": 92,
+      "text": "Read methods →",
+      "destination": "/methods"
+    },
+    {
+      "source": "website/app/phenotypes/outcomes/page.tsx",
+      "line": 26,
+      "text": "Atlas",
+      "destination": "/"
+    },
+    {
+      "source": "website/app/phenotypes/outcomes/page.tsx",
+      "line": 26,
+      "text": "Phenotypes",
+      "destination": "/phenotypes"
+    },
+    {
+      "source": "website/app/phenotypes/outcomes/page.tsx",
+      "line": 44,
+      "text": "Open landmark incidence curves →",
+      "destination": "/survival?code=401.1&view=cpap&window=180"
+    }
+  ]
+}

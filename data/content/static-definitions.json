@@ -1,0 +1,727 @@
+{
+  "snapshot_date": "2026-10-08",
+  "description": "Literal content tables, analysis families, adjustment models, contrast labels, categories, control choices, defaults, and page metadata preserved as data.",
+  "definitions": [
+    {
+      "name": "ANALYSES",
+      "source": "website/app/atlas-state.ts",
+      "line": 1,
+      "value": [
+        "prevalence",
+        "incidence"
+      ]
+    },
+    {
+      "name": "MODELS",
+      "source": "website/app/atlas-state.ts",
+      "line": 2,
+      "value": [
+        "M1",
+        "M2",
+        "M3",
+        "M4"
+      ]
+    },
+    {
+      "name": "VIEWS",
+      "source": "website/app/atlas-state.ts",
+      "line": 3,
+      "value": [
+        "manhattan",
+        "volcano",
+        "table"
+      ]
+    },
+    {
+      "name": "DEFAULT_ATLAS_STATE",
+      "source": "website/app/atlas-state.ts",
+      "line": 18,
+      "value": {
+        "analysis": "prevalence",
+        "contrast": "severe_vs_none",
+        "model": "M4",
+        "view": "manhattan",
+        "significance": "all"
+      }
+    },
+    {
+      "name": "CONTRASTS",
+      "source": "website/app/atlas-state.ts",
+      "line": 26,
+      "value": {
+        "prevalence": [
+          "severe_vs_none",
+          "moderate_vs_none",
+          "mild_vs_none",
+          "ahi_ge15",
+          "ahi_ge5"
+        ],
+        "incidence": [
+          "severe_vs_none",
+          "moderate_vs_none",
+          "mild_vs_none",
+          "trend",
+          "ahi_ge15",
+          "ahi_ge5",
+          "omnibus"
+        ]
+      }
+    },
+    {
+      "name": "CONTRAST_LABELS",
+      "source": "website/app/atlas-state.ts",
+      "line": 45,
+      "value": {
+        "severe_vs_none": "Severe vs None",
+        "moderate_vs_none": "Moderate vs None",
+        "mild_vs_none": "Mild vs None",
+        "trend": "Severity trend",
+        "ahi_ge15": "AHI ≥15 vs <15",
+        "ahi_ge5": "AHI ≥5 vs <5",
+        "omnibus": "Any severity difference"
+      }
+    },
+    {
+      "name": "MODEL_LABELS",
+      "source": "website/app/atlas-state.ts",
+      "line": 55,
+      "value": {
+        "M1": "M1 · crude",
+        "M2": "M2 · demographics",
+        "M3": "M3 · excludes BMI",
+        "M4": "M4 · + BMI · primary"
+      }
+    },
+    {
+      "name": "CATEGORY_ORDER",
+      "source": "website/app/components/AtlasExplorer.tsx",
+      "line": 18,
+      "value": [
+        "circulatory system",
+        "endocrine/metabolic",
+        "respiratory",
+        "neurological",
+        "digestive",
+        "genitourinary",
+        "hematopoietic",
+        "mental disorders",
+        "musculoskeletal",
+        "infectious diseases",
+        "neoplasms",
+        "sense organs",
+        "dermatologic",
+        "injuries & poisonings",
+        "pregnancy complications",
+        "congenital anomalies",
+        "symptoms",
+        "other"
+      ]
+    },
+    {
+      "name": "MODELS",
+      "source": "website/app/components/FeatureDetail.tsx",
+      "line": 10,
+      "value": [
+        "M1",
+        "M2",
+        "M3",
+        "M4"
+      ]
+    },
+    {
+      "name": "SEVERITY_CONTRASTS",
+      "source": "website/app/components/FeatureDetail.tsx",
+      "line": 11,
+      "value": [
+        "mild_vs_none",
+        "moderate_vs_none",
+        "severe_vs_none"
+      ]
+    },
+    {
+      "name": "DETAIL_CONTRASTS",
+      "source": "website/app/components/FeatureDetail.tsx",
+      "line": 12,
+      "value": [
+        "mild_vs_none",
+        "moderate_vs_none",
+        "severe_vs_none",
+        "ahi_ge15",
+        "ahi_ge5"
+      ]
+    },
+    {
+      "name": "POOLED_OSA_LABEL",
+      "source": "website/app/components/OctantSurvivalExplorer.tsx",
+      "line": 34,
+      "value": "All eight OSA phenotypes (pooled)"
+    },
+    {
+      "name": "metricDomainOptions",
+      "source": "website/app/components/PhenotypeExplorer.tsx",
+      "line": 27,
+      "value": [
+        {
+          "id": "all",
+          "label": "All measures"
+        },
+        {
+          "id": "physiologic",
+          "label": "Physiology"
+        },
+        {
+          "id": "symptom",
+          "label": "Symptoms"
+        },
+        {
+          "id": "comorbidity",
+          "label": "Comorbidity"
+        },
+        {
+          "id": "external",
+          "label": "AHI / severity"
+        },
+        {
+          "id": "demographic",
+          "label": "Demographic"
+        },
+        {
+          "id": "follow-up",
+          "label": "Follow-up"
+        },
+        {
+          "id": "utilisation",
+          "label": "Utilization"
+        }
+      ]
+    },
+    {
+      "name": "severityOrder",
+      "source": "website/app/components/UtilizationProfile.tsx",
+      "line": 13,
+      "value": [
+        "Overall",
+        "None",
+        "Mild",
+        "Moderate",
+        "Severe"
+      ]
+    },
+    {
+      "name": "encounterMetrics",
+      "source": "website/app/components/UtilizationProfile.tsx",
+      "line": 14,
+      "value": [
+        "outpatient_rate",
+        "inpatient_rate",
+        "ed_rate",
+        "urgent_care_rate",
+        "primary_care_rate",
+        "specialty_rate"
+      ]
+    },
+    {
+      "name": "contrastLabels",
+      "source": "website/app/components/WasExplorer.tsx",
+      "line": 43,
+      "value": {
+        "severe_vs_none": "Severe vs None",
+        "moderate_vs_none": "Moderate vs None",
+        "mild_vs_none": "Mild vs None",
+        "ahi_ge15": "AHI ≥15 vs <15",
+        "ahi_ge5": "AHI ≥5 vs <5",
+        "trend": "Severity trend",
+        "omnibus": "Any severity difference"
+      }
+    },
+    {
+      "name": "MODELS",
+      "source": "website/app/components/WasFeatureDetail.tsx",
+      "line": 26,
+      "value": [
+        "M1",
+        "M2",
+        "M3",
+        "M4"
+      ]
+    },
+    {
+      "name": "SEVERITY_CONTRASTS",
+      "source": "website/app/components/WasFeatureDetail.tsx",
+      "line": 27,
+      "value": [
+        "mild_vs_none",
+        "moderate_vs_none",
+        "severe_vs_none"
+      ]
+    },
+    {
+      "name": "CONTRAST_ORDER",
+      "source": "website/app/components/WasFeatureDetail.tsx",
+      "line": 28,
+      "value": [
+        "severe_vs_none",
+        "moderate_vs_none",
+        "mild_vs_none",
+        "trend",
+        "ahi_ge15",
+        "ahi_ge5",
+        "omnibus"
+      ]
+    },
+    {
+      "name": "description",
+      "source": "website/app/layout.tsx",
+      "line": 13,
+      "value": "Explore aggregate associations, octant phenotypes, and cumulative-incidence curves linking obstructive sleep apnea with diseases, laboratory patterns, medications, questionnaires, behaviors, procedures, and healthcare use."
+    },
+    {
+      "name": "models",
+      "source": "website/app/methods/page.tsx",
+      "line": 4,
+      "value": [
+        [
+          "M1",
+          "Crude",
+          "Unadjusted association model."
+        ],
+        [
+          "M2",
+          "Demographics",
+          "Adds demographic adjustment."
+        ],
+        [
+          "M3",
+          "Extended · excludes BMI",
+          "Adds family-specific adjustment while excluding BMI. Incidence PheDAS M3 also includes baseline encounter rate."
+        ],
+        [
+          "M4",
+          "Primary · adds BMI",
+          "Adds BMI to M3. M3 remains adjacent because BMI may be treated as a confounder or as part of the pathway, depending on the scientific question."
+        ]
+      ]
+    },
+    {
+      "name": "releaseRoadmap",
+      "source": "website/app/methods/page.tsx",
+      "line": 19,
+      "value": [
+        [
+          "Prevalence PheDAS",
+          "Existing disease · OR",
+          "Research preview"
+        ],
+        [
+          "Incidence PheDAS",
+          "New-onset disease · HR",
+          "Research preview"
+        ],
+        [
+          "LabWAS",
+          "Values, ordering propensity, and ordering rate",
+          "Archived snapshot"
+        ],
+        [
+          "MedWAS",
+          "Medication fills · OR",
+          "Archived snapshot"
+        ],
+        [
+          "BehWAS",
+          "EHR-derived behaviors · OR or β",
+          "Preliminary archived"
+        ],
+        [
+          "QWAS",
+          "Index-anchored questionnaire responses · OR or β",
+          "Research preview"
+        ],
+        [
+          "ProcWAS",
+          "Procedure rates · IRR",
+          "Archived snapshot"
+        ],
+        [
+          "UtilWAS",
+          "Healthcare-use presence and counts",
+          "Archived review"
+        ]
+      ]
+    },
+    {
+      "name": "otherFamilies",
+      "source": "website/app/methods/page.tsx",
+      "line": 30,
+      "value": [
+        [
+          "LabWAS",
+          "β / OR / IRR",
+          "Mean and median value betas use rank-inverse-normal standard-deviation units and condition on being tested. Ordering propensity and ordering rate remain separate extensive and intensive signals."
+        ],
+        [
+          "MedWAS",
+          "OR",
+          "Binary ever-filled medication classes use zero-preserved GPI-4 codes. Fallback class labels remain visibly marked for review."
+        ],
+        [
+          "BehWAS",
+          "OR or β",
+          "Binary and rank-inverse-normal standardized continuous representations remain on separate axes. This small curated scan is preliminary and forest-first."
+        ],
+        [
+          "QWAS",
+          "OR or β",
+          "Binary positive-or-worse response states use logistic odds ratios; continuous and ordinal responses use rank-inverse-normal betas. Both are itemwise complete-case and index-anchored."
+        ],
+        [
+          "ProcWAS",
+          "IRR",
+          "Procedure counts are annualized rates over one- and five-year pre-index windows; sleep-study and PAP-pathway procedures were excluded."
+        ],
+        [
+          "UtilWAS",
+          "OR / IRR",
+          "Presence and count among present are a two-part analysis. Physician and allied-health definitions must not be summed while their overlap rule remains under review."
+        ]
+      ]
+    },
+    {
+      "name": "families",
+      "source": "website/app/page.tsx",
+      "line": 6,
+      "value": [
+        {
+          "name": "PheDAS",
+          "question": "Which diseases are already present?",
+          "measure": "OR",
+          "status": "Research preview",
+          "href": "/explore?analysis=prevalence"
+        },
+        {
+          "name": "Incidence PheDAS",
+          "question": "Which diseases arise during follow-up?",
+          "measure": "HR",
+          "status": "Research preview",
+          "href": "/explore?analysis=incidence"
+        },
+        {
+          "name": "LabWAS",
+          "question": "How do laboratory values and ordering differ?",
+          "measure": "β / OR / IRR",
+          "status": "Archived snapshot",
+          "href": "/was?family=labwas&analysis=labwas_mean"
+        },
+        {
+          "name": "MedWAS",
+          "question": "Which medication classes are filled?",
+          "measure": "OR",
+          "status": "Archived snapshot",
+          "href": "/was?family=medwas&analysis=medwas_fill"
+        },
+        {
+          "name": "BehWAS",
+          "question": "How do EHR-derived behaviors differ?",
+          "measure": "OR / β",
+          "status": "Preliminary",
+          "href": "/was?family=behwas&analysis=behwas_binary&view=forest"
+        },
+        {
+          "name": "QWAS",
+          "question": "How do sleep-questionnaire responses differ?",
+          "measure": "OR / β",
+          "status": "Research preview",
+          "href": "/was?family=qwas&analysis=qwas_binary"
+        },
+        {
+          "name": "ProcWAS",
+          "question": "How do procedure rates differ?",
+          "measure": "IRR",
+          "status": "Archived snapshot",
+          "href": "/was?family=procwas&analysis=procwas_rate"
+        },
+        {
+          "name": "UtilWAS",
+          "question": "How does healthcare use differ?",
+          "measure": "OR / IRR",
+          "status": "Review needed",
+          "href": "/was?family=utilwas&analysis=utilwas_presence"
+        }
+      ]
+    },
+    {
+      "name": "metadata",
+      "source": "website/app/phenotypes/outcomes/page.tsx",
+      "line": 9,
+      "value": {
+        "title": "Phenotype outcome panels",
+        "description": "Search 168 octant-exposure Incidence PheDAS panels and inspect interactive cumulative-incidence curves with adjusted M4 associations."
+      }
+    },
+    {
+      "name": "metadata",
+      "source": "website/app/phenotypes/page.tsx",
+      "line": 7,
+      "value": {
+        "title": "Octant phenotypes",
+        "description": "Explore eight OSA phenotypes defined across physiologic severity, symptom burden, and comorbidity burden."
+      }
+    },
+    {
+      "name": "metadata",
+      "source": "website/app/survival/page.tsx",
+      "line": 8,
+      "value": {
+        "title": "Incidence curves",
+        "description": "Explore cumulative incidence by OSA severity and landmark CPAP adherence designed to address immortal-time bias."
+      }
+    },
+    {
+      "name": "WAS_FAMILIES",
+      "source": "website/app/was-config.ts",
+      "line": 1,
+      "value": [
+        "labwas",
+        "medwas",
+        "behwas",
+        "procwas",
+        "utilwas",
+        "qwas"
+      ]
+    },
+    {
+      "name": "WAS_ANALYSIS_IDS",
+      "source": "website/app/was-config.ts",
+      "line": 10,
+      "value": [
+        "labwas_mean",
+        "labwas_median",
+        "labwas_order_rate",
+        "labwas_order_propensity",
+        "medwas_fill",
+        "behwas_binary",
+        "behwas_continuous",
+        "procwas_rate",
+        "utilwas_presence",
+        "utilwas_count_present",
+        "utilwas_specialty_rate",
+        "qwas_binary",
+        "qwas_continuous"
+      ]
+    },
+    {
+      "name": "WAS_VIEWS",
+      "source": "website/app/was-config.ts",
+      "line": 26,
+      "value": [
+        "manhattan",
+        "volcano",
+        "forest",
+        "table"
+      ]
+    },
+    {
+      "name": "WAS_SIGNIFICANCE",
+      "source": "website/app/was-config.ts",
+      "line": 27,
+      "value": [
+        "all",
+        "fdr",
+        "bonferroni"
+      ]
+    },
+    {
+      "name": "WAS_FAMILY_LABELS",
+      "source": "website/app/was-config.ts",
+      "line": 45,
+      "value": {
+        "labwas": "LabWAS",
+        "medwas": "MedWAS",
+        "behwas": "BehWAS",
+        "procwas": "ProcWAS",
+        "utilwas": "UtilWAS",
+        "qwas": "QWAS"
+      }
+    },
+    {
+      "name": "WAS_FAMILY_DESCRIPTIONS",
+      "source": "website/app/was-config.ts",
+      "line": 54,
+      "value": {
+        "labwas": "Laboratory values and ordering patterns around the sleep-study index.",
+        "medwas": "Medication-fill associations within the defined observation window.",
+        "behwas": "Preliminary EHR-derived behavioral features, separated by outcome type.",
+        "procwas": "Procedure-rate associations within the defined observation window.",
+        "utilwas": "Healthcare-use presence, counts, and specialty rates as distinct estimands.",
+        "qwas": "Index-anchored sleep-questionnaire responses, separated by binary and continuous form."
+      }
+    },
+    {
+      "name": "WAS_ANALYSES",
+      "source": "website/app/was-config.ts",
+      "line": 63,
+      "value": {
+        "labwas_mean": {
+          "id": "labwas_mean",
+          "family": "labwas",
+          "label": "LabWAS · mean observed value",
+          "shortLabel": "Mean value",
+          "question": "How do mean observed laboratory values differ with OSA severity?",
+          "defaultWindow": "1yr",
+          "defaultView": "manhattan",
+          "codeLabel": "Laboratory feature"
+        },
+        "labwas_median": {
+          "id": "labwas_median",
+          "family": "labwas",
+          "label": "LabWAS · median observed value",
+          "shortLabel": "Median value",
+          "question": "How do median observed laboratory values differ with OSA severity?",
+          "defaultWindow": "1yr",
+          "defaultView": "manhattan",
+          "codeLabel": "Laboratory feature"
+        },
+        "labwas_order_rate": {
+          "id": "labwas_order_rate",
+          "family": "labwas",
+          "label": "LabWAS · ordering rate",
+          "shortLabel": "Ordering rate",
+          "question": "How do laboratory ordering rates differ with OSA severity?",
+          "defaultWindow": "1yr",
+          "defaultView": "manhattan",
+          "codeLabel": "Laboratory feature"
+        },
+        "labwas_order_propensity": {
+          "id": "labwas_order_propensity",
+          "family": "labwas",
+          "label": "LabWAS · ordering propensity",
+          "shortLabel": "Ordering propensity",
+          "question": "How does the probability of a laboratory order differ with OSA severity?",
+          "defaultWindow": "1yr",
+          "defaultView": "manhattan",
+          "codeLabel": "Laboratory feature"
+        },
+        "medwas_fill": {
+          "id": "medwas_fill",
+          "family": "medwas",
+          "label": "MedWAS · medication fill",
+          "shortLabel": "Medication fills",
+          "question": "Which medication classes are filled at different rates across OSA severity?",
+          "defaultWindow": "1yr",
+          "defaultView": "manhattan",
+          "codeLabel": "Medication feature"
+        },
+        "behwas_binary": {
+          "id": "behwas_binary",
+          "family": "behwas",
+          "label": "BehWAS · binary behavior",
+          "shortLabel": "Binary behaviors",
+          "question": "How do binary EHR-derived behaviors differ with OSA severity?",
+          "defaultWindow": "1yr",
+          "defaultView": "forest",
+          "codeLabel": "Behavior feature"
+        },
+        "behwas_continuous": {
+          "id": "behwas_continuous",
+          "family": "behwas",
+          "label": "BehWAS · continuous behavior",
+          "shortLabel": "Continuous behaviors",
+          "question": "How do continuous EHR-derived behaviors differ with OSA severity?",
+          "defaultWindow": "1yr",
+          "defaultView": "forest",
+          "codeLabel": "Behavior feature"
+        },
+        "procwas_rate": {
+          "id": "procwas_rate",
+          "family": "procwas",
+          "label": "ProcWAS · procedure rate",
+          "shortLabel": "Procedure rates",
+          "question": "How do procedure rates differ with OSA severity?",
+          "defaultWindow": "1yr",
+          "defaultView": "manhattan",
+          "codeLabel": "Procedure feature"
+        },
+        "utilwas_presence": {
+          "id": "utilwas_presence",
+          "family": "utilwas",
+          "label": "UtilWAS · any use",
+          "shortLabel": "Any utilization",
+          "question": "How does the presence of healthcare use differ with OSA severity?",
+          "defaultWindow": "1yr",
+          "defaultView": "manhattan",
+          "codeLabel": "Utilization feature"
+        },
+        "utilwas_count_present": {
+          "id": "utilwas_count_present",
+          "family": "utilwas",
+          "label": "UtilWAS · count among users",
+          "shortLabel": "Count among users",
+          "question": "Among people with use, how do utilization counts differ with OSA severity?",
+          "defaultWindow": "1yr",
+          "defaultView": "manhattan",
+          "codeLabel": "Utilization feature"
+        },
+        "utilwas_specialty_rate": {
+          "id": "utilwas_specialty_rate",
+          "family": "utilwas",
+          "label": "UtilWAS · specialty rate",
+          "shortLabel": "Specialty rates",
+          "question": "How do specialty-specific utilization rates differ with OSA severity?",
+          "defaultWindow": "1yr",
+          "defaultView": "manhattan",
+          "codeLabel": "Specialty feature"
+        },
+        "qwas_binary": {
+          "id": "qwas_binary",
+          "family": "qwas",
+          "label": "QWAS · binary questionnaire response",
+          "shortLabel": "Binary responses",
+          "question": "Which positive or worse questionnaire response states differ with OSA severity?",
+          "defaultWindow": "index",
+          "defaultView": "manhattan",
+          "codeLabel": "Questionnaire item"
+        },
+        "qwas_continuous": {
+          "id": "qwas_continuous",
+          "family": "qwas",
+          "label": "QWAS · ordinal or continuous response",
+          "shortLabel": "Continuous responses",
+          "question": "How do rank-normalized questionnaire responses differ with OSA severity?",
+          "defaultWindow": "index",
+          "defaultView": "manhattan",
+          "codeLabel": "Questionnaire item"
+        }
+      }
+    },
+    {
+      "name": "WAS_FAMILY_DEFAULT_ANALYSIS",
+      "source": "website/app/was-config.ts",
+      "line": 196,
+      "value": {
+        "labwas": "labwas_mean",
+        "medwas": "medwas_fill",
+        "behwas": "behwas_binary",
+        "procwas": "procwas_rate",
+        "utilwas": "utilwas_presence",
+        "qwas": "qwas_binary"
+      }
+    },
+    {
+      "name": "DEFAULT_WAS_STATE",
+      "source": "website/app/was-state.ts",
+      "line": 29,
+      "value": {
+        "family": "labwas",
+        "analysis": "labwas_mean",
+        "window": "1yr",
+        "model": "M4",
+        "contrast": "severe_vs_none",
+        "view": "manhattan",
+        "category": "all",
+        "significance": "all",
+        "stableOnly": true,
+        "query": ""
+      }
+    }
+  ]
+}

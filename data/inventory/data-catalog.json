@@ -1,0 +1,618 @@
+{
+  "snapshot_date": "2026-10-08",
+  "source": "website/public/data",
+  "notes": [
+    "Observed structure of existing published JSON; not a new analysis.",
+    "columnar_rows counts rows across files, including repeated features across models, contrasts and windows.",
+    "Column value_types and has_nulls describe observed values only.",
+    "Release and dataset semantics are preserved in the original manifests and payload metadata."
+  ],
+  "datasets": {
+    "atlas-manifest.json": {
+      "files": 1,
+      "bytes": 7913,
+      "columnar_rows": 0,
+      "top_level_fields": [
+        "defaults",
+        "exporter_version",
+        "features",
+        "models",
+        "partitions",
+        "release",
+        "schema_version",
+        "sources"
+      ],
+      "columns": {}
+    },
+    "features.json": {
+      "files": 1,
+      "bytes": 132019,
+      "columnar_rows": 1803,
+      "top_level_fields": [
+        "columns",
+        "metadata",
+        "schema_version"
+      ],
+      "columns": {
+        "feature_id": {
+          "value_types": [
+            "string"
+          ],
+          "has_nulls": false
+        },
+        "feature_name": {
+          "value_types": [
+            "string"
+          ],
+          "has_nulls": false
+        },
+        "category": {
+          "value_types": [
+            "string"
+          ],
+          "has_nulls": false
+        },
+        "prevalence": {
+          "value_types": [
+            "boolean"
+          ],
+          "has_nulls": false
+        },
+        "incidence": {
+          "value_types": [
+            "boolean"
+          ],
+          "has_nulls": false
+        },
+        "alternate_names": {
+          "value_types": [
+            "array"
+          ],
+          "has_nulls": false
+        }
+      }
+    },
+    "phedas": {
+      "files": 48,
+      "bytes": 13513059,
+      "columnar_rows": 63619,
+      "top_level_fields": [
+        "columns",
+        "metadata",
+        "schema_version"
+      ],
+      "columns": {
+        "feature_id": {
+          "value_types": [
+            "string"
+          ],
+          "has_nulls": false
+        },
+        "feature_name": {
+          "value_types": [
+            "string"
+          ],
+          "has_nulls": false
+        },
+        "category": {
+          "value_types": [
+            "string"
+          ],
+          "has_nulls": false
+        },
+        "effect_type": {
+          "value_types": [
+            "string"
+          ],
+          "has_nulls": false
+        },
+        "effect": {
+          "value_types": [
+            "number"
+          ],
+          "has_nulls": false
+        },
+        "ci_low": {
+          "value_types": [
+            "null",
+            "number"
+          ],
+          "has_nulls": true
+        },
+        "ci_high": {
+          "value_types": [
+            "null",
+            "number"
+          ],
+          "has_nulls": true
+        },
+        "p": {
+          "value_types": [
+            "number"
+          ],
+          "has_nulls": false
+        },
+        "neglog10p": {
+          "value_types": [
+            "number"
+          ],
+          "has_nulls": false
+        },
+        "sig_fdr": {
+          "value_types": [
+            "boolean"
+          ],
+          "has_nulls": false
+        },
+        "sig_bon": {
+          "value_types": [
+            "boolean"
+          ],
+          "has_nulls": false
+        },
+        "unstable": {
+          "value_types": [
+            "boolean"
+          ],
+          "has_nulls": false
+        },
+        "se": {
+          "value_types": [
+            "null",
+            "number"
+          ],
+          "has_nulls": true
+        },
+        "n_atrisk": {
+          "value_types": [
+            "number"
+          ],
+          "has_nulls": false
+        },
+        "n_events": {
+          "value_types": [
+            "number"
+          ],
+          "has_nulls": false
+        },
+        "ph_p": {
+          "value_types": [
+            "null",
+            "number"
+          ],
+          "has_nulls": true
+        },
+        "unstable_reason": {
+          "value_types": [
+            "null",
+            "string"
+          ],
+          "has_nulls": true
+        },
+        "beta": {
+          "value_types": [
+            "number"
+          ],
+          "has_nulls": false
+        }
+      }
+    },
+    "phenotype-survival": {
+      "files": 21,
+      "bytes": 6726733,
+      "columnar_rows": 0,
+      "top_level_fields": [
+        "category",
+        "curve_granularity",
+        "inference",
+        "level",
+        "no_osa",
+        "outcome_id",
+        "outcome_name",
+        "overall",
+        "panels",
+        "schema_version"
+      ],
+      "columns": {}
+    },
+    "phenotypes.json": {
+      "files": 1,
+      "bytes": 208072,
+      "columnar_rows": 0,
+      "top_level_fields": [
+        "caveats",
+        "cluster_profiles",
+        "construction",
+        "cpap_treatment",
+        "exporter_version",
+        "octants",
+        "release",
+        "schema_version",
+        "signature_figure",
+        "sources",
+        "survival"
+      ],
+      "columns": {}
+    },
+    "survival": {
+      "files": 39,
+      "bytes": 11607261,
+      "columnar_rows": 0,
+      "top_level_fields": [
+        "cpap",
+        "metadata",
+        "schema_version",
+        "severity",
+        "strata"
+      ],
+      "columns": {}
+    },
+    "survival-manifest.json": {
+      "files": 1,
+      "bytes": 10497,
+      "columnar_rows": 0,
+      "top_level_fields": [
+        "analysis",
+        "counts",
+        "defaults",
+        "disclosure",
+        "exporter_version",
+        "features",
+        "release",
+        "schema_version",
+        "sources",
+        "strata"
+      ],
+      "columns": {}
+    },
+    "was": {
+      "files": 568,
+      "bytes": 23413419,
+      "columnar_rows": 81833,
+      "top_level_fields": [
+        "columns",
+        "metadata",
+        "schema_version"
+      ],
+      "columns": {
+        "feature_key": {
+          "value_types": [
+            "string"
+          ],
+          "has_nulls": false
+        },
+        "feature_id": {
+          "value_types": [
+            "string"
+          ],
+          "has_nulls": false
+        },
+        "feature_name": {
+          "value_types": [
+            "string"
+          ],
+          "has_nulls": false
+        },
+        "category": {
+          "value_types": [
+            "string"
+          ],
+          "has_nulls": false
+        },
+        "subgroup": {
+          "value_types": [
+            "null",
+            "string"
+          ],
+          "has_nulls": true
+        },
+        "effect_type": {
+          "value_types": [
+            "string"
+          ],
+          "has_nulls": false
+        },
+        "effect": {
+          "value_types": [
+            "null",
+            "number"
+          ],
+          "has_nulls": true
+        },
+        "se": {
+          "value_types": [
+            "null",
+            "number"
+          ],
+          "has_nulls": true
+        },
+        "ci_low": {
+          "value_types": [
+            "null",
+            "number"
+          ],
+          "has_nulls": true
+        },
+        "ci_high": {
+          "value_types": [
+            "null",
+            "number"
+          ],
+          "has_nulls": true
+        },
+        "p": {
+          "value_types": [
+            "null",
+            "number"
+          ],
+          "has_nulls": true
+        },
+        "neglog10p": {
+          "value_types": [
+            "null",
+            "number"
+          ],
+          "has_nulls": true
+        },
+        "sig_fdr": {
+          "value_types": [
+            "boolean"
+          ],
+          "has_nulls": false
+        },
+        "sig_bon": {
+          "value_types": [
+            "boolean"
+          ],
+          "has_nulls": false
+        },
+        "unstable": {
+          "value_types": [
+            "boolean"
+          ],
+          "has_nulls": false
+        },
+        "unstable_reason": {
+          "value_types": [
+            "null",
+            "string"
+          ],
+          "has_nulls": true
+        },
+        "n": {
+          "value_types": [
+            "number"
+          ],
+          "has_nulls": false
+        },
+        "n_secondary": {
+          "value_types": [
+            "null",
+            "number"
+          ],
+          "has_nulls": true
+        },
+        "prevalence": {
+          "value_types": [
+            "null",
+            "number"
+          ],
+          "has_nulls": true
+        },
+        "label_review_required": {
+          "value_types": [
+            "boolean"
+          ],
+          "has_nulls": false
+        },
+        "referral_item": {
+          "value_types": [
+            "boolean"
+          ],
+          "has_nulls": false
+        }
+      }
+    },
+    "was-features.json": {
+      "files": 1,
+      "bytes": 271390,
+      "columnar_rows": 1362,
+      "top_level_fields": [
+        "columns",
+        "metadata",
+        "schema_version"
+      ],
+      "columns": {
+        "feature_key": {
+          "value_types": [
+            "string"
+          ],
+          "has_nulls": false
+        },
+        "feature_id": {
+          "value_types": [
+            "string"
+          ],
+          "has_nulls": false
+        },
+        "feature_name": {
+          "value_types": [
+            "string"
+          ],
+          "has_nulls": false
+        },
+        "family": {
+          "value_types": [
+            "string"
+          ],
+          "has_nulls": false
+        },
+        "analysis_ids": {
+          "value_types": [
+            "array"
+          ],
+          "has_nulls": false
+        },
+        "category": {
+          "value_types": [
+            "string"
+          ],
+          "has_nulls": false
+        },
+        "subgroup": {
+          "value_types": [
+            "null",
+            "string"
+          ],
+          "has_nulls": true
+        },
+        "code_system": {
+          "value_types": [
+            "string"
+          ],
+          "has_nulls": false
+        },
+        "alternate_names": {
+          "value_types": [
+            "array"
+          ],
+          "has_nulls": false
+        },
+        "windows": {
+          "value_types": [
+            "array"
+          ],
+          "has_nulls": false
+        },
+        "label_review_required": {
+          "value_types": [
+            "boolean"
+          ],
+          "has_nulls": false
+        }
+      }
+    },
+    "was-manifest.json": {
+      "files": 1,
+      "bytes": 454110,
+      "columnar_rows": 0,
+      "top_level_fields": [
+        "analyses",
+        "contrasts",
+        "defaults",
+        "exporter_version",
+        "features",
+        "models",
+        "partitions",
+        "qwas_release",
+        "release",
+        "schema_version",
+        "sources",
+        "utilization_profile"
+      ],
+      "columns": {}
+    },
+    "was-utilization-profile.json": {
+      "files": 1,
+      "bytes": 38579,
+      "columnar_rows": 70,
+      "top_level_fields": [
+        "columns",
+        "metadata",
+        "schema_version"
+      ],
+      "columns": {
+        "metric_id": {
+          "value_types": [
+            "string"
+          ],
+          "has_nulls": false
+        },
+        "metric_label": {
+          "value_types": [
+            "string"
+          ],
+          "has_nulls": false
+        },
+        "window": {
+          "value_types": [
+            "string"
+          ],
+          "has_nulls": false
+        },
+        "severity": {
+          "value_types": [
+            "string"
+          ],
+          "has_nulls": false
+        },
+        "n_denominator": {
+          "value_types": [
+            "number"
+          ],
+          "has_nulls": false
+        },
+        "n_nonmissing": {
+          "value_types": [
+            "number"
+          ],
+          "has_nulls": false
+        },
+        "n_with_use": {
+          "value_types": [
+            "number"
+          ],
+          "has_nulls": false
+        },
+        "mean": {
+          "value_types": [
+            "number"
+          ],
+          "has_nulls": false
+        },
+        "sd": {
+          "value_types": [
+            "number"
+          ],
+          "has_nulls": false
+        },
+        "median": {
+          "value_types": [
+            "number"
+          ],
+          "has_nulls": false
+        },
+        "unit": {
+          "value_types": [
+            "string"
+          ],
+          "has_nulls": false
+        },
+        "denominator_definition": {
+          "value_types": [
+            "string"
+          ],
+          "has_nulls": false
+        },
+        "metric_definition": {
+          "value_types": [
+            "string"
+          ],
+          "has_nulls": false
+        },
+        "suppressed": {
+          "value_types": [
+            "boolean"
+          ],
+          "has_nulls": false
+        },
+        "suppression_reason": {
+          "value_types": [
+            "null"
+          ],
+          "has_nulls": true
+        }
+      }
+    }
+  }
+}
