@@ -55,6 +55,16 @@ export function SidePanel(props: { open: boolean; onClose: () => void; children:
     };
   }, [open, isDesktop]);
 
+  // The ask dock re-centers over the column left of the open desktop panel.
+  useEffect(() => {
+    if (!open || !isDesktop) return;
+    const root = document.documentElement;
+    root.dataset.sidePanelOpen = "";
+    return () => {
+      delete root.dataset.sidePanelOpen;
+    };
+  }, [open, isDesktop]);
+
   if (isDesktop) {
     return (
       <aside

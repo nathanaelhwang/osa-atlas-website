@@ -2,9 +2,9 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState, useTransition, type FormEvent, type KeyboardEvent } from "react";
+import { useReducedMotion } from "@/components/home/useReducedMotion";
 import { resolveAsk } from "@/lib/ask/resolve";
 import styles from "./AskBox.module.css";
-import { useReducedMotion } from "./useReducedMotion";
 
 const PROMPTS = [
   "Is OSA linked to hypertension?",
@@ -74,7 +74,15 @@ function useTypewriter(active: boolean, reduced: boolean): Typed {
   return typed;
 }
 
-export function AskBox() {
+/** Classes that grow the hero box from the small breakpoint up; the dock stays at the base size. */
+const LARGE = {
+  input: "sm:h-16 sm:pr-[76px] sm:pl-7 sm:text-[19px]",
+  prompt: "sm:right-[76px] sm:pl-7 sm:text-[19px]",
+  button: "sm:right-2.5 sm:size-11",
+};
+
+/** The "Ask anything" box: `className` places the form; `large` is the home page hero size. */
+export function AskBox({ className, large = false }: { className: string; large?: boolean }) {
   const router = useRouter();
   const reduced = useReducedMotion();
   const [value, setValue] = useState("");
@@ -91,7 +99,11 @@ export function AskBox() {
     if (!query || pending) return;
     startTransition(async () => {
       const href = await resolveAsk(query);
-      startTransition(() => router.push(href));
+      // Clearing inside the transition commits together with the navigation.
+      startTransition(() => {
+        router.push(href);
+        setValue("");
+      });
     });
   };
 
@@ -103,7 +115,7 @@ export function AskBox() {
   };
 
   return (
-    <form role="search" aria-busy={pending} onSubmit={onSubmit} className="relative mt-8 w-full max-w-[720px] sm:mt-10">
+    <form role="search" aria-busy={pending} onSubmit={onSubmit} className={`relative w-full ${className}`}>
       <input
         type="text"
         aria-label="Ask anything"
@@ -115,12 +127,12 @@ export function AskBox() {
         autoComplete="off"
         spellCheck={false}
         enterKeyHint="go"
-        className="h-14 w-full rounded-full border border-hairline bg-white/85 pr-16 pl-5 text-[17px] text-ink shadow-[0_8px_32px_rgb(0_0_0/0.08)] backdrop-blur-xl sm:h-16 sm:pr-[76px] sm:pl-7 sm:text-[19px]"
+        className={`h-14 w-full rounded-full border border-hairline bg-white/85 pr-16 pl-5 text-[17px] text-ink shadow-[0_8px_32px_rgb(0_0_0/0.08)] backdrop-blur-xl ${large ? LARGE.input : ""}`}
       />
       {empty && (
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-y-0 right-16 left-0 flex items-center pl-5 text-[17px] text-muted sm:right-[76px] sm:pl-7 sm:text-[19px]"
+          className={`pointer-events-none absolute inset-y-0 right-16 left-0 flex items-center pl-5 text-[17px] text-muted ${large ? LARGE.prompt : ""}`}
         >
           <span className="min-w-0 overflow-hidden text-ellipsis whitespace-pre">{shown}</span>
           {!focused && (
@@ -134,7 +146,7 @@ export function AskBox() {
         type="submit"
         aria-label="Ask"
         disabled={!query}
-        className="absolute top-1/2 right-2 flex size-10 -translate-y-1/2 items-center justify-center rounded-full bg-ink text-white transition-colors duration-150 disabled:bg-hairline sm:right-2.5 sm:size-11"
+        className={`absolute top-1/2 right-2 flex size-10 -translate-y-1/2 items-center justify-center rounded-full bg-ink text-white transition-colors duration-150 disabled:bg-hairline ${large ? LARGE.button : ""}`}
       >
         {pending ? (
           <span aria-hidden className="size-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />

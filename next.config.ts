@@ -23,6 +23,8 @@ const nextConfig: NextConfig = {
     root: __dirname,
     rules: {
       "*.css": {
+        // Renaming via `as` would turn x.module.css into global CSS with no class exports; modules need no Tailwind.
+        condition: { not: { path: /\.module\.css$/ } },
         loaders: ["@tailwindcss/turbopack"],
         as: "*.css",
       },

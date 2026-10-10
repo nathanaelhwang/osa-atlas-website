@@ -41,7 +41,7 @@ WAS pages keep their state in the URL: `analysis`, `window`, `model`, `contrast`
 
 ## Ask box
 
-`resolveAsk(prompt)` in `src/lib/ask/resolve.ts` POSTs to `/api/ask` and returns the path to open. Any failure (firewall 429, Jev outage, missing key, 6 s timeout) falls back to the keyword router in `src/lib/ask/keyword.ts`.
+The box sits in the middle of the home page and floats at the bottom of every other page (`AskDock`, mounted in the root layout). `resolveAsk(prompt)` in `src/lib/ask/resolve.ts` POSTs to `/api/ask` and returns the path to open. Any failure (firewall 429, Jev outage, missing key, 6 s timeout) falls back to the keyword router in `src/lib/ask/keyword.ts`.
 
 `/api/ask` routes with Jev, TypeSafe's decision model on OpenRouter (`typesafe/jev-1.13`, pinned). Jev never writes text; it picks from options the code defines, so every link is built by code from valid page parameters.
 

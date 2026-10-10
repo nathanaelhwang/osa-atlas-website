@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { AskBox } from "@/components/home/AskBox";
+import { AskBox } from "@/components/ask/AskBox";
 import { HomeBackground } from "@/components/home/HomeBackground";
 
 export const metadata: Metadata = {
@@ -14,7 +14,7 @@ export default function Home() {
         <h1 className="text-center text-[40px] leading-[1.1] font-semibold tracking-[-0.025em] sm:text-[56px] sm:leading-[1.07]">
           Ask anything
         </h1>
-        <AskBox />
+        <AskBox large className="mt-8 max-w-[720px] sm:mt-10" />
       </main>
     </>
   );
