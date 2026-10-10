@@ -4,7 +4,8 @@ import { Select, type SelectOption } from "@/components/ui/Select";
 import { CONTRAST_LABELS, MODEL_LABELS, WINDOW_LABELS } from "@/lib/data/labels";
 import { categoryLabel, type PaletteKey } from "@/lib/palettes";
 import type { WasPageConfig } from "@/lib/was-config";
-import type { WasPatch, WasState } from "@/components/was/useWasState";
+import type { WasPatch } from "@/components/was/useWasState";
+import type { WasState } from "@/lib/was-state";
 
 /** Display text for a subgroup (setting) value; the data joins its parts with a middle dot. */
 export function settingLabel(subgroup: string): string {

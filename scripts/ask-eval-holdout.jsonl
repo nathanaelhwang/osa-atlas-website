@@ -1,0 +1,60 @@
+{"prompt": "restless legs syndrome", "href": "/phedas/prevalence?feature=327.71", "tags": ["phedas-prevalence", "exact"]}
+{"prompt": "Migraine", "href": "/phedas/prevalence?feature=340", "tags": ["phedas-prevalence", "exact"]}
+{"prompt": "is COPD more common in people with sleep apnea?", "href": "/phedas/prevalence?feature=496", "tags": ["phedas-prevalence", "lay"]}
+{"prompt": "posttraumatic stress disorder", "href": "/phedas/prevalence?feature=300.9", "tags": ["phedas-prevalence", "exact"]}
+{"prompt": "enlarged prostate", "href": "/phedas/prevalence?feature=600", "tags": ["phedas-prevalence", "lay"]}
+{"prompt": "blood clot in the lungs", "href": "/phedas/prevalence?feature=415.11", "tags": ["phedas-prevalence", "lay"]}
+{"prompt": "psoriasis", "href": "/phedas/prevalence?feature=696.4", "tags": ["phedas-prevalence", "exact"]}
+{"prompt": "smokers", "href": "/phedas/prevalence?feature=318", "tags": ["phedas-prevalence", "lay"]}
+{"prompt": "bipolar disorder, moderate OSA versus none", "href": "/phedas/prevalence?feature=296.1&contrast=moderate_vs_none", "tags": ["phedas-prevalence", "settings", "exact"]}
+{"prompt": "skin problems linked to sleep apnea", "href": "/phedas/prevalence?category=dermatologic", "tags": ["phedas-prevalence", "settings", "nav", "lay"]}
+{"prompt": "new cases of psoriasis", "href": "/phedas/incidence?feature=696.41", "tags": ["phedas-incidence", "lay"]}
+{"prompt": "will they get COPD down the road", "href": "/phedas/incidence?feature=496", "tags": ["phedas-incidence", "lay"]}
+{"prompt": "incident hearing loss", "href": "/phedas/incidence?feature=389", "tags": ["phedas-incidence", "exact"]}
+{"prompt": "risk of developing a drinking problem", "href": "/phedas/incidence?feature=317", "tags": ["phedas-incidence", "lay"]}
+{"prompt": "new migraine diagnoses after the sleep study", "href": "/phedas/incidence?feature=340", "tags": ["phedas-incidence", "lay"]}
+{"prompt": "incident psychosis, AHI 15 or more, demographics-adjusted model", "href": "/phedas/incidence?feature=295.3&contrast=ahi_ge15&model=M2", "tags": ["phedas-incidence", "settings", "exact"]}
+{"prompt": "incident disease hazard ratios, linear trend across severity", "href": "/phedas/incidence?contrast=trend", "tags": ["phedas-incidence", "nav", "settings"]}
+{"prompt": "prediabetes cumulative incidence by AHI severity", "href": "/incidence/severity?feature=250.41", "tags": ["curves-severity", "lay"]}
+{"prompt": "neck pain over time in mild, moderate and severe OSA", "href": "/incidence/severity?feature=761", "tags": ["curves-severity", "lay"]}
+{"prompt": "Aalen-Johansen curves for palpitations", "href": "/incidence/severity?feature=427.9", "tags": ["curves-severity", "exact"]}
+{"prompt": "how soon does protein in the urine show up after diagnosis, by severity group", "href": "/incidence/severity?feature=269", "tags": ["curves-severity", "lay"]}
+{"prompt": "CPAP adherence and osteoarthritis", "href": "/incidence/cpap?feature=740.11", "tags": ["curves-cpap", "exact"]}
+{"prompt": "ADHD by CPAP use with the 90-day landmark", "href": "/incidence/cpap?feature=313.1&window=90", "tags": ["curves-cpap", "settings", "exact"]}
+{"prompt": "nausea risk, 4+ hours a night vs never started CPAP", "href": "/incidence/cpap?feature=789", "tags": ["curves-cpap", "exact"]}
+{"prompt": "CPAP and aortic atherosclerosis, 180-day grace period", "href": "/incidence/cpap?feature=440.9", "tags": ["curves-cpap", "settings", "exact"]}
+{"prompt": "testosterone levels in men with sleep apnea", "href": "/was/labwas?feature=labwas%3A2986-8", "tags": ["labwas", "exact"]}
+{"prompt": "PSA", "href": "/was/labwas?feature=labwas%3A2857-1", "tags": ["labwas", "lay"]}
+{"prompt": "BUN", "href": "/was/labwas?feature=labwas%3A3094-0", "tags": ["labwas", "lay"]}
+{"prompt": "white blood cell count", "href": "/was/labwas?feature=labwas%3A6690-2", "tags": ["labwas", "lay"]}
+{"prompt": "serum magnesium", "href": "/was/labwas?feature=labwas%3A19123-9", "tags": ["labwas", "exact"]}
+{"prompt": "likelihood of having a parathyroid hormone test ordered", "href": "/was/labwas?analysis=labwas_order_propensity&feature=labwas%3A2731-8", "tags": ["labwas", "settings", "lay"]}
+{"prompt": "liver function tests", "href": "/was/labwas?category=liver", "tags": ["labwas", "nav", "settings", "lay"]}
+{"prompt": "Adderall and other amphetamines", "href": "/was/medwas?feature=medwas%3A6110", "tags": ["medwas", "lay"]}
+{"prompt": "levothyroxine", "href": "/was/medwas?feature=medwas%3A2810", "tags": ["medwas", "lay"]}
+{"prompt": "angiotensin receptor blockers", "href": "/was/medwas?feature=medwas%3A3615", "tags": ["medwas", "exact"]}
+{"prompt": "steroid inhalers", "href": "/was/medwas?feature=medwas%3A4440", "tags": ["medwas", "exact"]}
+{"prompt": "Flonase-type nasal steroid sprays, severe apnea vs none, 1-year window", "href": "/was/medwas?window=1yr&contrast=severe_vs_none&feature=medwas%3A4220", "tags": ["medwas", "settings", "lay"]}
+{"prompt": "which prescriptions do people with OSA fill more often", "href": "/was/medwas", "tags": ["medwas", "vague", "nav"]}
+{"prompt": "cataplexy", "href": "/was/qwas?feature=qwas%3ACATAPLEXY", "tags": ["qwas", "exact"]}
+{"prompt": "seeing or hearing things while falling asleep", "href": "/was/qwas?feature=qwas%3ASLEEPHALLUCINATION", "tags": ["qwas", "lay"]}
+{"prompt": "how often do they wake up with morning headaches", "href": "/was/qwas?analysis=qwas_continuous&feature=qwas%3AHEADACHE", "tags": ["qwas", "settings", "lay"]}
+{"prompt": "do they report claustrophobia", "href": "/was/qwas?feature=qwas%3ACLAUST", "tags": ["qwas", "exact"]}
+{"prompt": "STOP-Bang snoring item", "href": "/was/qwas?feature=qwas%3ASTOP1", "tags": ["qwas", "exact"]}
+{"prompt": "earwax removal", "href": ["/was/procwas?feature=procwas%3Aremoval-impacted-cerumen-by-lavage-bilateral", "/was/procwas?feature=procwas%3Aremoval-unilat-impacted-cerumen-by-irrigation-lavage"], "tags": ["procwas", "lay"]}
+{"prompt": "DLCO", "href": "/was/procwas?feature=procwas%3Ameasurement-of-diffusion-lung-capacity", "tags": ["procwas", "exact"]}
+{"prompt": "cardiac procedures", "href": "/was/procwas?category=Cardiovascular%20%2F%20Lymphatic", "tags": ["procwas", "nav", "settings", "lay"]}
+{"prompt": "how often are OSA patients seen for migraines", "href": "/was/utilwas?feature=utilwas%3Aphysician_primary%3Aphecode%3A340", "tags": ["utilwas", "lay"]}
+{"prompt": "ER visits after fainting", "href": "/was/utilwas?setting=Emergency%20department%20%C2%B7%20primary%20diagnosis&feature=utilwas%3AED_primary%3Aphecode%3A788", "tags": ["utilwas", "settings", "lay"]}
+{"prompt": "hospital admissions for stroke", "href": "/was/utilwas?setting=Inpatient%20%C2%B7%20principal%20diagnosis&feature=utilwas%3Ainpatient_primary%3Aphecode%3A433.2", "tags": ["utilwas", "settings", "lay"]}
+{"prompt": "care visits for dizziness or vertigo", "href": "/was/utilwas?feature=utilwas%3Aphysician_primary%3Aphecode%3A386.9", "tags": ["utilwas", "lay"]}
+{"prompt": "among diagnosed patients, how many type 2 diabetes visits do they have", "href": "/was/utilwas?analysis=utilwas_count_present&feature=utilwas%3Aphysician_primary%3Aphecode%3A250.2", "tags": ["utilwas", "settings", "lay"]}
+{"prompt": "neurology visit rate", "href": "/was/utilwas?analysis=utilwas_specialty_rate&feature=utilwas%3Aphysician_level%3Aspecialty%3Aneurology", "tags": ["utilwas", "settings", "exact"]}
+{"prompt": "number of flu vaccines received", "href": "/was/behwas?analysis=behwas_continuous&feature=behwas%3Aflu_count", "tags": ["behwas", "settings", "exact"]}
+{"prompt": "were they ever written out of work by a doctor", "href": "/was/behwas?window=lifetime&feature=behwas%3Aany_off_work", "tags": ["behwas", "settings", "lay"]}
+{"prompt": "patients who are sleepy and have lots of medical problems, but their sleep study isn't that bad", "href": "/phenotypes?octant=symptomatic-comorbid", "tags": ["profiles", "lay", "settings"]}
+{"prompt": "worst oxygen drops plus many other diseases, yet not sleepy", "href": "/phenotypes?octant=hypoxemic-comorbid", "tags": ["profiles", "lay", "settings"]}
+{"prompt": "Hypoxemic Symptomatic heatmap", "href": "/phenotypes?octant=hypoxemic-symptomatic&view=heatmap", "tags": ["profiles", "exact", "settings"]}
+{"prompt": "radiculitis or nerve pain by OSA phenotype", "href": "/phenotypes/outcomes?outcome=766", "tags": ["outcomes", "exact"]}
+{"prompt": "spondylosis in the high-all octant", "href": "/phenotypes/outcomes?outcome=721.1&octant=high-all", "tags": ["outcomes", "exact", "settings"]}
+{"prompt": "which OSA subtype is most likely to develop endocrine or metabolic problems", "href": "/phenotypes/outcomes?outcome=endocrine%2Fmetabolic", "tags": ["outcomes", "lay"]}

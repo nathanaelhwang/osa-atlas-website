@@ -1,25 +1,11 @@
-import { fetchJson } from "@/lib/data/client";
+import type { CurveView, FeatureRegistry, SurvivalManifest } from "@/lib/ask/sources";
+import { DECORATION, MIN_TERM_LENGTH, mentions, nameForms, normalize, sameLineage } from "@/lib/ask/text";
 
 /**
- * Turns a free-text prompt into a destination href. This is the single seam a future LLM service replaces;
- * for now it is a deterministic keyword router.
+ * Deterministic keyword router: the fallback when the Jev router (/api/ask) is unavailable or rate-limited.
+ * Picks a page by keyword (first match wins), then the longest PheCode name in the prompt.
  */
 
-interface FeatureRegistry {
-  columns: {
-    feature_id: string[];
-    feature_name: string[];
-    prevalence: boolean[];
-    incidence: boolean[];
-    alternate_names: string[][];
-  };
-}
-
-interface SurvivalManifest {
-  features: { feature_id: string; feature_name: string; available_views: Partial<Record<CurveView, boolean>> }[];
-}
-
-type CurveView = "severity" | "cpap";
 type FeaturePool = "prevalence" | "incidence" | CurveView;
 
 interface Route {
@@ -35,14 +21,12 @@ interface Term {
   text: string;
 }
 
-interface FeatureIndex {
+export interface KeywordIndex {
   terms: Term[];
   pools: Record<FeaturePool, Set<string>>;
   /** Curated features with incidence curves, with normalized names. */
   headlines: Term[];
 }
-
-const MIN_TERM_LENGTH = 4;
 
 /** First match wins. Words and phrases are matched whole, after normalization. */
 const ROUTES: (Route & { words: string[] })[] = [
@@ -71,39 +55,7 @@ const ROUTES: (Route & { words: string[] })[] = [
 
 const DEFAULT_ROUTE: Route = { href: "/phedas/prevalence", pool: "prevalence" };
 
-/** Trailing PheCode qualifiers that users never type. */
-const QUALIFIER = / (nos|nec|unspecified)$/;
-const BRACKETED = /\[([^\]]+)\]/g;
-const DECORATION = /\s*(\[[^\]]*\]|\([^)]*\))/g;
-
-function normalize(text: string): string {
-  return text
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, " ")
-    .trim();
-}
-
-/** Whole-word containment; `text` must be normalized and padded with single spaces. */
-function mentions(text: string, phrase: string): boolean {
-  return text.includes(` ${phrase} `);
-}
-
-/** Matchable forms of a feature name: as written, without decorations or qualifiers, and bracketed synonyms. */
-function nameForms(name: string): string[] {
-  const forms = [name, name.replace(DECORATION, " "), ...Array.from(name.matchAll(BRACKETED), (m) => m[1])];
-  return forms.flatMap((form) => {
-    const text = normalize(form);
-    return [text, text.replace(QUALIFIER, "")];
-  });
-}
-
-/** PheCodes in one lineage: one is the other refined by more digits (401 → 401.1, 427.2 → 427.21). */
-function sameLineage(a: string, b: string): boolean {
-  const [short, long] = a.length <= b.length ? [a, b] : [b, a];
-  return long.startsWith(short) && (short.includes(".") || long[short.length] === ".");
-}
-
-function buildIndex(registry: FeatureRegistry, survival: SurvivalManifest): FeatureIndex {
+export function buildKeywordIndex(registry: FeatureRegistry, survival: SurvivalManifest): KeywordIndex {
   const { feature_id, feature_name, prevalence, incidence, alternate_names } = registry.columns;
   const terms: Term[] = [];
   feature_id.forEach((id, i) => {
@@ -112,8 +64,8 @@ function buildIndex(registry: FeatureRegistry, survival: SurvivalManifest): Feat
   });
   const curves: Record<CurveView, Set<string>> = { severity: new Set(), cpap: new Set() };
   for (const f of survival.features) {
-    if (f.available_views.severity) curves.severity.add(f.feature_id);
-    if (f.available_views.cpap) curves.cpap.add(f.feature_id);
+    if (f.available_views.severity) curves.severity.add(String(f.feature_id));
+    if (f.available_views.cpap) curves.cpap.add(String(f.feature_id));
   }
   return {
     terms,
@@ -122,23 +74,11 @@ function buildIndex(registry: FeatureRegistry, survival: SurvivalManifest): Feat
       incidence: new Set(feature_id.filter((_, i) => incidence[i])),
       ...curves,
     },
-    headlines: survival.features.map((f) => ({ id: f.feature_id, text: ` ${normalize(f.feature_name.replace(DECORATION, " "))} ` })),
+    headlines: survival.features.map((f) => ({
+      id: String(f.feature_id),
+      text: ` ${normalize(f.feature_name.replace(DECORATION, " "))} `,
+    })),
   };
-}
-
-let indexPromise: Promise<FeatureIndex> | null = null;
-
-function loadIndex(): Promise<FeatureIndex> {
-  if (!indexPromise) {
-    indexPromise = Promise.all([
-      fetchJson<FeatureRegistry>("features.json"),
-      fetchJson<SurvivalManifest>("survival-manifest.json"),
-    ]).then(([registry, survival]) => buildIndex(registry, survival));
-    indexPromise.catch(() => {
-      indexPromise = null;
-    });
-  }
-  return indexPromise;
 }
 
 /**
@@ -146,7 +86,7 @@ function loadIndex(): Promise<FeatureIndex> {
  * promoted to the curated feature in its PheCode lineage whose name contains the same words
  * ("hypertension" → Essential hypertension). Returns null unless the result exists in `pool`.
  */
-function matchFeature(index: FeatureIndex, text: string, pool: FeaturePool): string | null {
+function matchFeature(index: KeywordIndex, text: string, pool: FeaturePool): string | null {
   let best: Term | null = null;
   for (const term of index.terms) {
     if ((!best || term.text.length > best.text.length) && mentions(text, term.text)) best = term;
@@ -160,7 +100,8 @@ function matchFeature(index: FeatureIndex, text: string, pool: FeaturePool): str
   return index.pools[pool].has(id) ? id : null;
 }
 
-export async function resolveAsk(prompt: string): Promise<string> {
+/** `loadIndex` is called only when the chosen page takes a feature. */
+export async function keywordHref(prompt: string, loadIndex: () => Promise<KeywordIndex>): Promise<string> {
   const text = ` ${normalize(prompt)} `;
   const route = ROUTES.find((r) => r.words.some((w) => mentions(text, w))) ?? DEFAULT_ROUTE;
   if (route.refine?.words.some((w) => mentions(text, w))) return route.refine.href;

@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState, useTransition, type FormEvent, type KeyboardEvent } from "react";
-import { resolveAsk } from "@/lib/ask";
+import { resolveAsk } from "@/lib/ask/resolve";
 import styles from "./AskBox.module.css";
 import { useReducedMotion } from "./useReducedMotion";
 

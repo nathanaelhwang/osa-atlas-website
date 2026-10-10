@@ -3,12 +3,10 @@
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { ForestPlot } from "@/components/phenotypes/outcomes/ForestPlot";
 import { OutcomeCurves } from "@/components/phenotypes/outcomes/OutcomeCurves";
-import type { OutcomeOctant, OutcomeSummary } from "@/components/phenotypes/outcomes/types";
+import { DEFAULT_OUTCOME, type OutcomeOctant, type OutcomeSummary } from "@/components/phenotypes/outcomes/types";
 import { octantLabel } from "@/components/phenotypes/profiles/OctantGlyph";
 import { ComboBox } from "@/components/ui/ComboBox";
 import { categoryColor, categoryLabel, OCTANT_COLORS } from "@/lib/palettes";
-
-const DEFAULT_OUTCOME = "428.2";
 
 /** Octant with the smallest one-vs-rest p for the outcome. */
 function strongestOctant(outcome: OutcomeSummary): string | undefined {

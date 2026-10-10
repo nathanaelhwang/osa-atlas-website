@@ -20,17 +20,18 @@ The manuscript, supplement, and tables and figures are `.docx` files in `manuscr
 - Home: an immersive Manhattan plot background built from real data, colored by body system, with **no text in the background**. In the middle, "Ask anything" above a big text box whose example prompts type out and backspace. The nav sits top right.
 - WAS template, shared by every association page: the WAS title; dropdowns for Exposure, Adjustment and Disease category (plus Measure, Window and Setting when the page has more than one option); Manhattan by default with a Volcano tab; points colored by body system as in the manuscript; clicking a point opens a right panel with the effect (odds ratio etc.), 95% CI, p-value, FDR significant and Bonferroni significant.
 - Sitemap: Home → PheDAS (Prevalence, Incidence) | Other WAS (LabWAS, MedWAS, QWAS, ProcWAS, UtilWAS, BehWAS; each its own page) | Phenotypes (8 profiles; **outcomes on a separate page**) | Incidence curves (OSA severity, CPAP adherence).
-- The "Ask anything" box will later be connected to an LLM that sends users to the feature they asked about. That service is not built yet.
+- The "Ask anything" box sends users to the page and feature they asked about. It routes with Jev (a decision model on OpenRouter) and falls back to a keyword router.
 
 ## Stack and commands
 
-Next.js 16.4 (App Router, `src/`, alias `@/*` → `src/*`), React 19.3, TypeScript (strict), Tailwind CSS v4 (configured in CSS in `src/app/globals.css`; there is no tailwind config file), d3-scale, d3-shape and d3-array. Charts are hand-written SVG or canvas; do not add a chart or UI library. The site has no backend yet. The code is on GitHub at `nathanaelhwang/osa-atlas-website`; commit or push only when the user asks.
+Next.js 16.4 (App Router, `src/`, alias `@/*` → `src/*`), React 19.3, TypeScript (strict), Tailwind CSS v4 (configured in CSS in `src/app/globals.css`; there is no tailwind config file), d3-scale, d3-shape and d3-array. Charts are hand-written SVG or canvas; do not add a chart or UI library. The only backend is the `/api/ask` route handler. The code is on GitHub at `nathanaelhwang/osa-atlas-website`; commit or push only when the user asks.
 
 ```bash
 npm run dev        # dev server
 npm run typecheck  # next typegen && tsc --noEmit (typegen generates the global LayoutProps and PageProps types)
 npm run lint
 npm run build
+npm run eval:ask   # tsx: scores ask routers against scripts/ask-eval.jsonl (--labels, --designs, --misses); calls Jev
 ```
 
 Check a change by running typecheck, lint and build, then opening the affected routes in a browser at desktop width and at about 390px (no console errors; try the interaction you changed). Python is used only for inspecting data, run with `uv run --with <pkg> python`. Never use conda or pip.
@@ -48,8 +49,8 @@ Check a change by running typecheck, lint and build, then opening the affected r
 
 - The site is meant to run on Vercel, connected to the GitHub repo: pushes to `main` deploy to production, and other branches and pull requests get preview URLs. It uses Vercel's default Next.js settings, with no `vercel.json`. Keep Cache Components on. Do not add `output: "export"`: that was only needed for Cloudflare, which was not chosen.
 - Vercel's free Hobby plan allows only personal, non-commercial use. On that plan, going over a monthly limit stops that feature until 30 days have passed. The user decides the plan. Mention this if a change could greatly increase function or bandwidth use.
-- Every page is pre-built at build time. The only request-time rendering is an unknown `/was/<slug>`, which calls `notFound()` before reading any data. If you add server code that runs at request time, don't assume it can read `public/data` from the file system: Vercel serves `public/` from its CDN, and it may not be bundled with the function. Either check the file is included (`outputFileTracingIncludes` in `next.config.ts`) or fetch it by URL.
-- Plan for the LLM: add a route handler at `src/app/api/ask/route.ts` (POST `{ prompt }` → `{ href }`), keep the API key in a Vercel environment variable (never `NEXT_PUBLIC_*`), set `export const maxDuration` if needed (the Hobby limit is 300 s), and make `resolveAsk` call this endpoint. Returned links must be site paths that use the URL parameters listed under Architecture.
+- Every page is pre-built at build time. Request-time server code: an unknown `/was/<slug>` (calls `notFound()` before reading any data) and `POST /api/ask`. Don't assume request-time code can read `public/data` from the file system: Vercel serves `public/` from its CDN. `/api/ask` reads six registries/manifests through `readPublicJson`, listed in `outputFileTracingIncludes`; `outputFileTracingExcludes` keeps the ~56 MB of partitions out of that function. Update both lists if the router reads another file.
+- `/api/ask` needs `OPENROUTER_API_KEY` (Vercel environment variable and local `.env.local`; never `NEXT_PUBLIC_*`). It is rate-limited by a Vercel firewall rule (POST `/api/ask`, per IP, 20 per 60 s → 429) configured in the dashboard, not in code. Jev costs about $0.30 per 1,000 asks. `maxDuration` is 10 s.
 - The site's metadata sets its address (`metadataBase`) to `https://www.osaatlas.com`, so social preview images resolve there. Point that domain at this Vercel project, or change `metadataBase`, when the site goes live.
 
 ## Data (read `data/README_20261008.txt` first)
@@ -84,7 +85,15 @@ src/lib/plot/manhattan.ts manhattanLayout (x positions in [0,1] by group), yCap 
 src/lib/was-config.ts     WasSlug, WAS_FAMILY_SLUGS, WasAnalysisConfig, WasPageConfig (types only; importable anywhere)
 src/lib/palettes.ts       CATEGORY_PALETTES + categoryColor/Label/Order; SEVERITY_COLORS, CPAP_COLORS, OCTANT_COLORS, NO_OSA_COLOR
 src/lib/site.ts           NAV (the sitemap; drives SiteNav)
-src/lib/ask.ts            resolveAsk(prompt) → href (the place to plug in the LLM)
+src/lib/was-state.ts      resolveWasState, wasQuery (WAS URL ↔ state; shared by useWasState and the ask router)
+src/lib/ask/resolve.ts    resolveAsk(prompt) → href (client: POST /api/ask, keyword fallback on any failure)
+src/lib/ask/keyword.ts    keyword router (fallback; pure, takes the registry)
+src/lib/ask/catalog.ts    "server-only": getAskCatalog() — entities (diseases, labs, meds, items, procedures, specialties, behaviors), page configs, pools
+src/lib/ask/retrieve.ts   createRetriever(entities): prompt → ≤20 candidates by word overlap
+src/lib/ask/jev.ts        "server-only": decide(state, questions) on OpenRouter's Decisions API, pinned typesafe/jev-1.13
+src/lib/ask/router.ts     "server-only": routePrompt — Jev questions, thresholds, feature tree
+src/lib/ask/href.ts       buildHref(catalog, plan): the canonical URL the destination page would write
+src/app/api/ask/route.ts  POST { prompt } → { href }; 400 bad input, 503 on any Jev failure
 src/components/ui/        Select, SegmentedControl (+SegmentTrack), TabLinks, PageHeader, SidePanel, Legend, ComboBox
 src/components/charts/    ManhattanPlot, VolcanoPlot (AssocPlotProps in plot-shared.tsx), CifChart (y values in PERCENT)
 src/components/was/       WasPage, WasControls, FeatureDetail, useWasState, WasFallback
@@ -93,13 +102,13 @@ src/components/phenotypes/{profiles,outcomes}/, src/components/incidence/
 ```
 
 - **Data flow:** server pages call `readPublicJson`/`getWasPageConfig` and pass small, serializable props to client components. Client components fetch partitions and curve files at runtime. Never import `server.ts` or large manifests into client code.
-- **State lives in the URL**, using query params and `router.replace(url, { scroll: false })`, with defaults left out of the URL. Every view can be deep-linked, and the future LLM depends on this:
+- **State lives in the URL**, using query params and `router.replace(url, { scroll: false })`, with defaults left out of the URL. Every view can be deep-linked, and the ask router depends on this:
   - WAS pages: `analysis`, `window`, `model` (M1–M4, case-insensitive), `contrast`, `category`, `setting`, `view` (`manhattan` or `volcano`), `feature` (the row key). `useWasState` falls back so that it always lands on a partition that exists.
   - Incidence curves: `feature`, plus `window` (`180` or `90`) on the CPAP page.
   - Phenotype profiles: `octant`, `view` (`profile` or `heatmap`). Phenotype outcomes: `outcome`, `octant`.
 - **Shared code:** `OctantGlyph`/`octantLabel` live in `phenotypes/profiles/OctantGlyph.tsx` and the outcomes page uses them too.
 - **Defaults:** contrast `ahi_ge5`, model M4, window `5yr` (QWAS `index`). Default analyses are LabWAS median, UtilWAS presence, QWAS and BehWAS binary. The incidence curves default to 401.1; phenotype outcomes default to 428.2.
-- **Ask box:** `resolveAsk` currently matches keywords to pick a page, in a fixed order where the first match wins. It then finds the longest PheCode name in the prompt (qualifiers like NOS removed); if that code has no incidence curves, it switches to a related, more specific code that has them (401 → 401.1). It only recognizes disease names; it does not recognize labs, medications or questionnaire items. To connect the LLM, replace this function and keep its signature `(prompt) => Promise<href>`.
+- **Ask box:** round 1 is one Jev request with every question in parallel (page, settings, "names a feature?", count, and a choice among retrieved candidates). A candidate with P ≥ 0.6 that the chosen page shows is used directly; otherwise, when a feature is named, round 2 walks the chosen page's list (body system → feature for PheDAS/UtilWAS, top 3 systems in parallel; the whole list, ≤255 options, elsewhere). If that finds nothing, a confident candidate moves the user to the most likely page that shows it. A Jev Choice takes at most 255 options and output only from the options given; never let Jev produce a URL. Option names and descriptions are sent to the model: describe pages by their data (`pageCoverage`), and never copy eval prompts into descriptions. Tune only against `scripts/ask-eval.jsonl`; `scripts/ask-eval-holdout.jsonl` measures generalization and must not be tuned against.
 
 ## Design system (`src/app/globals.css`)
 
@@ -124,8 +133,8 @@ src/components/phenotypes/{profiles,outcomes}/, src/components/incidence/
 
 ## How to do common changes
 
-- **Add or change a WAS page:** edit `PAGES`, `ANALYSIS_LABELS`, `ANALYSIS_STYLES`, `FAMILY_PALETTES` and `DEFAULT_ANALYSIS` in `src/lib/data/server.ts`. Then update `WasSlug`/`WAS_FAMILY_SLUGS`, `NAV` in `site.ts`, and add a palette in `palettes.ts`. Every category string in the data needs a color, a label and a position in the palette order.
-- **New page:** a server `page.tsx` with `metadata.title`, using `PageHeader` (with `TabLinks` for sibling pages). Read data with `readPublicJson`; put the client UI inside Suspense with a fallback of the same height. Add the page to `NAV`.
+- **Add or change a WAS page:** edit `PAGES`, `ANALYSIS_LABELS`, `ANALYSIS_STYLES`, `FAMILY_PALETTES` and `DEFAULT_ANALYSIS` in `src/lib/data/server.ts`. Then update `WasSlug`/`WAS_FAMILY_SLUGS`, `NAV` in `site.ts`, and add a palette in `palettes.ts`. Every category string in the data needs a color, a label and a position in the palette order. For the ask router, add the family to `WasFamily`/`KIND_BY_FAMILY`/`PALETTE_BY_FAMILY` in `src/lib/ask/catalog.ts` and a `PAGES` entry in `router.ts` (new measures go in `MEASURES`), then add labeled prompts and run `npm run eval:ask`.
+- **New page:** a server `page.tsx` with `metadata.title`, using `PageHeader` (with `TabLinks` for sibling pages). Read data with `readPublicJson`; put the client UI inside Suspense with a fallback of the same height. Add the page to `NAV`, and to the ask router (`PageId`, `PAGES` in `router.ts`, a case in `href.ts`) if users should be able to ask for it.
 - **New chart:** follow `CifChart`/`plot-shared.tsx`. Track width with a ResizeObserver, draw points in one memoized layer, and draw hover and selection on a separate overlay layer. Use 12px muted ticks and `hairline-soft` gridlines.
 - `TabLinks` marks the active tab only when the link exactly matches the current path, so links with query strings never show as active.
 

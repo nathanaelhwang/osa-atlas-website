@@ -1,3 +1,6 @@
+/** Outcome shown when the URL names none. */
+export const DEFAULT_OUTCOME = "428.2";
+
 /** Octant row metadata passed from the server page. */
 export interface OutcomeOctant {
   id: string;
