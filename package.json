@@ -11,6 +11,7 @@
     "eval:ask": "tsx --conditions=react-server scripts/ask-eval.ts"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "d3-array": "^3.2.4",
     "d3-scale": "^4.0.2",
     "d3-shape": "^3.2.0",
