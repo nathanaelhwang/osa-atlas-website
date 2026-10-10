@@ -159,7 +159,7 @@ export function SiteNav() {
           mobileOpen ? "bg-canvas" : "bg-canvas/80 backdrop-blur-xl backdrop-saturate-150"
         }`}
       >
-        <div className="mx-auto flex h-full max-w-[1280px] items-center justify-between px-4 sm:px-6">
+        <div className="flex h-full items-center justify-between px-4 sm:px-6">
           <Link href="/" className="rounded-md text-[17px] font-semibold tracking-[-0.022em]">
             OSA Atlas
           </Link>

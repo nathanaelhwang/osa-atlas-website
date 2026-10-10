@@ -51,7 +51,7 @@ export default function PhenotypeOutcomesPage() {
   );
 
   return (
-    <main className="mx-auto w-full max-w-[1280px] px-4 pb-24 sm:px-6">
+    <main className="w-full px-4 pb-24 sm:px-6">
       <PageHeader title="Phenotypes">
         <TabLinks
           ariaLabel="Phenotypes"

@@ -189,16 +189,17 @@ export function YAxis(props: {
   );
 }
 
-function PlotTooltip(props: {
-  point: PlotPoint;
+/** Hover card for a plotted association: name, category, p and effect. `left`/`top` are the marker center in container pixels. */
+export function PlotTooltip(props: {
+  row: AssocRow;
+  color: string;
   left: number;
   top: number;
   containerWidth: number;
   category: string;
   effectType: EffectType;
 }) {
-  const { point, left, top, containerWidth, category, effectType } = props;
-  const { row } = point;
+  const { row, color, left, top, containerWidth, category, effectType } = props;
   // Prefer the right of the point, then the left; when neither side fits a full-width tooltip, pin it inside the plot.
   const maxWidth = Math.min(TOOLTIP_WIDTH, containerWidth);
   let x: number;
@@ -220,7 +221,7 @@ function PlotTooltip(props: {
     >
       <p className="line-clamp-2 text-[13px] leading-snug font-semibold text-ink">{row.name}</p>
       <p className="mt-0.5 flex items-center gap-1.5 text-[12px] text-muted">
-        <span className="size-1.5 shrink-0 rounded-full" style={{ backgroundColor: point.color }} />
+        <span className="size-1.5 shrink-0 rounded-full" style={{ backgroundColor: color }} />
         <span className="truncate">{category}</span>
       </p>
       <p className="mt-1.5 flex flex-wrap gap-x-3 text-[12px] text-ink tabular-nums">
@@ -411,7 +412,8 @@ export function AssocPlotCanvas(props: {
 
       {tooltipPoint && (
         <PlotTooltip
-          point={tooltipPoint}
+          row={tooltipPoint.row}
+          color={tooltipPoint.color}
           left={margin.left + tooltipPoint.x}
           top={margin.top + tooltipPoint.y}
           containerWidth={width}

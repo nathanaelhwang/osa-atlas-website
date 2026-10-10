@@ -1,4 +1,4 @@
-/* Fixed over the content column: the gutters match the content container (max-w-[1280px] px-4 sm:px-6). */
+/* Fixed over the content column: the gutters match the content container (px-4 sm:px-6). */
 .dock {
   --gutter: 1rem;
   position: fixed;
@@ -14,7 +14,7 @@
 
 @media (min-width: 640px) {
   .dock {
-    --gutter: max(1.5rem, calc((100% - 1280px) / 2 + 1.5rem));
+    --gutter: 1.5rem;
   }
 }
 

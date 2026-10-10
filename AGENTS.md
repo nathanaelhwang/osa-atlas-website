@@ -17,7 +17,7 @@ The manuscript, supplement, and tables and figures are `.docx` files in `manuscr
 ## User's design brief (binding)
 
 - "Very simple. White background, black sans-serif font. MINIMAL WORDS, KEEP CONCISE. Act like this is Apple's UI." The user's sketches are rough, so apply proper design judgment.
-- Home: an immersive Manhattan plot background built from real data, colored by body system, with **no text in the background**. In the middle, "Ask anything" above a big text box whose example prompts type out and backspace. The nav sits top right.
+- Home: an immersive Manhattan plot background built from real data, colored by body system, with **no static text in the background**. It runs edge to edge (sides and bottom). Hovering a point shows the same tooltip as the WAS Manhattan plots (`PlotTooltip`); touch has no hover. In the middle, "Ask anything" above a big text box whose example prompts type out and backspace. The nav sits top right. The home `<main>` is `pointer-events-none` with only its content `pointer-events-auto`, so the pointer reaches the canvas.
 - WAS template, shared by every association page: the WAS title; dropdowns for Exposure, Adjustment and Disease category (plus Measure, Window and Setting when the page has more than one option); Manhattan by default with a Volcano tab; points colored by body system as in the manuscript; clicking a point opens a right panel with the effect (odds ratio etc.), 95% CI, p-value, FDR significant and Bonferroni significant.
 - Sitemap: Home → PheDAS (Prevalence, Incidence) | Other WAS (LabWAS, MedWAS, QWAS, ProcWAS, UtilWAS, BehWAS; each its own page) | Phenotypes (8 profiles; **outcomes on a separate page**) | Incidence curves (OSA severity, CPAP adherence).
 - The "Ask anything" box sends users to the page and feature they asked about. It routes with Jev (a decision model on OpenRouter) and falls back to a keyword router. The same box floats at the bottom center of every page except home.
@@ -99,7 +99,7 @@ src/components/ui/        Select, SegmentedControl (+SegmentTrack), TabLinks, Pa
 src/components/charts/    ManhattanPlot, VolcanoPlot (AssocPlotProps in plot-shared.tsx), CifChart (y values in PERCENT)
 src/components/was/       WasPage, WasControls, FeatureDetail, useWasState, WasFallback
 src/components/ask/       AskBox (typewriter; `large` for the home hero), AskDock (layout-mounted floating box, hidden on `/`)
-src/components/home/      HomeBackground (canvas), useReducedMotion
+src/components/home/      HomeBackground (canvas + hover tooltip), useReducedMotion
 src/components/phenotypes/{profiles,outcomes}/, src/components/incidence/
 ```
 
@@ -123,7 +123,7 @@ src/components/phenotypes/{profiles,outcomes}/, src/components/incidence/
 - **Layout and motion:**
   - No card styling with shadows. Shadows are allowed only on the ask box, menus and tooltips.
   - Plots sit directly on white.
-  - Corner radius by role: pills 9999px, panels and menus 18px, chips 8px. Content container: `mx-auto max-w-[1280px] px-4 sm:px-6`.
+  - Corner radius by role: pills 9999px, panels and menus 18px, chips 8px. Content container: full width, `w-full px-4 sm:px-6` (no max width; the nav uses the same gutters, so the wordmark sits top left and the links top right).
   - Animate only in response to user actions. Panels slide in 240ms with the `ease-apple` curve.
   - The only animations that play by themselves are the one-time load on the home page and the ask box typewriter. Respect `prefers-reduced-motion`.
   - The ask dock is fixed at `z-index: 15`: above sticky table headers and segment controls (10), below menus (30), the mobile nav sheet (40) and the mobile side-panel sheet (60/70). While the desktop `SidePanel` is open it sets `data-side-panel-open` on `<html>`, and the dock re-centers over the column left of the panel. Pages keep `pb-24` so their last line clears the dock.

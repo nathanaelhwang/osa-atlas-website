@@ -15,7 +15,7 @@ import {
 import { formatInt } from "@/lib/data/format";
 
 const ROW_GRID =
-  "grid grid-cols-[minmax(0,1fr)_84px_84px] items-center gap-x-4 gap-y-1.5 sm:grid-cols-[minmax(0,1.2fr)_96px_96px_minmax(0,1fr)]";
+  "grid grid-cols-[minmax(0,1fr)_84px_84px] items-center gap-x-4 gap-y-1.5 sm:grid-cols-[minmax(0,1.2fr)_96px_96px_minmax(0,1fr)] lg:grid-cols-[minmax(0,1fr)_96px_96px_minmax(0,2fr)]";
 const BAR_CELL = "col-span-3 flex items-center gap-3 sm:col-span-1";
 
 /** Documented setup percent (already 0–100); null rows are suppressed counts and read "<11", never 0. */
@@ -108,7 +108,7 @@ export function ProfileDetail(props: { octant: OctantSummary; domains: MeasureDo
           ))}
         </dl>
 
-        <div className="mt-12 max-w-[960px]">
+        <div className="mt-12">
           <div aria-hidden="true" className={`${ROW_GRID} pb-2 text-[12px] text-muted`}>
             <span />
             <span className="text-right">Phenotype</span>
@@ -136,7 +136,7 @@ export function ProfileDetail(props: { octant: OctantSummary; domains: MeasureDo
         </div>
       </section>
 
-      <section aria-labelledby={cpapId} className="mt-14 max-w-[960px]">
+      <section aria-labelledby={cpapId} className="mt-14">
         <h3 id={cpapId} className="text-[17px] font-semibold">
           CPAP setup
         </h3>

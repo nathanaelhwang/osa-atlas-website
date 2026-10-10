@@ -44,7 +44,7 @@ export function IncidencePage(props: { view: IncidenceView }) {
   const groupOrder = view === "severity" ? manifest.strata.severity_group_order : manifest.strata.cpap_group_order;
 
   return (
-    <main className="mx-auto w-full max-w-[1280px] px-4 pb-24 sm:px-6">
+    <main className="w-full px-4 pb-24 sm:px-6">
       <PageHeader title="Incidence curves">
         <TabLinks ariaLabel="Incidence curves" items={TABS} />
       </PageHeader>

@@ -30,7 +30,7 @@ Vercel's free Hobby plan is for personal, non-commercial use only; commercial us
 
 | Route | Content |
 |---|---|
-| `/` | Manhattan plot background (PheDAS prevalence, M4, AHI ≥5 vs <5) and the "Ask anything" box |
+| `/` | Manhattan plot background (PheDAS prevalence, M4, AHI ≥5 vs <5; hover a point for its name) and the "Ask anything" box |
 | `/phedas/prevalence`, `/phedas/incidence` | PheDAS pages built from the WAS template |
 | `/was/{labwas,medwas,qwas,procwas,utilwas,behwas}` | Other WAS pages built from the WAS template |
 | `/phenotypes` | The 8 octant profiles: profile view and heatmap |

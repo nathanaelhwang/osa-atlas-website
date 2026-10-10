@@ -158,7 +158,7 @@ export function WasPage({ config }: { config: WasPageConfig }) {
   };
 
   return (
-    <main className="mx-auto w-full max-w-[1280px] px-4 pb-24 sm:px-6">
+    <main className="w-full px-4 pb-24 sm:px-6">
       <PageHeader title={config.title}>
         {config.slug.startsWith("phedas") && <TabLinks ariaLabel="PheDAS analysis" items={PHEDAS_TABS} />}
       </PageHeader>
