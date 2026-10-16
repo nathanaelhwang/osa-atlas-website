@@ -87,14 +87,14 @@ src/lib/was-config.ts     WasSlug, WAS_FAMILY_SLUGS, WasAnalysisConfig, WasPageC
 src/lib/palettes.ts       CATEGORY_PALETTES + categoryColor/Label/Order; SEVERITY_COLORS, CPAP_COLORS, OCTANT_COLORS, NO_OSA_COLOR
 src/lib/site.ts           NAV (the sitemap; drives SiteNav)
 src/lib/was-state.ts      resolveWasState, wasQuery (WAS URL ↔ state; shared by useWasState and the ask router)
-src/lib/ask/resolve.ts    resolveAsk(prompt) → href (client: POST /api/ask, keyword fallback on any failure)
+src/lib/ask/resolve.ts    resolveAsk(prompt) → href | null (client: POST /api/ask; null = refused as off-topic; keyword fallback on any failure)
 src/lib/ask/keyword.ts    keyword router (fallback; pure, takes the registry)
 src/lib/ask/catalog.ts    "server-only": getAskCatalog() — entities (diseases, labs, meds, items, procedures, specialties, behaviors), page configs, pools
 src/lib/ask/retrieve.ts   createRetriever(entities): prompt → ≤20 candidates by word overlap
 src/lib/ask/jev.ts        "server-only": decide(state, questions) on OpenRouter's Decisions API, pinned typesafe/jev-1.13
 src/lib/ask/router.ts     "server-only": routePrompt — Jev questions, thresholds, feature tree
 src/lib/ask/href.ts       buildHref(catalog, plan): the canonical URL the destination page would write
-src/app/api/ask/route.ts  POST { prompt } → { href }; 400 bad input, 503 on any Jev failure
+src/app/api/ask/route.ts  POST { prompt } → { href } (null = refused); 400 bad input, 503 on any Jev failure
 src/components/ui/        Select, SegmentedControl (+SegmentTrack), TabLinks, PageHeader, SidePanel, Legend, ComboBox
 src/components/charts/    ManhattanPlot, VolcanoPlot (AssocPlotProps in plot-shared.tsx), CifChart (y values in PERCENT)
 src/components/was/       WasPage, WasControls, FeatureDetail, useWasState, WasFallback
@@ -110,11 +110,11 @@ src/components/phenotypes/{profiles,outcomes}/, src/components/incidence/
   - Phenotype profiles: `octant`, `view` (`profile` or `heatmap`). Phenotype outcomes: `outcome`, `octant`.
 - **Shared code:** `OctantGlyph`/`octantLabel` live in `phenotypes/profiles/OctantGlyph.tsx` and the outcomes page uses them too.
 - **Defaults:** contrast `ahi_ge5`, model M4, window `5yr` (QWAS `index`). Default analyses are LabWAS median, UtilWAS presence, QWAS and BehWAS binary. The incidence curves default to 401.1; phenotype outcomes default to 428.2.
-- **Ask box:** round 1 is one Jev request with every question in parallel (page, settings, "names a feature?", count, and a choice among retrieved candidates). A candidate with P ≥ 0.6 that the chosen page shows is used directly; otherwise, when a feature is named, round 2 walks the chosen page's list (body system → feature for PheDAS/UtilWAS, top 3 systems in parallel; the whole list, ≤255 options, elsewhere). If that finds nothing, a confident candidate moves the user to the most likely page that shows it. A Jev Choice takes at most 255 options and output only from the options given; never let Jev produce a URL. Option names and descriptions are sent to the model: describe pages by their data (`pageCoverage`), and never copy eval prompts into descriptions. Tune only against `scripts/ask-eval.jsonl`; `scripts/ask-eval-holdout.jsonl` measures generalization and must not be tuned against.
+- **Ask box:** round 1 is one Jev request with every question in parallel (on topic?, page, settings, "names a feature?", count, and a choice among retrieved candidates). P(on topic) < 0.15 refuses the prompt (`href: null`): the box stays put, flashes its outline red (`error` token) and shows "Try another prompt" until the text changes. Refuse only clearly unrelated prompts, and never refuse in the keyword fallback (Jev unavailable means let it through). A candidate with P ≥ 0.6 that the chosen page shows is used directly; otherwise, when a feature is named, round 2 walks the chosen page's list (body system → feature for PheDAS/UtilWAS, top 3 systems in parallel; the whole list, ≤255 options, elsewhere). If that finds nothing, a confident candidate moves the user to the most likely page that shows it. A Jev Choice takes at most 255 options and output only from the options given; never let Jev produce a URL. Option names and descriptions are sent to the model: describe pages by their data (`pageCoverage`), and never copy eval prompts into descriptions. Tune only against `scripts/ask-eval.jsonl` (off-topic labels have `href: null`); `scripts/ask-eval-holdout.jsonl` measures generalization and must not be tuned against.
 
 ## Design system (`src/app/globals.css`)
 
-- Tokens (Tailwind names): `canvas` #FFFFFF, `ink` #000000, `muted` #6E6E73, `hairline` #D2D2D7, `hairline-soft` #E8E8ED (gridlines), `fill` #F5F5F7 (control backgrounds), `accent` #0071E3 (focus and active state only). Light mode only.
+- Tokens (Tailwind names): `canvas` #FFFFFF, `ink` #000000, `muted` #6E6E73, `hairline` #D2D2D7, `hairline-soft` #E8E8ED (gridlines), `fill` #F5F5F7 (control backgrounds), `accent` #0071E3 (focus and active state only), `error` #D70015 (refused ask prompts only). Light mode only.
 - Type: the system font first, so Apple devices get SF Pro; Inter (loaded with `next/font`) is the fallback. Body 17px. Page titles 48px (34px on mobile), weight 600, letter-spacing −0.02em. Home heading 56px (40px on mobile). Panel headlines 28px. Controls 14px. Captions and axis ticks 12px. Use `tabular-nums` for numbers.
 - **Hard rules:**
   - Sentence case.

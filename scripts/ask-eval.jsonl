@@ -178,3 +178,23 @@
 {"prompt": "does treatment help", "href": "/incidence/cpap", "tags": ["curves-cpap", "vague", "nav"]}
 {"prompt": "what kinds of OSA patients are there", "href": "/phenotypes", "tags": ["profiles", "vague", "nav"]}
 {"prompt": "blood tests", "href": "/was/labwas", "tags": ["labwas", "vague", "nav"]}
+{"prompt": "weather tomorrow in Los Angeles", "href": null, "tags": ["offtopic"]}
+{"prompt": "who won the world series", "href": null, "tags": ["offtopic"]}
+{"prompt": "write me a poem about cats", "href": null, "tags": ["offtopic"]}
+{"prompt": "how do I bake sourdough bread", "href": null, "tags": ["offtopic"]}
+{"prompt": "convert 50 dollars to euros", "href": null, "tags": ["offtopic"]}
+{"prompt": "best laptop under $1000", "href": null, "tags": ["offtopic"]}
+{"prompt": "translate hello into French", "href": null, "tags": ["offtopic"]}
+{"prompt": "what is the capital of Australia", "href": null, "tags": ["offtopic"]}
+{"prompt": "fix my python import error", "href": null, "tags": ["offtopic"]}
+{"prompt": "cheap flights to Tokyo", "href": null, "tags": ["offtopic"]}
+{"prompt": "tell me a joke", "href": null, "tags": ["offtopic"]}
+{"prompt": "hi", "href": null, "tags": ["offtopic"]}
+{"prompt": "asdfghjkl", "href": null, "tags": ["offtopic"]}
+{"prompt": "stock price of apple", "href": null, "tags": ["offtopic"]}
+{"prompt": "movie showtimes near me", "href": null, "tags": ["offtopic"]}
+{"prompt": "how to change a car tire", "href": null, "tags": ["offtopic"]}
+{"prompt": "lyrics to bohemian rhapsody", "href": null, "tags": ["offtopic"]}
+{"prompt": "who is the president of France", "href": null, "tags": ["offtopic"]}
+{"prompt": "recommend a good fantasy novel", "href": null, "tags": ["offtopic"]}
+{"prompt": "what time is it", "href": null, "tags": ["offtopic"]}

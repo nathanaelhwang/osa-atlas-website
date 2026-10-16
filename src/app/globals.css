@@ -8,6 +8,8 @@
   --color-hairline-soft: #e8e8ed;
   --color-fill: #f5f5f7;
   --color-accent: #0071e3;
+  /* Apple's increased-contrast system red (5.6:1 on white): refused ask prompts only. */
+  --color-error: #d70015;
 
   --ease-apple: cubic-bezier(0.32, 0.72, 0, 1);
 

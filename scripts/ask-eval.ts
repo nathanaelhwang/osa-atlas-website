@@ -4,8 +4,9 @@
  *   npm run eval:ask -- [--labels file.jsonl] [--designs keyword,tree,hybrid] [--limit N] [--concurrency N] [--misses]
  *
  * Labels: scripts/ask-eval.jsonl (tuning set, the default) or scripts/ask-eval-holdout.jsonl (held out: never tune
- * against it). keyword: the client fallback. tree: Jev without candidate retrieval (every named feature walks the
- * tree). hybrid: the shipped router. Jev designs read OPENROUTER_API_KEY from the environment or .env.local.
+ * against it). `href: null` labels a prompt the router should refuse as unrelated. keyword: the client fallback (never
+ * refuses). tree: Jev without candidate retrieval (every named feature walks the tree). hybrid: the shipped router. Jev
+ * designs read OPENROUTER_API_KEY from the environment or .env.local.
  */
 import { existsSync, readFileSync } from "node:fs";
 import { DEFAULT_OUTCOME } from "@/components/phenotypes/outcomes/types";
@@ -21,7 +22,8 @@ import { resolveWasState, wasQuery } from "@/lib/was-state";
 
 interface Label {
   prompt: string;
-  href: string | string[];
+  /** Null: the router should refuse the prompt. */
+  href: string | string[] | null;
   tags: string[];
 }
 
@@ -35,6 +37,9 @@ interface Outcome {
 }
 
 type Design = "keyword" | "tree" | "hybrid";
+
+/** The outcome string of a refused prompt. */
+const REFUSED = "refused";
 
 const WAS_PARAMS = ["analysis", "window", "model", "contrast", "category", "setting", "view", "feature"];
 
@@ -184,7 +189,7 @@ async function main() {
 
   let invalid = 0;
   for (const label of labels) {
-    for (const href of [label.href].flat()) {
+    for (const href of [label.href ?? []].flat()) {
       const { errors } = canonicalize(catalog, keys, href);
       if (errors.length > 0) {
         invalid++;
@@ -201,12 +206,14 @@ async function main() {
   );
   const retrievers: Record<"tree" | "hybrid", Retrieve> = { tree: () => [], hybrid: createRetriever(catalog.entities) };
 
-  const summary: string[][] = [["design", "exact", "page", "feature", "errors", "p50 ms", "p95 ms", "rounds", "$ / 1k asks"]];
+  const summary: string[][] = [
+    ["design", "exact", "page", "feature", "false refusals", "missed refusals", "errors", "p50 ms", "p95 ms", "rounds", "$ / 1k asks"],
+  ];
   const byTag = new Map<string, Record<string, [number, number]>>();
 
   for (const design of designs) {
     const outcomes = await mapLimit(labels, design === "keyword" ? 16 : concurrency, async (label): Promise<Outcome> => {
-      const expected = [label.href].flat().map((href) => canonicalize(catalog, keys, href).href);
+      const expected = label.href === null ? [REFUSED] : [label.href].flat().map((href) => canonicalize(catalog, keys, href).href);
       const started = performance.now();
       try {
         if (design === "keyword") {
@@ -217,7 +224,7 @@ async function main() {
         return {
           label,
           expected,
-          actual: canonicalize(catalog, keys, result.href).href,
+          actual: result.href === null ? REFUSED : canonicalize(catalog, keys, result.href).href,
           ms: performance.now() - started,
           rounds: result.rounds,
           cost: result.cost,
@@ -233,12 +240,17 @@ async function main() {
     const withFeature = outcomes.filter((o) => o.expected.some((e) => featureOf(e) !== null));
     const featureHits = withFeature.filter((o) => o.expected.some((e) => featureOf(e) === featureOf(o.actual)));
     const errors = outcomes.filter((o) => o.actual.startsWith("error:"));
+    const offTopic = outcomes.filter((o) => o.label.href === null);
+    const falseRefusals = outcomes.filter((o) => o.label.href !== null && o.actual === REFUSED);
+    const missedRefusals = offTopic.filter((o) => o.actual !== REFUSED);
     const pct = (k: number, d: number) => `${((100 * k) / Math.max(d, 1)).toFixed(1)}%`;
     summary.push([
       design,
       pct(exact.length, n),
       pct(page.length, n),
       pct(featureHits.length, withFeature.length),
+      `${falseRefusals.length}/${n - offTopic.length}`,
+      `${missedRefusals.length}/${offTopic.length}`,
       String(errors.length),
       percentile(outcomes.map((o) => o.ms), 0.5).toFixed(0),
       percentile(outcomes.map((o) => o.ms), 0.95).toFixed(0),

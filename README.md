@@ -41,16 +41,16 @@ WAS pages keep their state in the URL: `analysis`, `window`, `model`, `contrast`
 
 ## Ask box
 
-The box sits in the middle of the home page and floats at the bottom of every other page (`AskDock`, mounted in the root layout). `resolveAsk(prompt)` in `src/lib/ask/resolve.ts` POSTs to `/api/ask` and returns the path to open. Any failure (firewall 429, Jev outage, missing key, 6 s timeout) falls back to the keyword router in `src/lib/ask/keyword.ts`.
+The box sits in the middle of the home page and floats at the bottom of every other page (`AskDock`, mounted in the root layout). `resolveAsk(prompt)` in `src/lib/ask/resolve.ts` POSTs to `/api/ask` and returns the path to open, or null when Jev refuses the prompt as unrelated to the atlas; the box then stays put, flashes its outline red and shows "Try another prompt" until the text is edited. Any failure (firewall 429, Jev outage, missing key, 6 s timeout) falls back to the keyword router in `src/lib/ask/keyword.ts`, which never refuses.
 
 `/api/ask` routes with Jev, TypeSafe's decision model on OpenRouter (`typesafe/jev-1.13`, pinned). Jev never writes text; it picks from options the code defines, so every link is built by code from valid page parameters.
 
 1. Code retrieves up to 20 candidate features whose names share words with the prompt (`retrieve.ts`).
-2. One Jev request asks every question in parallel: the page, the settings (model, contrast, window, view, measure, setting, octant, category), whether a feature is named, and which candidate it is.
+2. One Jev request asks every question in parallel: whether the prompt concerns health or the site at all, the page, the settings (model, contrast, window, view, measure, setting, octant, category), whether a feature is named, and which candidate it is. A P(on topic) below 0.15 refuses the prompt (`{ href: null }`); the cutoff is low because a wrong refusal costs more than a wrong page.
 3. If no confident candidate exists on the chosen page, a second request walks that page's feature list: body system, then feature for PheDAS and UtilWAS (top 3 systems in parallel), or the whole list for smaller pages.
 4. `href.ts` builds the URL the destination page itself would write, leaving defaults out.
 
-`npm run eval:ask` scores the keyword router, a tree-only design and the shipped router against `scripts/ask-eval.jsonl` (180 prompts, used for tuning). `--labels scripts/ask-eval-holdout.jsonl` scores the held-out set; never tune against it. Re-run both before changing the Jev version or the thresholds in `router.ts`.
+`npm run eval:ask` scores the keyword router, a tree-only design and the shipped router against `scripts/ask-eval.jsonl` (200 prompts, 20 of them off-topic with `href: null`, used for tuning). It reports false refusals (on-topic prompts refused) and missed refusals. `--labels scripts/ask-eval-holdout.jsonl` (70 prompts, 10 off-topic) scores the held-out set; never tune against it. Re-run both before changing the Jev version or the thresholds in `router.ts`.
 
 ## Data
 

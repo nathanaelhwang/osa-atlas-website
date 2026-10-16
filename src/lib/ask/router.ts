@@ -8,9 +8,10 @@ import { CONTRAST_LABELS, MODEL_LABELS } from "@/lib/data/labels";
 import { categoryLabel } from "@/lib/palettes";
 
 /**
- * Jev router. Round 1 asks every question in parallel: the page, the settings, whether a feature is named, and which
- * retrieved candidate it is. Round 2 (only when no candidate fits) walks the destination's feature tree:
- * body system → feature for large pools, or the whole pool when it fits one Choice (≤255 options).
+ * Jev router. Round 1 asks every question in parallel: whether the request concerns the atlas at all, the page, the
+ * settings, whether a feature is named, and which retrieved candidate it is. Round 2 (only when no candidate fits) walks
+ * the destination's feature tree: body system → feature for large pools, or the whole pool when it fits one Choice
+ * (≤255 options).
  */
 
 export interface AskDeps {
@@ -20,7 +21,8 @@ export interface AskDeps {
 }
 
 export interface AskResult {
-  href: string;
+  /** Null when the request is clearly unrelated to the atlas. */
+  href: string | null;
   rounds: number;
   /** USD across rounds. */
   cost: number;
@@ -28,6 +30,8 @@ export interface AskResult {
 
 /** Tuned on scripts/ask-eval.jsonl; see README "Ask box". */
 const THRESHOLDS = {
+  /** Below this P(on topic) the request is refused; low because a wrong refusal costs more than a wrong page. */
+  onTopic: 0.15,
   /** Minimum probability for a setting answer to leave the page default. */
   setting: 0.65,
   /** Minimum P(yes) for a yes/no question. */
@@ -198,6 +202,15 @@ function pageCoverage(catalog: Catalog, page: PageId): string {
 function firstRound(catalog: Catalog, candidates: Entity[]) {
   const settings = [...new Set([...(catalog.settings.utilwas_presence ?? []), ...(catalog.settings.utilwas_count_present ?? [])])];
   const questions: Record<string, Question> = {
+    on_topic: {
+      type: "noul",
+      instructions:
+        "The OSA Atlas is a research website on how obstructive sleep apnea (OSA) relates to diseases, symptoms, lab tests, medications, procedures, healthcare visits and appointments, questionnaires, behaviors, work absence and leave, sleep and patient outcomes. Could `request` be a search or question about health, healthcare or this website?",
+      criteria: {
+        true: "It concerns health, healthcare use, medicine, the body, sleep, patients or the website's pages, charts and statistics, even as a single term, a misspelling or a vague question.",
+        false: "It is clearly unrelated to health, medicine and this website.",
+      },
+    },
     page: choice(
       "Which page of the OSA Atlas, a research website on obstructive sleep apnea (OSA), best answers `request`?",
       Object.fromEntries(
@@ -329,6 +342,8 @@ export async function routePrompt(prompt: string, { catalog, decide, retrieve }:
   const { answers } = round1;
   let rounds = 1;
   let cost = round1.cost;
+
+  if (answers.on_topic?.type === "noul" && answers.on_topic.noul < THRESHOLDS.onTopic) return { href: null, rounds, cost };
 
   const pages = distribution(answers.page).flatMap(([key]) => (PAGES[key] ? [PAGES[key].page] : []));
   let page = pages[0] ?? "phedas-prevalence";

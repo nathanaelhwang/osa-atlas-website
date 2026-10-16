@@ -21,10 +21,10 @@ function loadIndex(): Promise<KeywordIndex> {
 }
 
 /**
- * Turns a free-text prompt into a site path. The Jev router at /api/ask answers first; any failure (firewall 429,
- * Jev outage, timeout, network) falls back to the keyword router.
+ * Turns a free-text prompt into a site path, or null when the Jev router at /api/ask refuses it as unrelated to the
+ * atlas. Any failure (firewall 429, Jev outage, timeout, network) falls back to the keyword router, which never refuses.
  */
-export async function resolveAsk(prompt: string): Promise<string> {
+export async function resolveAsk(prompt: string): Promise<string | null> {
   try {
     const response = await fetch("/api/ask", {
       method: "POST",
@@ -34,15 +34,9 @@ export async function resolveAsk(prompt: string): Promise<string> {
     });
     if (response.ok) {
       const body: unknown = await response.json();
-      if (
-        typeof body === "object" &&
-        body !== null &&
-        "href" in body &&
-        typeof body.href === "string" &&
-        body.href.startsWith("/") &&
-        !body.href.startsWith("//")
-      ) {
-        return body.href;
+      if (typeof body === "object" && body !== null && "href" in body) {
+        if (body.href === null) return null;
+        if (typeof body.href === "string" && body.href.startsWith("/") && !body.href.startsWith("//")) return body.href;
       }
     }
   } catch {

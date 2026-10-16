@@ -11,8 +11,9 @@ const MAX_PROMPT_LENGTH = 500;
 let retrieve: Retrieve | null = null;
 
 /**
- * POST { prompt } → { href }: a site path for the "Ask anything" box. Any Jev failure answers 503 so the client falls
- * back to its keyword router. Rate limiting is a Vercel firewall rule on this path (see README).
+ * POST { prompt } → { href }: a site path for the "Ask anything" box, or null when the prompt is clearly unrelated to
+ * the atlas. Any Jev failure answers 503 so the client falls back to its keyword router, which never refuses. Rate
+ * limiting is a Vercel firewall rule on this path (see README).
  */
 export async function POST(request: Request): Promise<Response> {
   let prompt: unknown;

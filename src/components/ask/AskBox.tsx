@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useEffect, useRef, useState, useTransition, type FormEvent, type KeyboardEvent } from "react";
+import { useEffect, useId, useRef, useState, useTransition, type FormEvent, type KeyboardEvent } from "react";
 import { useReducedMotion } from "@/components/home/useReducedMotion";
 import { resolveAsk } from "@/lib/ask/resolve";
 import styles from "./AskBox.module.css";
@@ -28,6 +28,8 @@ const START_MS = 500;
 const PHASE_MS: Record<Phase, number> = { typing: 45, holding: 1800, erasing: 22, pausing: 350 };
 const TYPE_JITTER_MS = 30;
 const STATIC_SWAP_MS = 3000;
+/** How long the outline stays red after a refused prompt. */
+const REFUSAL_FLASH_MS = 1200;
 
 function advance({ index, length, phase }: Typed): Typed {
   switch (phase) {
@@ -85,14 +87,25 @@ const LARGE = {
 export function AskBox({ className, large = false }: { className: string; large?: boolean }) {
   const router = useRouter();
   const reduced = useReducedMotion();
+  const hintId = useId();
   const [value, setValue] = useState("");
   const [focused, setFocused] = useState(false);
+  /** Refusals since the last edit; the hint shows while any stand. */
+  const [refusals, setRefusals] = useState(0);
+  const [flashing, setFlashing] = useState(false);
   const [pending, startTransition] = useTransition();
   const empty = value.length === 0;
   const typed = useTypewriter(empty, reduced);
   const prompt = PROMPTS[typed.index];
   const shown = reduced ? prompt : prompt.slice(0, typed.length);
   const query = value.trim();
+
+  // Each refusal restarts the red flash.
+  useEffect(() => {
+    if (!flashing) return;
+    const timer = setTimeout(() => setFlashing(false), REFUSAL_FLASH_MS);
+    return () => clearTimeout(timer);
+  }, [flashing, refusals]);
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -101,8 +114,14 @@ export function AskBox({ className, large = false }: { className: string; large?
       const href = await resolveAsk(query);
       // Clearing inside the transition commits together with the navigation.
       startTransition(() => {
+        if (href === null) {
+          setRefusals((n) => n + 1);
+          setFlashing(true);
+          return;
+        }
         router.push(href);
         setValue("");
+        setRefusals(0);
       });
     });
   };
@@ -119,16 +138,28 @@ export function AskBox({ className, large = false }: { className: string; large?
       <input
         type="text"
         aria-label="Ask anything"
+        aria-invalid={refusals > 0}
+        aria-describedby={hintId}
         value={value}
-        onChange={(event) => setValue(event.target.value)}
+        onChange={(event) => {
+          setValue(event.target.value);
+          setRefusals(0);
+        }}
         onKeyDown={onKeyDown}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
         autoComplete="off"
         spellCheck={false}
         enterKeyHint="go"
-        className={`h-14 w-full rounded-full border border-hairline bg-white/85 pr-16 pl-5 text-[17px] text-ink shadow-[0_8px_32px_rgb(0_0_0/0.08)] backdrop-blur-xl ${large ? LARGE.input : ""}`}
+        className={`h-14 w-full rounded-full border bg-white/85 pr-16 pl-5 text-[17px] text-ink shadow-[0_8px_32px_rgb(0_0_0/0.08)] backdrop-blur-xl transition-[border-color,box-shadow] duration-300 ease-apple ${flashing ? "border-error ring-1 ring-error" : "border-hairline"} ${large ? LARGE.input : ""}`}
       />
+      <p
+        id={hintId}
+        role="status"
+        className={`pointer-events-none absolute inset-x-0 flex justify-center ${large ? "top-full mt-3" : "bottom-full mb-2"}`}
+      >
+        {refusals > 0 && <span className="rounded-full bg-white/85 px-3 py-1 text-[12px] text-error backdrop-blur-xl">Try another prompt</span>}
+      </p>
       {empty && (
         <div
           aria-hidden
